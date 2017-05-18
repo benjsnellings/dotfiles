@@ -1,41 +1,21 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-
 # Modkey
 set $mod Mod4
 
 
-
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up l
-set $down k
-set $left j
-set $right semicolon
+set $up k
+set $down j
+set $left h
+set $right l
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -46,8 +26,13 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# start rofi
+bindsym $mod+d       exec "rofi -show run"
+bindsym $mod+Shift+d exec "rofi -show drun"
+
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -78,7 +63,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -120,7 +105,6 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -169,41 +153,39 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	position top
         status_command i3status
 }
-
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-exec i3-config-wizard
 
 
 
 ##### SELF MADE STUFF
 
+#Setup Screen
 workspace 1 output HDMI-2
 workspace 2 output HDMI-1
 workspace 3 output eDP-1
 workspace 4 output eDP-1
 workspace 5 output eDP-1
 
-exec i3-msg 'workspace 3; exec slack'
-exec i3-msg 'workspace 4; exec spotify'
-exec i3-msg 'workspace 5; exec discord'
+exec --no-startup-id i3-msg 'workspace 3; exec slack'
+exec --no-startup-id i3-msg 'workspace 4; exec spotify'
+exec --no-startup-id i3-msg 'workspace 5; exec discord'
 exec --no-startup-id "$HOME/.i3/screen_setup.sh"
-exec xautolock -time 5 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
 
 
-## Bindings
+#Enable lock timeout
+exec xautolock -time 2 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
+
+
+# Show network manager on i3Status bar
+exec --no-startup-id nm-applet
+
+
+##### Bindings
+
 #lock i3
 bindsym $mod+Shift+0 exec "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png"
-
 
 
 # Media Keys
@@ -213,6 +195,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_
 bindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
 
 # Spotfiy Controls
+
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioStop exec mdbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
