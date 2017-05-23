@@ -175,7 +175,7 @@ exec --no-startup-id "$HOME/.i3/screen_setup.sh"
 
 
 #Enable lock timeout
-exec xautolock -time 2 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
+exec xautolock -time 6 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
 
 
 # Show network manager on i3Status bar
