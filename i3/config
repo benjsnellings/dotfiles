@@ -168,10 +168,11 @@ workspace 3 output eDP-1
 workspace 4 output eDP-1
 workspace 5 output eDP-1
 
-exec --no-startup-id i3-msg 'workspace 3; exec slack'
-exec --no-startup-id i3-msg 'workspace 4; exec spotify'
-exec --no-startup-id i3-msg 'workspace 5; exec discord'
+
 exec --no-startup-id "$HOME/.i3/screen_setup.sh"
+exec --no-startup-id "$HOME/.i3/setup_workspace.sh"
+exec --no-startup-id compton -CGb
+exec --no-startup-id nitrogen --restore
 
 
 #Enable lock timeout
