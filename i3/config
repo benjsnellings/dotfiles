@@ -169,7 +169,6 @@ bar {
 }
 
 
-
 ##### SELF MADE STUFF
 
 #Setup Screen
@@ -184,6 +183,8 @@ exec --no-startup-id "$HOME/.i3/setup_workspace.sh"
 exec --no-startup-id compton -CGb
 exec --no-startup-id nitrogen --restore
 
+gaps inner 5
+gaps outer 4
 
 #Enable lock timeout
 exec xautolock -time 6 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
