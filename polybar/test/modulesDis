@@ -1,0 +1,169 @@
+
+[module/volume]
+type                      		= internal/volume
+
+format = <label>
+label-muted-background  	= ${colors.t99}
+label-volume-background  	= ${colors.t99}
+
+format-volume 					= <label-volume>
+format-muted  					= <label-muted>
+
+label-muted   					=  " muted "
+format-muted-padding 		= 0
+
+label-volume = " %percentage%% "
+format-volume-padding 		= 0
+
+bar-volume-background 			= ${colors.t99}
+
+[module/clock]
+type = custom/script
+interval = 1
+format = <label>
+exec = ~/.config/polybar/clock.sh
+
+format-prefix            = 
+format-prefix-foreground = ${colors.t1}
+format-prefix-background = ${colors.t3}
+label-background = ${colors.t1}
+label-padding-right    = 0
+
+[module/temps]
+type = custom/script
+interval = 1
+format = <label>
+exec = ~/.config/polybar/cputemp.sh
+
+label-background = ${colors.t5}
+format-underline = ${colors.cyan}
+label-padding   =  2
+
+format-prefix            = 
+format-prefix-background = #D3C1D6
+format-prefix-foreground = ${self.label-background}
+
+format-suffix            = 
+format-suffix-background = ${self.label-background}
+format-suffix-foreground = #B6A5C8
+
+[module/weather]
+type = custom/script
+interval = 300
+format = <label>
+exec = ~/.config/polybar/weather-git.sh
+
+label-background = ${colors.background}
+label-padding   =  2
+
+; format-prefix            = 
+format-prefix-background = #B6A5C8
+format-prefix-foreground = ${colors.background}
+
+; format-suffix            = 
+format-suffix-background = ${colors.background}
+format-suffix-foreground = #AD9CC3
+
+
+[module/battery]
+type    = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging    = <label-charging>
+time-format        = %H:%M
+
+format-discharging = <label-discharging>
+label-discharging  = "  %percentage%% "
+label-charging  = "  %percentage%% "
+
+format-charging-padding     = 0
+
+format-charging-prefix = ""
+format-charging-prefix-foreground = ${colors.t6}
+format-charging-prefix-background = ${colors.background}
+
+format-discharging-prefix = ""
+format-discharging-prefix-foreground = ${colors.t6}
+format-discharging-prefix-background = ${colors.background}
+
+format-charging-suffix = " "
+format-charging-suffix-background = ${colors.background}
+format-charging-suffix-foreground = ${colors.t6}
+
+format-discharging-suffix = " "
+format-discharging-suffix-background = ${colors.background}
+format-discharging-suffix-foreground = ${colors.t6}
+
+label-charging-background = ${colors.t6}
+label-discharging-background = ${colors.t6}
+
+format-full-background        = ${colors.t6}
+format-charging-background    = ${colors.t6}
+format-discharging-background = ${colors.t6}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 =  
+animation-charging-framerate = 750
+
+[module/ssid]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+ping-interval = 10
+;<ramp-signal>
+format-connected =  <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+label-connected-background = ${colors.t7}
+label-disconnected-background = ${colors.t7}
+
+format-connected-suffix = " "
+format-disconnected-suffix = " "
+format-connected-suffix-background = ${colors.background}
+format-connected-suffix-foreground = ${colors.t7}
+format-disconnected-suffix-background = ${colors.background}
+format-disconnected-suffix-foreground = ${colors.t7}
+
+
+[module/wlan]
+format-connected-prefix = ""
+format-connected-prefix-background = ${colors.background}
+format-connected-prefix-foreground = ${colors.t7}
+
+format-disconnected-prefix = ""
+format-disconnected-prefix-background = ${colors.background}
+format-disconnected-prefix-foreground = ${colors.t7}
+
+type      = internal/network
+interface = wlp2s0
+; p3s0
+interval  = 3.0
+
+label-connected-padding      = 2
+label-disconnected-padding   = 2
+
+format-connected              = <label-connected>
+format-disconnected           = <label-disconnected>
+
+label-connected-foreground    = ${colors.foreground}
+label-connected-background    = ${colors.t7}
+
+label-disconnected-foreground    = ${colors.foreground
+label-disconnected-background    = ${colors.t7}
+
+label-connected    =   %downspeed%  %upspeed%
+label-disconnected = no wifi :(
+
