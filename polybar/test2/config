@@ -115,7 +115,7 @@ font-3 = FontAwesome:pixelsize=14;0
 
 modules-left =
 modules-center = date
-modules-right = wireless-network temperature cpu memory volume
+modules-right = temperature cpu memory volume
 
 override-redirect = true
 
@@ -137,7 +137,7 @@ font-3 = FontAwesome:pixelsize=14;0
 
 modules-left =
 modules-center = date
-modules-right = wireless-network temperature cpu memory volume
+modules-right = temperature cpu memory volume
 
 override-redirect = true
 
@@ -150,7 +150,7 @@ strip-wsnumbers = true
 pin-workspaces = true
 
 label-mode-padding = 5
-label-mode-foreground = #ffffff
+label-mode-foreground = #3b1261
 
 label-unfocused-foreground = #888888
 label-unfocused-padding = 1
@@ -158,7 +158,7 @@ label-unfocused-padding = 1
 label-visible-foregroud = #888888
 label-visible-padding = 1
 
-label-focused-foreground = #ffffff
+label-focused-foreground = #3b1261
 label-focused-padding = 1
 
 label-urgent-padding = 1
@@ -170,7 +170,7 @@ interval = 5
 date = "%d/%m/%y"
 date-alt = " %d"
 
-time = " %H:%M:%S"
+time = " %l:%M"
 time-alt =  %H:%M
 
 label = %date% %time%

@@ -27,8 +27,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d       exec "rofi -show run"
-bindsym $mod+Shift+d exec "rofi -show drun"
+bindsym $mod+d       exec "rofi -show run -theme royal-sky"
+bindsym $mod+Shift+d exec "rofi -show drun -theme royal-sky"
 
 
 # start dmenu (a program launcher)
@@ -169,6 +169,25 @@ bindsym $mod+r mode "resize"
 #}
 
 
+bar {
+  status_command          i3blocks -c ~/.i3/i3blocks.conf
+  tray_output             HDMI-2
+  position                top
+  strip_workspace_numbers yes
+  separator_symbol        "·"
+  workspace_buttons       yes
+
+  colors {
+    separator #666666
+    background #000000
+    statusline #ffffff
+    focused_workspace #551a8b #551a8b #ffffff
+    active_workspace #333333 #5f676a #ffffff
+    inactive_workspace #000000 #000000 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+  }
+}
+
 ##### SELF MADE STUFF
 
 #Setup Screen
@@ -182,10 +201,10 @@ exec --no-startup-id "$HOME/.i3/screen_setup.sh"
 exec --no-startup-id "$HOME/.i3/setup_workspace.sh"
 exec --no-startup-id compton -CGb
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id "$HOME/.polybar/run_polybar.sh"
+# exec --no-startup-id "$HOME/.polybar/run_polybar.sh"
 
-gaps inner 8
-gaps outer 25
+gaps inner 15
+gaps outer 20
 
 #Enable lock timeout
 exec xautolock -time 6 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
