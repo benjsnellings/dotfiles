@@ -220,7 +220,8 @@ for_window [class="^.*"] border pixel 1
 ##### Bindings
 
 #lock i3
-bindsym $mod+Shift+0 exec "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png"
+# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png"
+bindsym Scroll_Lock exec "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png"
 
 
 # Media Keys
