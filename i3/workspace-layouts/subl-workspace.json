@@ -1,0 +1,61 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 431,
+                       "width": 732,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "i3-save-tree --workspace 4 > workspace-layouts/subl-workspace.json",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                        "class": "^Gnome\\-terminal$",
+                        "instance": "^gnome\\-terminal\\-server$",
+                        "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1370,
+               "width": 821,
+               "x": 4272,
+               "y": 43
+            },
+            "name": "~/dotfiles/i3/setup_workspace.sh (cloud-desktop, workspace-local) - Sublime Text (UNREGISTERED)",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Sublime_text$",
+                "instance": "^sublime_text$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

@@ -1,8 +1,7 @@
 #!/bin/bash
 scrot /tmp/screen.png
 convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
-[[ -f $1 ]] && convert /tmp/screen.png $1 -gravity center -composite -matte /tmp/screen.png
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
-xset dpms 360 
-i3lock -u -i /tmp/screen.png
+[[ -f $1 ]] && convert /tmp/screen.png $1 -gravity east -region 10x10+40 -composite -matte /tmp/screen.png
+#xset dpms 600 
+i3lock -i /tmp/screen.png --debug >> ~/.i3/lockLog.txt
 rm /tmp/screen.png

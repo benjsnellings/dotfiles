@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1388,
+       "width": 2526,
+       "x": 17,
+       "y": 35
+    },
+    "name": "Trouble Ticketing - Chromium",
+    "percent": 1,
+    "swallows": [
+       {
+       "class": "^Chromium\\-browser$",
+       // "instance": "^chromium\\-browser$",
+       // "title": "^Trouble\\ Ticketing\\ \\-\\ Chromium$",
+       // "transient_for": "^$",
+       "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+

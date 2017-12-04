@@ -27,8 +27,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d       exec "rofi -show run -theme royal-sky"
-bindsym $mod+Shift+d exec "rofi -show drun -theme royal-sky"
+bindsym $mod+d       exec "rofi -modi drun -show drun -theme royal-sky"
+bindsym $mod+Shift+d exec "rofi -show ssh -theme royal-sky"
 
 
 # start dmenu (a program launcher)
@@ -171,7 +171,7 @@ bindsym $mod+r mode "resize"
 
 bar {
   status_command          i3blocks -c ~/.i3/i3blocks.conf
-  tray_output             eDP-1
+  tray_output             DP1
   position                top
   strip_workspace_numbers yes
   separator_symbol        "·"
@@ -191,23 +191,18 @@ bar {
 ##### SELF MADE STUFF
 
 #Setup Screen
-workspace 1 output HDMI-2
-workspace 2 output HDMI-1
-workspace 3 output eDP-1
-workspace 4 output eDP-1
-workspace 5 output eDP-1
-
 exec --no-startup-id "$HOME/.i3/screen_setup.sh"
 exec --no-startup-id "$HOME/.i3/setup_workspace.sh"
 exec --no-startup-id compton -CGb
+exec --no-startup-id synergy
 exec --no-startup-id nitrogen --restore
 # exec --no-startup-id "$HOME/.polybar/run_polybar.sh"
 
-gaps inner 10
-gaps outer 15
+gaps inner 0
+gaps outer 0
 
 #Enable lock timeout
-exec xautolock -time 6 -locker "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png" -notify 20 -notifier 'xset dpms force off' &
+exec xautolock -time 6 -locker "$HOME/.i3/lock.sh $HOME/dotfiles/lock.png" -notify 20 -notifier 'xset dpms force off' &
 
 # Show network manager on i3Status bar
 exec --no-startup-id nm-applet
@@ -221,14 +216,16 @@ for_window [class="^.*"] border pixel 1
 
 #lock i3
 # bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png"
-bindsym Scroll_Lock exec "$HOME/.i3/lock.sh $HOME/Pictures/Icons/lock.png"
+bindsym Scroll_Lock exec "$HOME/.i3/lock.sh $HOME/dotfiles/lock.png"
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
 
 
 # Media Keys
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +10%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -10%
-bindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -10%
+bindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
 
 # Spotfiy Controls
 

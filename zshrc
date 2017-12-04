@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/ben/.oh-my-zsh
+export ZSH=/home/local/ANT/snellin/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -53,7 +53,7 @@ eval `dircolors $HOME/.dir_colors/dircolors`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,25 +73,11 @@ export LANG=en_US.UTF-8
  fi
 
 
-alias vat="cat"
-alias rebuild="./gradlew -P skipOptionalTransforms=true clean build"
-alias build="./gradlew -P skipOptionalTransforms=true"
+export PATH=$BRAZIL_CLI_BIN:$PATH
+
+alias sam='brazil-build-tool-exec sam $1'
 
 
 
-LS_COLORS=$(ls_colors_generator)
 
-run_ls() {
-    ls-i --color=auto -w $(tput cols) "$@"
-}
-
-run_dir() {
-    dir-i --color=auto -w $(tput cols) "$@"
-}
-
-run_vdir() {
-    vdir-i --color=auto -w $(tput cols) "$@"
-}
-alias ls="run_ls"
-alias dir="run_dir"
-alias vdir="run_vdir"
+source /home/local/ANT/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

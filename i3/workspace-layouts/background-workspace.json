@@ -1,0 +1,45 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Spotify",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Spotify$",
+        "instance": "^spotify$",
+        "title": "^Spotify$",
+        "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+},
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 431,
+       "width": 732,
+       "x": 0,
+       "y": 0
+    },
+    "name": "unison -ui text cloud_desktop.prf",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Gnome\\-terminal$",
+        "instance": "^gnome\\-terminal\\-server$",
+       }
+    ],
+    "type": "con"
+}
+
