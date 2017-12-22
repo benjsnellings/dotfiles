@@ -202,7 +202,7 @@ gaps inner 0
 gaps outer 0
 
 #Enable lock timeout
-exec xautolock -time 6 -locker "$HOME/.i3/lock.sh $HOME/dotfiles/lock.png" -notify 20 -notifier 'xset dpms force off' &
+exec xautolock -time 10 -locker "$HOME/.i3/lock/test_lock_2.sh" -notify 20 -notifier 'xset dpms force off' &
 
 # Show network manager on i3Status bar
 exec --no-startup-id nm-applet
@@ -216,7 +216,7 @@ for_window [class="^.*"] border pixel 1
 
 #lock i3
 # bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png"
-bindsym Scroll_Lock exec "$HOME/.i3/lock.sh $HOME/dotfiles/lock.png"
+bindsym Scroll_Lock exec "$HOME/.i3/lock/test_lock_2.sh"
 bindsym $mod+Shift+greater move container to output right
 bindsym $mod+Shift+less move container to output left
 

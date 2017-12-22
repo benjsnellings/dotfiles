@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
 # This program is free software: you can redistribute it and/or modify
@@ -15,6 +15,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 TYPE="${BLOCK_INSTANCE:-mem}"
+
+printf "\\uf1fe "
 
 awk -v type=$TYPE '
 /^MemTotal:/ {
@@ -62,4 +64,4 @@ END {
 		print("#FFF600\n")
 	}
 }
-' /proc/meminfo
+' /proc/meminfo |  grep -oP '\(\K[^\)]+'
