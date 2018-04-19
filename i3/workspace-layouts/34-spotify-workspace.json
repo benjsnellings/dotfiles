@@ -1,0 +1,48 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Spotify",
+    "percent": 0.80,
+    "swallows": [
+       {
+       // "class": "Spotify"
+       "instance": "^spotify$"
+       // "title": "^Spotify$"
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 338,
+       "width": 562,
+       "x": 0,
+       "y": 0
+    },
+    "name": "./unison-forever.sh",
+    "percent": 0.2,
+    "swallows": [
+       {
+       "class": "^Gnome\\-terminal$"
+       // "instance": "^gnome\\-terminal\\-server$",
+       // "title": "^\\.\\/unison\\-forever\\.sh$",
+       // "transient_for": "^$",
+       // "window_role": "^gnome\\-terminal\\-window\\-d9950a6d\\-2c14\\-4d8a\\-847e\\-e78f69519599$"
+       }
+    ],
+    "type": "con"
+}
+

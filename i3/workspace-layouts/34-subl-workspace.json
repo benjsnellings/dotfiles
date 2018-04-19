@@ -1,0 +1,104 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1406,
+       "width": 1484,
+       "x": 0,
+       "y": 32
+    },
+    "name": "~/dotfiles/i3/setup_workspace.sh • (dotfiles, tools) - Sublime Text",
+    "percent": 0.40,
+    "swallows": [
+       {
+       "class": "^Sublime_text$"
+       // "instance": "^sublime_text$",
+       // "title": "^\\~\\/dotfiles\\/i3\\/setup_workspace\\.sh\\ \\•\\ \\(dotfiles\\,\\ tools\\)\\ \\-\\ Sublime\\ Text$",
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1406,
+       "width": 1174,
+       "x": 1486,
+       "y": 32
+    },
+    "name": "(% border=\"5\" style=\"width:800px\" %) • - Sublime Text",
+    "percent": 0.40,
+    "swallows": [
+       {
+       "class": "^Sublime_text$"
+       // "instance": "^sublime_text$",
+       // "title": "^\\(\\%\\ border\\=\\\"5\\\"\\ style\\=\\\"width\\:800px\\\"\\ \\%\\)\\ \\•\\ \\-\\ Sublime\\ Text$",
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.22,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 338,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "i3-save-tree --workspace 3 > ~/.i3/workspace-layouts/34-subl-workspace.json",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$"
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^i3\\-save\\-tree\\ \\-\\-workspace\\ 3\\ \\>\\ \\~\\/\\.i3\\/workspace\\-layouts\\/34\\-subl\\-workspace\\.json$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-c32cc59e\\-a8fd\\-4815\\-84ec\\-b2311d5afca7$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 338,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "snellin@u480fcf5c4a17599c63bd: ~/.i3/workspace-layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$"
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^snellin\\@u480fcf5c4a17599c63bd\\:\\ \\~\\/\\.i3\\/workspace\\-layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-5e67428b\\-9905\\-4bd6\\-8979\\-24e06e56fefe$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

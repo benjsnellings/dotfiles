@@ -1,0 +1,47 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1395,
+       "width": 2578,
+       "x": 4294967295,
+       "y": 16
+    },
+    "name": "CommsDeviceTargetingService [~/workspace-local/CommsDeviceTargetingService] - .../src/DeviceTargetingLib/src/com/amazon/alexa/application/devicetargeting/deviceselector/HomeGroupInfoAggregator.java [DeviceTargetingLib] - IntelliJ IDEA",
+    "percent": 0.78,
+    "swallows": [
+       {
+       "class": "^jetbrains\\-idea\\-ce$",
+       "instance": "^sun\\-awt\\-X11\\-XFramePeer$"
+       // "title": "^CommsDeviceTargetingService\\ \\[\\~\\/workspace\\-local\\/CommsDeviceTargetingService\\]\\ \\-\\ \\.\\.\\.\\/src\\/DeviceTargetingLib\\/src\\/com\\/amazon\\/alexa\\/application\\/devicetargeting\\/deviceselector\\/HomeGroupInfoAggregator\\.java\\ \\[DeviceTargetingLib\\]\\ \\-\\ IntelliJ\\ IDEA$",
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 338,
+       "width": 562,
+       "x": 0,
+       "y": 0
+    },
+    "name": "i3-save-tree --workspace 4 > ~/.i3/workspace-layouts/34-idea-workspace.json",
+    "percent": 0.22,
+    "swallows": [
+       {
+       "class": "^Gnome\\-terminal$"
+       // "instance": "^gnome\\-terminal\\-server$",
+       // "title": "^i3\\-save\\-tree\\ \\-\\-workspace\\ 4\\ \\>\\ \\~\\/\\.i3\\/workspace\\-layouts\\/34\\-idea\\-workspace\\.json$",
+       // "transient_for": "^$",
+       // "window_role": "^gnome\\-terminal\\-window\\-3890b060\\-a22b\\-4da0\\-9c11\\-cbdaeeb411b6$"
+       }
+    ],
+    "type": "con"
+}
+

@@ -26,10 +26,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi
-bindsym $mod+space       exec "rofi -modi drun -show drun -theme royal-sky"
-bindsym $mod+Shift+space exec "rofi -show ssh -theme royal-sky"
-
 # change focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -125,14 +121,14 @@ mode "resize" {
         # Pressing up will shrink ./    the window’s height.
         # Pressing down will grow the window’s height.
         bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $down       resize shrink height 10 px or 10 ppt
+        bindsym $up         resize grow height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Down        resize shrink height 10 px or 10 ppt
+        bindsym Up          resize grow height 10 px or 10 ppt
         bindsym Right       resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
@@ -180,7 +176,7 @@ bindsym $mod+r mode "resize"
 #  }
 #}
 
-##### SELF MADE STUFF
+######################### SELF MADE STUFF #############################################
 
 #Setup Screen
 exec --no-startup-id "$HOME/.i3/screen_setup.sh"
@@ -200,34 +196,61 @@ exec xautolock -time 10 -locker "$HOME/.i3/lock/test_lock_2.sh" -notify 20 -noti
 # Show network manager on i3Status bar
 exec --no-startup-id nm-applet
 
+# Turn off Nautalis Desktop
+gsettings set org.gnome.desktop.background show-desktop-icons false
+
+# Turn off mouse focus
+focus_follows_mouse no
+
+#Enable Screenshots
+bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pictures/screenshots'
+
 #### Window Specific Controls
 for_window [class="^.*"] border pixel 1
 #for_window [class="Gnome-terminal"] border normal
 
-
 ##### Bindings
+bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
+bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
 
-#lock i3
+# start rofi
+bindsym $mod+space       exec "rofi -modi drun -show drun -theme royal-sky"
+bindsym $mod+Shift+space exec "rofi -show ssh -theme royal-sky"
+
+# Lock i3
 # bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png"
 bindsym Scroll_Lock exec "$HOME/.i3/lock/test_lock_2.sh"
 bindsym $mod+Shift+greater move container to output right
 bindsym $mod+Shift+less move container to output left
 
-
 # Media Keys
-
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -10%
 bindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
 
 # Spotfiy Controls
-
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioStop exec mdbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
-client.focused #3b1261 #3b1261 #ffffff #662b9c
+# Coloring
+##                       border  backgr. text    indicator child_border
+client.focused          #3b1261 #ffa500 #ffffff #662b9c
 client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused #222222 #222222 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000
+client.unfocused        #222222 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
+# class                 border  backgr. text    indicator child_border
+#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+#client.background       #ffffff
+
+# Workspace assignments
+
+for_window [class="Spotify"] move to workspace 9
+for_window [class="jetbrains-idea-ce"] move to workspace 4

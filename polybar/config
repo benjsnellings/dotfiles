@@ -18,6 +18,52 @@ bg = #2c3e50
 fg = #bdc3c7
 foreground = #2c3e50
 
+
+
+[bar/topm]
+monitor = DP2
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = ypn envypn:pixelsize=11;2
+font-1 = ypn envypn:fontformat=truetype:size=11:antialias=true;3
+font-2 = ypn envypn:pixelsize=11;2
+font-3 = FontAwesome:size=9;3
+font-4 = Unifont Upper:pixelsize=9;2
+
+
+modules-left =  i3 memory cpu remote-cpu
+modules-center = spotify
+modules-right =  volume date
+
+;tray-position = center
+;tray-padding = 15
+;tray-transparent = true
+;tray-background = #0063ff
+tray-offset-x = 10
+
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+padding-right = 5
+
+
+
+
+
+
 [bar/topr]
 monitor = DP1
 
@@ -253,6 +299,20 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = CPU: %percentage%%
+
+[module/remote-cpu]
+type = custom/script
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = "%output:0:100%"
+exec = ssh snellin@snellin.aka.corp.amazon.com echo CPU: `top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+  FREE_DATA=`free -m | grep Mem`
+  CURRENT=`echo $FREE_DATA | cut -f3 -d' '`
+  TOTAL=`echo $FREE_DATA | cut -f2 -d' '`
+
+
 
 [module/memory]
 type = internal/memory

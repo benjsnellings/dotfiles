@@ -76,7 +76,7 @@ export LANG=en_US.UTF-8
 export PATH=$BRAZIL_CLI_BIN:$PATH
 
 alias sam='brazil-build-tool-exec sam $1'
-
+alias bb='brazil-build'
 
 
 
