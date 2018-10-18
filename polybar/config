@@ -46,8 +46,8 @@ modules-left =  i3 memory cpu remote-cpu
 modules-center = spotify
 modules-right =  volume date
 
-;tray-position = center
-;tray-padding = 15
+tray-position = right
+tray-padding = 10
 ;tray-transparent = true
 ;tray-background = #0063ff
 tray-offset-x = 10

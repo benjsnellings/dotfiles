@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 pkill -f "lemonbar -n notification"
 
 rectangles=" "

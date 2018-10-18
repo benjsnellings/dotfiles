@@ -181,23 +181,27 @@ bindsym $mod+r mode "resize"
 #Setup Screen
 exec --no-startup-id "$HOME/.i3/screen_setup.sh"
 exec --no-startup-id "$HOME/.i3/setup_workspace.sh"
-exec --no-startup-id compton -CGb
+exec --no-startup-id compton -cGb
 exec --no-startup-id synergy
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id "$HOME/.polybar/run_polybar.sh"
 exec --no-startup-id "xrdb $HOME/.Xresources/config" #Enable rofi theme
+exec --no-startup-id "xset r rate 300 60" # set keypress delay and rate
 
 gaps inner 0
 gaps outer 0
 
-#Enable lock timeout
-exec xautolock -time 10 -locker "$HOME/.i3/lock/test_lock_2.sh" -notify 20 -notifier 'xset dpms force off' &
+# Lock i3
+# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
+bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh; $HOME/.i3/lock/macLock.sh"
+##Enable lock timeout
+exec xautolock -time 10 -detectsleep -locker "$HOME/.i3/lock/timeout_lock.sh" -notify 20 -notifier 'xset dpms force off' &
 
 # Show network manager on i3Status bar
 exec --no-startup-id nm-applet
 
 # Turn off Nautalis Desktop
-gsettings set org.gnome.desktop.background show-desktop-icons false
+exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
 
 # Turn off mouse focus
 focus_follows_mouse no
@@ -217,15 +221,13 @@ bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
 bindsym $mod+space       exec "rofi -modi drun -show drun -theme royal-sky"
 bindsym $mod+Shift+space exec "rofi -show ssh -theme royal-sky"
 
-# Lock i3
-# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png"
-bindsym Scroll_Lock exec "$HOME/.i3/lock/test_lock_2.sh"
+
 bindsym $mod+Shift+greater move container to output right
 bindsym $mod+Shift+less move container to output left
 
 # Media Keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -10
 bindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
 
 # Spotfiy Controls
@@ -236,7 +238,8 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 
 # Coloring
 ##                       border  backgr. text    indicator child_border
-client.focused          #3b1261 #ffa500 #ffffff #662b9c
+#client.focused          #3b1261 #ffa500 #ffffff #662b9c #3b1261
+client.focused          #555555 #555555 #ffffff #2e9ef4 #CC0000
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #222222 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
@@ -248,7 +251,6 @@ client.urgent           #2f343a #900000 #ffffff #900000
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-#client.background       #ffffff
 
 # Workspace assignments
 
