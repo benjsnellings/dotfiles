@@ -1,0 +1,6 @@
+
+
+
+inoremap jk <esc>
+xnoremap <leader>p "_dP
+noremap <C-p> viw"_dP
