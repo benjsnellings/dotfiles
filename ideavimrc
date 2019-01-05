@@ -1,5 +1,5 @@
 
-
+source ~/.vimrc
 
 inoremap jk <esc>
 xnoremap <leader>p "_dP

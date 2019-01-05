@@ -216,6 +216,10 @@ for_window [class="^.*"] border pixel 1
 ##### Bindings
 bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
+bindsym $mod+Control+$left exec "python $HOME/.i3/workspace_move.py left"
+bindsym $mod+Control+$right exec "python $HOME/.i3/workspace_move.py right"
+
+
 
 # start rofi
 bindsym $mod+space       exec "rofi -modi drun -show drun -theme royal-sky"

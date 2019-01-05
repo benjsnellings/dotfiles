@@ -77,7 +77,9 @@ export PATH=$BRAZIL_CLI_BIN:$PATH
 
 alias sam='brazil-build-tool-exec sam $1'
 alias bb='brazil-build'
+alias gll='git log --graph --all -n 20 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
 
 
 
 source /home/local/ANT/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=$HOME/.toolbox/bin:$PATH

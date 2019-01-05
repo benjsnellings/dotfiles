@@ -13,7 +13,7 @@
     "percent": 1,
     "swallows": [
        {
-       "class": "^jetbrains\\-idea\\-ce$"
+       "class": "^jetbrains\\-idea$"
        // "instance": "^sun\\-awt\\-X11\\-XFramePeer$",
        // "title": "^Presence\\ \\-\\ \\[\\~\\/workspace\\-local\\/Presence\\]\\ \\-\\ \\[PresenceServiceSqsPollerLambda\\]\\ \\-\\ \\~\\/workspace\\-local\\/Presence\\/src\\/PresenceServiceSqsPollerLambda\\/src\\/com\\/amazon\\/communications\\/presence\\/lambdas\\/SqsDMDSPoller\\.java\\ \\-\\ IntelliJ\\ IDEA\\ 2017\\.2\\.5$",
        // "transient_for": "^$"
