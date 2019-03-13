@@ -87,7 +87,7 @@ font-4 = Unifont Upper:pixelsize=9;2
 
 
 modules-left =  i3 memory cpu
-modules-center = 
+modules-center =
 modules-right =  volume date
 
 tray-position = center
@@ -145,7 +145,7 @@ modules-right =
 ;tray-transparent = true
 ;tray-background = #0063ff
 
-wm-restack = i3 
+wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -263,7 +263,7 @@ format-online = <label-song> <label-time> <icon-prev> <icon-stop> <toggle> <icon
 icon-prev = 
 icon-stop = 
 icon-play = 
-icon-pause = 
+icon-pause =
 icon-next = 
 
 label-time = (%elapsed%/%total%)
@@ -320,7 +320,7 @@ interval = 2
 format-prefix = "      "
 format-prefix-foreground = ${colors.fg}
 format-underline = #4bffdc
-label = %gb_used% used 
+label = %gb_used% used
 
 [module/wlan]
 type = internal/network

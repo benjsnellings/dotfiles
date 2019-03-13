@@ -4,3 +4,5 @@ source ~/.vimrc
 inoremap jk <esc>
 xnoremap <leader>p "_dP
 noremap <C-p> viw"_dP
+
+set clipboard+=unnamed

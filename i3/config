@@ -144,7 +144,7 @@ bindsym $mod+r mode "resize"
 #  position top
 #  # status_command i3status
 #  # status_command conky -c $HOME/.i3/conky/conkyrc
-#  
+#
 #  colors {
 #    separator #666666
 #    background #000000
@@ -191,7 +191,7 @@ exec --no-startup-id "xset r rate 300 60" # set keypress delay and rate
 gaps inner 0
 gaps outer 0
 
-# Lock i3
+# Lock ie
 # bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
 bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh; $HOME/.i3/lock/macLock.sh"
 ##Enable lock timeout
