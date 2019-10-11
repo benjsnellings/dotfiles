@@ -83,3 +83,5 @@ alias gll='git log --graph --all -n 20 --pretty=format:"%Cblue%h%Creset [%Cgreen
 
 source /home/local/ANT/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$HOME/.toolbox/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

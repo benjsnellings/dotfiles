@@ -1,0 +1,85 @@
+export BRAZIL_WORKSPACE_DEFAULT_LAYOUT=short
+
+for f in envImprovement AmazonAwsCli OdinTools; do
+    if [[ -d /apollo/env/$f ]]; then
+        export PATH=$PATH:/apollo/env/$f/bin
+    fi
+done
+
+export AUTO_TITLE_SCREENS="NO"
+
+# export PROMPT="
+# %{$fg[white]%}(%D %*) <%?> [%~] $program %{$fg[default]%}
+# %{$fg[cyan]%}%m %#%{$fg[default]%} "
+
+# export RPROMPT=
+
+# set-title() {
+#     echo -e "\e]0;$*\007"
+# }
+
+# ssh() {
+#     set-title $*;
+#     /usr/bin/ssh -2 $*;
+#     set-title $HOST;
+# }
+
+#Setup AAA access
+alias register_with_aaa='/apollo/env/AAAWorkspaceSupport/bin/register_with_aaa.py'
+
+alias lynxcheck="lynx build/brazil-documentation/checkstyle/checkstyle_report.html"
+
+alias gll='git log --graph --all -n 20 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
+alias glll='git log --graph --all -n 30 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
+alias gllll='git log --graph --all -n 40 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
+alias gpr='git branch -r | grep origin/ | grep -v 'async$' | grep -v 'mainline$' | grep -v HEAD | while read line; do git branch -d -r $line; done;'
+# alias gll='git lg'
+
+#Brazil Alias'
+alias e=emacs
+alias bb=brazil-build
+alias br=brazil-build-rainbow
+alias bbc='bb clean'
+alias bba='brazil-build apollo-pkg'
+alias bre='brazil-runtime-exec'
+alias brc='brazil-recursive-cmd'
+alias bws='brazil ws'
+alias bwsuse='bws use --gitMode -p'
+alias bwscreate='bws create -n'
+alias brc=brazil-recursive-cmd
+alias bbr='brc brazil-build'
+alias bball='brc --allPackages'
+alias bbb='brc --allPackages brazil-build'
+alias bbbc='bball --reverse --continue brazil-build clean'
+alias bbra='bbr apollo-pkg'
+alias sam='brazil-build-tool-exec sam $1'
+
+if [ -f ~/.zshrc-dev-dsk-post ]; then
+    source ~/.zshrc-dev-dsk-post
+fi
+
+
+#Make copies here of variables that are used in the OH MY ZSH that need to be
+##replaced after
+ENV_ZSH=$ZSH
+ENV_HOME=$HOME
+ENV_ZSH_THEME=$ZSH_THEME
+
+export SSH_CLIENT=""
+#Load oh my zsh. You may add any lines you want here from the backed up zshrc of
+#the oh my zsh. Anything you would have added or uncommented there comes here.
+#The other alternative is to just source that file like so:
+ #source .zshrc.oh-my-zsh-bckup
+HOME=/home/snellin
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="kolo"
+plugins=(git sudo)
+DEFAULT_USER=snellin
+source $ZSH/oh-my-zsh.sh
+
+#restore environment variables
+ZSH=$ENV_ZSH
+HOME=$ENV_HOME
+ZSH_THEME=$ENV_ZSH_THEME
+
+export PATH=$HOME/.toolbox/bin:$PATH

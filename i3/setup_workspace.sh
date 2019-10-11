@@ -24,14 +24,15 @@
 # i3-msg "workspace 8; exec --no-startup-id /home/local/ANT/snellin/workspace-local/Chime/src/UCBuzzExpressElectron/dist/linux-unpacked/amazonchime"
 # i3-msg "workspace 8; exec --no-startup-id thunderbird"
 
-i3-msg "workspace 8; append_layout ~/.i3/workspace-layouts/34-comms-workspace.json"
+i3-msg "workspace 8; append_layout ~/.i3/workspace-layouts/8-ubuntu-mail-workspace.json"
 i3-msg "workspace 8; exec --no-startup-id ~/workspace-local/Chime/src/UCBuzzExpressElectron/dist/linux-unpacked/amazonchime"
-i3-msg "workspace 8; exec --no-startup-id thunderbird"
+i3-msg "workspace 8; exec --no-startup-id mailspring"
+i3-msg "workspace 8; exec --no-startup-id evolution"
 
 
-
-# i3-msg "workspace 9; append_layout ~/.i3/workspace-layouts/34-spotify-workspace.json"
+i3-msg "workspace 9; append_layout ~/.i3/workspace-layouts/8-spotify-workspace.json"
 i3-msg "workspace 9; exec spotify"
 i3-msg "workspace 9; exec gnome-terminal -e /home/local/ANT/snellin/unison-forever.sh "
+i3-msg "workspace 9; exec gnome-terminal -e /home/local/ANT/snellin/unison_murder.sh "
 
 # i3-msg "workspace 4"

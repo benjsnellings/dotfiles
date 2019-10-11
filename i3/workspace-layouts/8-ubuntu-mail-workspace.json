@@ -1,0 +1,49 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1406,
+       "width": 1314,
+       "x": 1,
+       "y": 33
+    },
+    "name": "Mailspring · djdawson OOTO today",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Mailspring$"
+       // "instance": "^mailspring$",
+       // "title": "^Mailspring\\ ·\\ djdawson\\ OOTO\\ today$",
+       // "transient_for": "^$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1406,
+       "width": 1718,
+       "x": 1720,
+       "y": 32
+    },
+    "name": "Calendar - Evolution",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Evolution$"
+       // "instance": "^evolution$",
+       // "title": "^Calendar\\ \\-\\ Evolution$",
+       // "transient_for": "^$",
+       // "window_role": "^EShellWindow\\-94587305092144$"
+       }
+    ],
+    "type": "con"
+}
+

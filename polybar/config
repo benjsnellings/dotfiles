@@ -8,15 +8,15 @@
 ;=====================================================
 
 [colors]
-background = #222
 background-alt = #444
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-bg = #2c3e50
-fg = #bdc3c7
-foreground = #2c3e50
+#bg = #2c3e50
+bg = #00000000
+#fg = #bdc3c7
+fg = #ccffffff
 
 
 
@@ -83,7 +83,7 @@ font-0 = ypn envypn:pixelsize=11;2
 font-1 = ypn envypn:fontformat=truetype:size=11:antialias=false;3
 font-2 = ypn envypn:pixelsize=11;2
 font-3 = FontAwesome:size=9;3
-font-4 = Unifont Upper:pixelsize=9;2
+# font-4 = Unifont Upper:pixelsize=9;2
 
 
 modules-left =  i3 memory cpu
@@ -134,7 +134,7 @@ font-0 = ypn envypn:pixelsize=11;2
 font-1 = ypn envypn:fontformat=truetype:size=11:antialias=false;3
 font-2 = ypn envypn:pixelsize=11;2
 font-3 = FontAwesome:pixelsize=9;2
-font-4 = Unifont Upper:pixelsize=9;2
+# font-4 = Unifont Upper:pixelsize=9;2
 
 modules-left =  i3
 modules-center = spotify
