@@ -1,0 +1,4 @@
+#!/bin/bash
+
+printf "\\uf271 "
+date '+%l:%M %A %d of %B'

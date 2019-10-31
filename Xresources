@@ -2,9 +2,10 @@
 
 ! special
 *.foreground: #93a1a1
-*.background: #93a1a1
-!*.background: #141c21
-*.cursorColor: #afbfbf
+!*.background: #93a1a1
+*.background: #000000
+!*.cursorColor: #afbfbf
+*.cursorColor: #67125f
 
 ! black
 *.color0: #263640
@@ -84,3 +85,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.transparent: true
 URxvt.shading:25
 
+!! Open Links
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: /usr/bin/firefox
+URxvt.matcher.button: 1

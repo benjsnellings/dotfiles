@@ -4,7 +4,8 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Font Awesome 8.3
+# https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started
+font pango:Font Awesome 6
 #font pango:Ubuntu Display 5
 #font pango:Dejavu Sans Mono 14
 
@@ -183,6 +184,7 @@ bindsym $mod+r mode "resize"
 
 bar {
   status_command          i3blocks -c ~/.i3/i3blocks.conf
+  font pango:Font Awesome Regular 10
   tray_output             DP2
   position                top
   strip_workspace_numbers yes
@@ -200,7 +202,9 @@ bar {
   }
 }
 
-######################### SELF MADE STUFF #############################################
+
+######################### STARTUP STUFF #############################################
+
 
 #Setup Screen
 exec --no-startup-id "$HOME/.i3/screen_setup.sh"
@@ -209,25 +213,30 @@ exec --no-startup-id compton -cGb --config ~/.config/compton/compton.conf
 exec --no-startup-id synergy
 exec --no-startup-id nitrogen --restore
 #exec --no-startup-id "$HOME/.polybar/run_polybar.sh"
-exec --no-startup-id "xrdb $HOME/.Xresources/config" #Enable rofi theme
+exec --no-startup-id "xrdb $HOME/.Xresources"
 exec --no-startup-id "xset r rate 300 60" # set keypress delay and rate
-exec --no-startup-id "imwheel -b \"4 5 6 7\"" # Increase sideways scroll speed and ignore buttons
 exec_always --no-startup-id flashfocus
 
-gaps inner 0
-gaps outer 0
-
-# Lock ie
-# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
-bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh; $HOME/.i3/lock/macLock.sh"
-##Enable lock timeout
-exec xautolock -time 10 -detectsleep -locker "$HOME/.i3/lock/timeout_lock.sh" -notify 20 -notifier 'xset dpms force off' &
+# Programs needed for MX Master mouse
+exec --no-startup-id solaar
+exec --no-startup-id "imwheel -b \"4 5 6 7\"" # Increase sideways scroll speed and ignore buttons
 
 # Show network manager on i3Status bar
 exec --no-startup-id nm-applet
 
 # Turn off Nautalis Desktop
 exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
+
+# gaps inner 0
+# gaps outer 0
+
+######################### SELF MADE STUFF #############################################
+
+# Lock ie
+# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
+bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh; $HOME/.i3/lock/macLock.sh"
+##Enable lock timeout
+exec xautolock -time 10 -detectsleep -locker "$HOME/.i3/lock/timeout_lock.sh" -notify 20 -notifier 'xset dpms force off' &
 
 # Turn off mouse focus
 focus_follows_mouse no
@@ -239,18 +248,15 @@ bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pict
 for_window [class="^.*"] border pixel 1
 #for_window [class="Gnome-terminal"] border normal
 
-##### Bindings
+##### Bindings for workspace movement
 bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
 bindsym $mod+Control+$left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+$right exec "python $HOME/.i3/workspace_move.py right"
 
-
-
 # start rofi
 bindsym $mod+space       exec "rofi -modi drun -show drun -theme royal-sky"
 bindsym $mod+Shift+space exec "rofi -show ssh -theme royal-sky"
-
 
 bindsym $mod+Shift+greater move container to output right
 bindsym $mod+Shift+less move container to output left
@@ -281,8 +287,5 @@ client.urgent           #2f343a #900000 #ffffff #900000
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-
 # Workspace assignments
-
 for_window [class="Spotify"] move to workspace 9
-for_window [class="jetbrains-idea-ce"] move to workspace 4

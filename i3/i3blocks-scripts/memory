@@ -16,7 +16,7 @@
 
 TYPE="${BLOCK_INSTANCE:-mem}"
 
-printf "\\uf1fe "
+printf "\\uf538 "
 
 awk -v type=$TYPE '
 /^MemTotal:/ {

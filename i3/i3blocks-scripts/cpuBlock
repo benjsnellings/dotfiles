@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+printf "\\uf2db "
+~/.i3/i3blocks-scripts/cpu_usage
