@@ -58,6 +58,7 @@ URxvt.cursorColor: magenta
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 12000
+URxvt.saveLines: 20000
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
@@ -87,5 +88,10 @@ URxvt.shading:25
 
 !! Open Links
 URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: /usr/bin/firefox
+URxvt.url-launcher: /home/local/ANT/snellin/.local/share/umake/web/firefox-dev/firefox-bin
 URxvt.matcher.button: 1
+
+!! Buffer
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true

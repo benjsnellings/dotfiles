@@ -1,0 +1,10 @@
+#!/bin/bash
+
+synergyLine=$(sockstat | grep synergys | grep ESTABLISHED )
+# echo $synergyLine
+
+ipAddr=$(echo $synergyLine | sed -rn 's/.* ([0-9.]*):24800 .*/\1/p')
+
+echo $ipAddr
+
+ssh -o ConnectTimeout=3 snellin@$ipAddr /Users/snellin/tools/lock_commands/lock.sh

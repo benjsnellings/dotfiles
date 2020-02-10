@@ -5,7 +5,7 @@
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started
-font pango:Font Awesome 6
+#font pango:Font Awesome 6
 #font pango:Ubuntu Display 5
 #font pango:Dejavu Sans Mono 14
 
@@ -184,8 +184,9 @@ bindsym $mod+r mode "resize"
 
 bar {
   status_command          i3blocks -c ~/.i3/i3blocks.conf
-  font pango:Font Awesome Regular 10
-  tray_output             DP2
+  font pango:             Font Awesome Regular 10
+  tray_output             DP-2
+  #output                  DP-2
   position                top
   strip_workspace_numbers yes
   separator_symbol        "·"

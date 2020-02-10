@@ -152,49 +152,18 @@
 	"buffers":
 	[
 		{
+			"file": "i3/i3blocks-scripts/spotify",
+			"settings":
+			{
+				"buffer_size": 491,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "i3/config",
 			"settings":
 			{
-				"buffer_size": 8447,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "polybar/config",
-			"settings":
-			{
-				"buffer_size": 10737,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "polybar/run_polybar.sh",
-			"settings":
-			{
-				"buffer_size": 75,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#!/bin/bash\n\nxrandr --output DP2 --auto --left-of DP1 \n\n\n# i3-msg \"workspace 1, move workspace to output DP2\"\n# i3-msg \"workspace 2, move workspace to output DP2\"\n# i3-msg \"workspace 3, move workspace to output DP2\"\n# i3-msg \"workspace 4, move workspace to output DP1\"\n# i3-msg \"workspace 5, move workspace to output DP1\"\n# i3-msg \"workspace 6, move workspace to output DP1\"\nW",
-			"file": "i3/screen_setup.sh",
-			"file_size": 375,
-			"file_write_time": 131668442556973301,
-			"settings":
-			{
-				"buffer_size": 376,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "i3/setup_workspace.sh",
-			"settings":
-			{
-				"buffer_size": 1553,
+				"buffer_size": 10716,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -211,6 +180,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"bash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -259,16 +232,23 @@
 	[
 		"/home/local/ANT/snellin/dotfiles",
 		"/home/local/ANT/snellin/dotfiles/i3",
-		"/home/local/ANT/snellin/dotfiles/polybar"
+		"/home/local/ANT/snellin/dotfiles/intellij",
+		"/home/local/ANT/snellin/dotfiles/scripts"
 	],
 	"file_history":
 	[
+		"/home/local/ANT/snellin/dotfiles/i3/lock/getMacAddress",
+		"/home/local/ANT/snellin/dotfiles/i3/lock/macLock.sh",
+		"/home/local/ANT/snellin/dotfiles/i3/setup_workspace.sh",
+		"/home/local/ANT/snellin/dotfiles/i3/screen_setup.sh",
+		"/home/local/ANT/snellin/dotfiles/i3/i3blocks.conf",
+		"/home/local/ANT/snellin/dotfiles/i3/config",
+		"/home/local/ANT/snellin/dotfiles/polybar/run_polybar.sh",
+		"/home/local/ANT/snellin/dotfiles/polybar/config",
 		"/home/local/ANT/snellin/workspace-local/EMOJI/application.log.2018-03-16-19",
 		"/home/local/ANT/snellin/workspace-local/CDTSLPT/src/CommsDeviceTargetingServiceLpt/lib/amazon/lpt/comms_device_targeting_service_lpt.rb",
 		"/home/local/ANT/snellin/workspace-local/AlexaPreferences/src/AlexaCommsPreferencesService/src/com/amazon/alexa/comms/service/preferences/federated/converters/DevicePreferenceConverter.java",
 		"/home/local/ANT/snellin/workspace-local/dev-desktop.sublime-project",
-		"/home/local/ANT/snellin/dotfiles/polybar/config",
-		"/home/local/ANT/snellin/dotfiles/i3/screen_setup.sh",
 		"/home/local/ANT/snellin/workspace-local/Hardware/sonar/SetLedOverlappers.sh",
 		"/home/local/ANT/snellin/workspace-local/Hardware/sonar/SetLedColors.sh",
 		"/home/local/ANT/snellin/workspace-local/Hardware/sonar/SetLedRainbow.sh",
@@ -328,7 +308,6 @@
 		"/home/local/ANT/snellin/cloud-desktop/notes/dynamoautoscale",
 		"/home/local/ANT/snellin/workspace-local/PhoneNumberVendorLibrary/sftp-config.json",
 		"/home/local/ANT/snellin/workspace-local/presence/src/PresenceCloudFormationScripts/configuration/scripts/network-stack.yaml",
-		"/home/local/ANT/snellin/dotfiles/i3/setup_workspace.sh",
 		"/home/local/ANT/snellin/cloud-desktop/workspace/presence/src/PresenceCloudFormationScripts/configuration/scripts/presence-stack.yaml",
 		"/home/local/ANT/snellin/cloud-desktop/workspace/sftp-config.json",
 		"/home/local/ANT/snellin/cloud-desktop/sftp-config.json",
@@ -342,7 +321,7 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -431,99 +410,34 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "i3/config",
+					"file": "i3/i3blocks-scripts/spotify",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8447,
+						"buffer_size": 491,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4960,
-								4960
+								491,
+								491
 							]
 						],
 						"settings":
 						{
+							"_nv_visual_sel_mode": "mode_visual_line",
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/i3 wm/Syntax/i3wm_config.tmLanguage",
-							"tab_size": 8,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2088.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "polybar/config",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10737,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1248,
-								1248
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/i3 wm/Syntax/i3wm_config.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "polybar/run_polybar.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 75,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								75,
-								75
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -533,20 +447,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "i3/screen_setup.sh",
+					"buffer": 1,
+					"file": "i3/config",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 376,
+						"buffer_size": 10716,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								376,
-								376
+								7282,
+								7282
 							]
 						],
 						"settings":
@@ -555,45 +469,15 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+							"syntax": "Packages/i3 wm/Syntax/i3wm_config.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2506.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "i3/setup_workspace.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1553,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1553,
-								1553
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -601,7 +485,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -642,6 +526,10 @@
 	{
 		"height": 0.0
 	},
+	"output.loghighlight":
+	{
+		"height": 128.0
+	},
 	"output.mdpopups":
 	{
 		"height": 0.0
@@ -654,7 +542,7 @@
 	"project": "dotfiles.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -674,7 +562,7 @@
 		[
 			[
 				"",
-				"~/dotfiles/dotfiles.sublime-project"
+				"~/workspace-local/dev-desktop.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -691,12 +579,15 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"_vintageous_last_char_search": "l",
+		"_vintageous_last_char_search_command": "vi_f",
+		"_vintageous_reset_during_init": true
 	},
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 391.0,
+	"side_bar_width": 274.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
