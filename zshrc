@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/local/ANT/snellin/.oh-my-zsh
+export ZSH=/home/snellin/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-eval `dircolors $HOME/.dir_colors/dircolors`
+# eval `dircolors $HOME/.dir_colors/dircolors`
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -81,7 +81,10 @@ alias gll='git log --graph --all -n 20 --pretty=format:"%Cblue%h%Creset [%Cgreen
 
 
 
-source /home/local/ANT/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$HOME/.toolbox/bin:$PATH
+export PATH=/opt/firefox/firefox:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$HOME/.toolbox/bin:$PATH

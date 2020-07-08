@@ -8,7 +8,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc i3 i3status.conf dir_colors polybar rofi vimrc ideavimrc imwheelrc Xresources"    # list of files/folders to symlink in homedir
+# files="zshrc i3 i3status.conf dir_colors polybar rofi vimrc ideavimrc imwheelrc Xresources"    # list of files/folders to symlink in homedir
+files="zshrc i3 i3status.conf rofi vimrc ideavimrc Xresources polybar"    # list of files/folders to symlink in homedir
 
 ##########
 

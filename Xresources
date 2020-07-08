@@ -1,5 +1,9 @@
 !! Colorscheme
 
+! Screen Scaling
+! Xft.dpi: 192
+Xft.dpi: 192
+
 ! special
 *.foreground: #93a1a1
 !*.background: #93a1a1

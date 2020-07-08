@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/home/snellin/.config/polybar"
 		}
 	]
 }

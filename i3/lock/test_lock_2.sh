@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pkill -f "lemonbar -n notification"
-
 rectangles=" "
 
 SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
@@ -15,7 +13,7 @@ done
 TMPBG=/tmp/screen.png
 scrot $TMPBG && convert $TMPBG -scale 10% -scale 1000% -draw "fill black fill-opacity 0.4 $rectangles" $TMPBG
 
-~/.i3/lock/i3lock \
+i3lock \
   -i $TMPBG \
   --timepos="x-90:h-ch-20" \
   --datepos="tx+24:ty+25" \
@@ -28,4 +26,3 @@ scrot $TMPBG && convert $TMPBG -scale 10% -scale 1000% -draw "fill black fill-op
   --textcolor="ffffffff" --timecolor="ffffffff" --datecolor="ffffffff"
 
 rm /tmp/screen.png
-
