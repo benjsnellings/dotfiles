@@ -164,8 +164,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "display" {
-
-        bindsym d exec "~/dotfiles/dell/default-display-settings.sh &"
+        bindsym d exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
+        bindsym w exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
         bindsym a exec "~/dotfiles/dell/dell_setup.sh &"
 
         # back to normal: Enter or Escape
@@ -178,9 +178,8 @@ bindsym $mod+d mode "display"
 
 ######################### STARTUP STUFF #############################################
 
-#exec --no-startup-id "$HOME/.i3/screen_setup.sh"
-#exec --no-startup-id "$HOME/.i3/setup_workspace.sh"
-#exec --no-startup-id "$HOME/dotiles/dell/home_display_testing.sh"
+exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
+exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
 exec --no-startup-id compton -cGb --config ~/.config/compton/compton.conf
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id "$HOME/.config/polybar/launch.sh"
@@ -200,9 +199,6 @@ exec --no-startup-id nm-applet
 # Turn off Nautalis Desktop
 exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
 
-# gaps inner 0
-# gaps outer 0
-
 ######################### SELF MADE STUFF #############################################
 
 # bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
@@ -218,7 +214,6 @@ bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pict
 
 #### Window Specific Controls
 for_window [class="^.*"] border pixel 1
-#for_window [class="Gnome-terminal"] border normal
 
 ##### Bindings for workspace movement
 bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
@@ -255,23 +250,5 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #222222 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
 
-# Workspace assignments
-# for_window [class="Spotify"] move to workspace 9
-
 # Exec DELL XPS specific stuff 
 exec --no-startup-id "$HOME/dotfiles/dell/dell_setup.sh"
-
-workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output DP-2
-workspace 5 output DP-2
-workspace 6 output DP-2
-workspace 7 output DP-2
-workspace 8 output DP-2
-workspace 9 output DP-6
-workspace 10 output DP-6
-workspace 17 output eDP-1
-workspace 18 output eDP-1
-workspace 19 output eDP-1
-workspace 20 output eDP-1

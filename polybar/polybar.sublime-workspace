@@ -1,0 +1,212 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ani",
+				"animation-charging-3"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"generi",
+				"Set Syntax: Generic Config"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"config",
+				"Set Syntax: Generic Config"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"i3",
+				"Set Syntax: i3-wm Config"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/snellin/.config/polybar",
+		"/home/snellin/.config/polybar/source"
+	],
+	"file_history":
+	[
+		"/home/snellin/.config/polybar/config.ini",
+		"/home/snellin/.config/polybar/modules.ini",
+		"/home/snellin/.config/polybar/launch.sh",
+		"/home/snellin/.config/polybar/spotify_status.py",
+		"/home/snellin/.config/polybar/config",
+		"/home/snellin/dotfiles/i3/config",
+		"/home/snellin/dotfiles/polybar/config",
+		"/home/snellin/dotfiles/manageDotfiles.sh",
+		"/home/snellin/dotfiles/polybar/run_polybar.sh",
+		"/home/snellin/dotfiles/polybar/polybar",
+		"/home/snellin/dotfiles/i3/i3blocks.conf"
+	],
+	"find":
+	{
+		"height": 49.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"volume",
+			"battery",
+			"tray",
+			"alsa",
+			"volume",
+			"font",
+			"truncate",
+			"size"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 49.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "polybar.sublime-project",
+	"replace":
+	{
+		"height": 90.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 1000.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 760.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 464.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

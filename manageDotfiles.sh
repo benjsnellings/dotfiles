@@ -5,11 +5,11 @@
 ############################
 
 ########## Variables
-
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/old_dotfiles             # old dotfiles backup directory
-# files="zshrc i3 i3status.conf dir_colors polybar rofi vimrc ideavimrc imwheelrc Xresources"    # list of files/folders to symlink in homedir
-files="zshrc i3 i3status.conf rofi vimrc ideavimrc Xresources polybar xmodmap fzf gitconfig imwheelrc tmux.conf"    # list of files/folders to symlink in homedir
+
+# list of files/folders to symlink in homedir
+files="zshrc i3 i3status.conf rofi vimrc ideavimrc Xresources polybar xmodmap fzf gitconfig imwheelrc tmux.conf"    
 
 ##########
 
