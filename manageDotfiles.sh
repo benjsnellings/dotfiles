@@ -7,13 +7,13 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/old_dotfiles             # old dotfiles backup directory
 # files="zshrc i3 i3status.conf dir_colors polybar rofi vimrc ideavimrc imwheelrc Xresources"    # list of files/folders to symlink in homedir
-files="zshrc i3 i3status.conf rofi vimrc ideavimrc Xresources polybar xmodmap"    # list of files/folders to symlink in homedir
+files="zshrc i3 i3status.conf rofi vimrc ideavimrc Xresources polybar xmodmap fzf gitconfig imwheelrc tmux.conf"    # list of files/folders to symlink in homedir
 
 ##########
 
-# create dotfiles_old in homedir
+# create old_dotfiles in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
@@ -23,10 +23,10 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+# move any existing dotfiles in homedir to old_dotfiles directory, then create symlinks
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    mv ~/.$file ~/old_dotfiles/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done

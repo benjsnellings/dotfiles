@@ -79,10 +79,8 @@ alias gll='git log --graph --all -n 20 --pretty=format:"%Cblue%h%Creset [%Cgreen
 alias glll='git log --graph --all -n 30 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
 alias gllll='git log --graph --all -n 40 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
 alias gpr='git branch -r | grep origin/ | grep -v 'async$' | grep -v 'mainline$' | grep -v HEAD | while read line; do git branch -d -r $line; done;'
-# alias gll='git lg'
 
-#Brazil Alias'
-alias e=emacs
+# Brazil Alias'
 alias bb=brazil-build
 alias br=brazil-build-rainbow
 alias bbc='bb clean'
@@ -100,15 +98,11 @@ alias bbbc='bball --reverse --continue brazil-build clean'
 alias bbra='bbr apollo-pkg'
 alias sam='brazil-build-tool-exec sam $1'
 
-
-
 # source /home/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$HOME/.toolbox/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=/opt/firefox/firefox:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH=$HOME/.toolbox/bin:$PATH
 
 export PATH=$HOME/.toolbox/bin:$PATH

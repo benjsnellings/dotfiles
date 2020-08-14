@@ -1,0 +1,19 @@
+[user]
+	email = snellin@amazon.com
+	name = Benjamin Snellings
+[color]
+	ui = auto
+[core]
+	pager = less -FMRiX
+	excludesfile = /home/snellin/.gitignore_global
+	editor = vim
+[push]
+	default = simple
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+        st = status
+        squash = "! ~/tools/squash.sh"
+        co = checkout
+[amazon]
+	append-cr-url = true
+	pull-request-by-default = true
