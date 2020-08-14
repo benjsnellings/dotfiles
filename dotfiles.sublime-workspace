@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"3840x",
+				"3840x2160"
+			],
+			[
+				"DP-",
+				"DP-1-3"
+			],
+			[
+				"e",
+				"eDP-1"
+			],
+			[
 				"Phone",
 				"PhoneNumberVendorLambda"
 			],
@@ -152,22 +164,28 @@
 	"buffers":
 	[
 		{
-			"contents": "# i3 config file (v4)\n#\n# Please see http://i3wm.org/docs/userguide.html for a complete reference!\n\n# Font for window titles. Will also be used by the bar unless a different font\n# is used in the bar {} block below.\n# https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started\n#font pango:Font Awesome 6\n#font pango:Ubuntu Display 5\n#font pango:Dejavu Sans Mono 14\n\n\n# Modkey\nset $mod mod4\n\n\n# use these keys for focus, movement, and resize directions when reaching for\n# the arrows is not convenient\nset $up k\nset $down j\nset $left h\nset $right l\n\n# use Mouse+$mod to drag floating windows to their wanted position\nfloating_modifier $mod\n\n# start a terminal\nbindsym $mod+Return exec i3-sensible-terminal\n\n# kill focused window\nbindsym $mod+Shift+q kill\n\n# change focus\nbindsym $mod+$left focus left\nbindsym $mod+$down focus down\nbindsym $mod+$up focus up\nbindsym $mod+$right focus right\n\n# alternatively, you can use the cursor keys:\nbindsym $mod+Left focus left\nbindsym $mod+Down focus down\nbindsym $mod+Up focus up\nbindsym $mod+Right focus right\n\n# move focused window\nbindsym $mod+Shift+$left move left\nbindsym $mod+Shift+$down move down\nbindsym $mod+Shift+$up move up\nbindsym $mod+Shift+$right move right\n\n# alternatively, you can use the cursor keys:\nbindsym $mod+Shift+Left move left\nbindsym $mod+Shift+Down move down\nbindsym $mod+Shift+Up move up\nbindsym $mod+Shift+Right move right\n\n# split in horizontal orientation\nbindsym $mod+b split h\n\n# split in vertical orientation\nbindsym $mod+v split v\n\n# enter fullscreen mode for the focused container\nbindsym $mod+f fullscreen toggle\n\n# change container layout (stacked, tabbed, toggle split)\nbindsym $mod+s layout stacking\nbindsym $mod+w layout tabbed\nbindsym $mod+e layout toggle split\n\n# toggle tiling / floating\nbindsym $mod+Shift+p floating toggle\n\n# change focus between tiling / floating windows\nbindsym $mod+p focus mode_toggle\n\n# focus the parent container\nbindsym $mod+a focus parent\n\n# focus the child container\n#bindsym $mod+d focus child\n\n# move the currently focused window to the scratchpad\nbindsym $mod+Shift+minus move scratchpad\n\n# Show the next scratchpad window or hide the focused scratchpad window.\n# If there are multiple scratchpad windows, this command cycles through them.\nbindsym $mod+minus scratchpad show\n\n# switch to workspace\nbindsym $mod+1 workspace 1\nbindsym $mod+2 workspace 2\nbindsym $mod+3 workspace 3\nbindsym $mod+4 workspace 4\nbindsym $mod+5 workspace 5\nbindsym $mod+6 workspace 6\nbindsym $mod+7 workspace 7\nbindsym $mod+8 workspace 8\nbindsym $mod+9 workspace 9\nbindsym $mod+0 workspace 10\nbindsym $mod+Control+1 workspace 11\nbindsym $mod+Control+2 workspace 12\nbindsym $mod+Control+3 workspace 13\nbindsym $mod+Control+4 workspace 14\nbindsym $mod+Control+5 workspace 15\nbindsym $mod+Control+6 workspace 16\nbindsym $mod+Control+7 workspace 17\nbindsym $mod+Control+8 workspace 18\nbindsym $mod+Control+9 workspace 19\nbindsym $mod+Control+0 workspace 20\n\n# move focused container to workspace\nbindsym $mod+Shift+1 move container to workspace 1\nbindsym $mod+Shift+2 move container to workspace 2\nbindsym $mod+Shift+3 move container to workspace 3\nbindsym $mod+Shift+4 move container to workspace 4\nbindsym $mod+Shift+5 move container to workspace 5\nbindsym $mod+Shift+6 move container to workspace 6\nbindsym $mod+Shift+7 move container to workspace 7\nbindsym $mod+Shift+8 move container to workspace 8\nbindsym $mod+Shift+9 move container to workspace 9\nbindsym $mod+Shift+0 move container to workspace 10\nbindsym $mod+Control+Shift+1 move container to workspace 11\nbindsym $mod+Control+Shift+2 move container to workspace 12\nbindsym $mod+Control+Shift+3 move container to workspace 13\nbindsym $mod+Control+Shift+4 move container to workspace 14\nbindsym $mod+Control+Shift+5 move container to workspace 15\nbindsym $mod+Control+Shift+6 move container to workspace 16\nbindsym $mod+Control+Shift+7 move container to workspace 17\nbindsym $mod+Control+Shift+8 move container to workspace 18\nbindsym $mod+Control+Shift+9 move container to workspace 19\nbindsym $mod+Control+Shift+0 move container to workspace 20\n\n# reload the configuration file\nbindsym $mod+Shift+c reload\n# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)\nbindsym $mod+Shift+r restart\n# exit i3 (logs you out of your X session)\nbindsym $mod+Shift+e exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'\"\n\n# resize window (you can also use the mouse for that)\nmode \"resize\" {\n        # Pressing left will shrink the window’s width.\n        # Pressing right will grow the window’s width.\n        # Pressing up will shrink ./    the window’s height.\n        # Pressing down will grow the window’s height.\n        bindsym $left       resize shrink width 10 px or 10 ppt\n        bindsym $down       resize shrink height 10 px or 10 ppt\n        bindsym $up         resize grow height 10 px or 10 ppt\n        bindsym $right      resize grow width 10 px or 10 ppt\n\n        # same bindings, but for the arrow keys\n        bindsym Left        resize shrink width 10 px or 10 ppt\n        bindsym Down        resize shrink height 10 px or 10 ppt\n        bindsym Up          resize grow height 10 px or 10 ppt\n        bindsym Right       resize grow width 10 px or 10 ppt\n\n        # back to normal: Enter or Escape\n        bindsym Return mode \"default\"\n        bindsym Escape mode \"default\"\n}\n\nbindsym $mod+r mode \"resize\"\n\n######################### STARTUP STUFF #############################################\n\n#exec --no-startup-id \"$HOME/.i3/screen_setup.sh\"\n#exec --no-startup-id \"$HOME/.i3/setup_workspace.sh\"\nexec --no-startup-id compton -cGb --config ~/.config/compton/compton.conf\nexec --no-startup-id nitrogen --restore\nexec --no-startup-id \"$HOME/.config/polybar/launch.sh\"\nexec --no-startup-id \"xrdb $HOME/.Xresources\"\nexec --no-startup-id \"xmodmap $HOME/.xmodmap\"\nexec --no-startup-id \"xset r rate 300 60\" # set keypress delay and rate\nexec_always --no-startup-id flashfocus\n\n# Programs needed for MX Master mouse\n#exec --no-startup-id solaar\n#exec --no-startup-id \"imwheel -b \\\"4 5 6 7\\\"\" # Increase sideways scroll speed and ignore buttons\n\n# Show network manager on i3Status bar\nexec --no-startup-id nm-applet\n\n# Turn off Nautalis Desktop\nexec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false\n\n# gaps inner 0\n# gaps outer 0\n\n######################### SELF MADE STUFF #############################################\n\n# bindsym $mod+shift+0 exec \"$home/.i3/lock.sh $home/pictures/icons/lock.png\nbindsym Scroll_Lock exec \"xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh\"\n##Enable lock timeout\nexec xautolock -time 10 -detectsleep -locker \"$HOME/.i3/lock/timeout_lock.sh\" -notify 20 -notifier 'xset dpms force off' &\n\n# Turn off mouse focus\nfocus_follows_mouse no\n\n#Enable Screenshots\nbindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pictures/screenshots'\n\n#### Window Specific Controls\nfor_window [class=\"^.*\"] border pixel 1\n#for_window [class=\"Gnome-terminal\"] border normal\n\n##### Bindings for workspace movement\nbindsym $mod+Control+Left exec \"python $HOME/.i3/workspace_move.py left\"\nbindsym $mod+Control+Right exec \"python $HOME/.i3/workspace_move.py right\"\nbindsym $mod+Control+$left exec \"python $HOME/.i3/workspace_move.py left\"\nbindsym $mod+Control+$right exec \"python $HOME/.i3/workspace_move.py right\"\n\n# start rofi\nbindsym $mod+space       exec \"rofi -modi drun -show drun -theme extra\"\nbindsym $mod+Shift+space exec \"rofi -show ssh -theme extra\"\n\nbindsym $mod+Shift+greater move container to output right\nbindsym $mod+Shift+less move container to output left\n\n# Media Keys\nbindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10%\nbindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -10%\nbindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle\n\n# Spotfiy Controls\nbindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause\nbindsym XF86AudioStop exec mdbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop\nbindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous\nbindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next\n\n# Brightness Controls\nbindsym XF86MonBrightnessUp exec brightnessctl s 10000+\nbindsym XF86MonBrightnessDown exec brightnessctl s 10000-\n\n# Coloring\n##                       border  backgr. text    indicator child_border\nclient.focused          #555555 #555555 #ffffff #2e9ef4 #CC0000\nclient.focused_inactive #333333 #5f676a #ffffff #484e50\nclient.unfocused        #222222 #222222 #888888 #292d2e\nclient.urgent           #2f343a #900000 #ffffff #900000\n\n# Workspace assignments\n# for_window [class=\"Spotify\"] move to workspace 9\n\n# Exec DELL XPS specific stuff \nexec --no-startup-id \"$HOME/dotfiles/dell/dell_setup.sh\"\n\n",
 			"file": "i3/config",
-			"file_size": 9315,
-			"file_write_time": 132367549827153415,
 			"settings":
 			{
-				"buffer_size": 9307,
+				"buffer_size": 10094,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/snellin/.config/polybar/config.ini",
+			"file": "dell/coolrandr.py",
 			"settings":
 			{
-				"buffer_size": 9816,
+				"buffer_size": 1662,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dell/dell_setup.sh",
+			"settings":
+			{
+				"buffer_size": 492,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -185,19 +203,39 @@
 		"selected_items":
 		[
 			[
+				"keybind",
+				"Preferences: Key Bindings"
+			],
+			[
+				"neovin",
+				"NeoVintageous: Open RC File"
+			],
+			[
+				"neo",
+				"NeoVintageous: Reload RC File"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
 				"i3",
 				"Set Syntax: i3-wm Config"
 			],
 			[
 				"install ",
-				"Package Control: Install Package"
-			],
-			[
-				"neo",
-				"NeoVintageous: Open RC File"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -246,12 +284,43 @@
 	},
 	"expanded_folders":
 	[
-		"/home/snellin/.config/polybar"
+		"/home/ANT.AMAZON.COM/snellin/dotfiles",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/i3",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/i3/lock",
+		"/home/ANT.AMAZON.COM/snellin/.config",
+		"/home/ANT.AMAZON.COM/snellin/.config/polybar"
 	],
 	"file_history":
 	[
-		"/home/snellin/.config/polybar/user_modules.ini",
+		"/home/ANT.AMAZON.COM/snellin/workspace-local/VAULT/PythonScripts/Induction SNR equal or greather an 7.28, less than 8.6.csv",
+		"/home/ANT.AMAZON.COM/snellin/workspace-local/VAULT/PythonScripts/Induction SNR equal or greater than 8.5, less than 8.12.csv",
+		"/home/ANT.AMAZON.COM/snellin/.mozilla/tmp/mozilla_snellin0/Induction SNR equal or greater than 8.5, less than 8.12.csv",
+		"/home/ANT.AMAZON.COM/snellin/.mozilla/tmp/mozilla_snellin0/Induction SNR equal or greather an 7.28, less than 8.6.csv",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/home_display_testing.sh",
+		"/home/ANT.AMAZON.COM/snellin/.config/sublime-text-3/Packages/User/.neovintageousrc",
+		"/home/ANT.AMAZON.COM/snellin/.config/polybar/modules.ini",
+		"/home/ANT.AMAZON.COM/snellin/.config/compton/compton.conf",
+		"/home/ANT.AMAZON.COM/snellin/.Xresources",
+		"/home/ANT.AMAZON.COM/snellin/.config/polybar/config.ini",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/i3/config",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/dual_display.sh",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/dell_setup.sh",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/nvidia-driver-displays.sh",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/i3/workspace_move.py",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/imwheelrc",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/scaled_4k.sh",
+		"/home/ANT.AMAZON.COM/snellin/.config/polybar/colors.ini",
+		"/home/ANT.AMAZON.COM/snellin/.config/polybar/user_modules.ini",
+		"/home/ANT.AMAZON.COM/snellin/.config/polybar/config",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/i3_workspace_setup.sh",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/dell/.Xresources",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/compton.conf",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/rofi/royal-sky.rasi",
+		"/home/ANT.AMAZON.COM/snellin/dotfiles/rofi/slate.rasi",
+		"/home/ANT.AMAZON.COM/snellin/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
 		"/home/snellin/.config/polybar/config.ini",
+		"/home/snellin/.config/polybar/user_modules.ini",
 		"/home/snellin/.config/polybar/modules.ini",
 		"/home/snellin/dotfiles/i3/lock/timeout_lock.sh",
 		"/home/snellin/dotfiles/i3/config",
@@ -347,13 +416,14 @@
 	],
 	"find":
 	{
-		"height": 77.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
-		"height": 131.0,
+		"height": 199.0,
 		"where_history":
 		[
+			"/home/ANT.AMAZON.COM/snellin/.config/polybar",
 			"<open folders>",
 			"/home/local/ANT/snellin/workspace-local/PresenceLoadTest/src/PresenceLambdaFunctionalTests",
 			"/home/local/ANT/snellin/workspace-local/Hoolaha/src/",
@@ -368,6 +438,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".",
+			"')).",
+			"mod+d",
+			"pulseaudio",
+			"bindsym",
+			"\n#",
+			"background",
+			"underline",
+			"i3",
+			"bluetooth",
+			"alsa",
+			"size",
 			"i3",
 			"13",
 			"sysmenu",
@@ -435,6 +517,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -445,7 +528,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -454,25 +537,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9307,
+						"buffer_size": 10094,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5503,
-								5503
+								1851,
+								1851
 							]
 						],
 						"settings":
 						{
+							"_nv_visual_sel_mode": "mode_visual",
+							"highlight_line": false,
 							"syntax": "Packages/i3 wm/Syntax/i3wm_config.tmLanguage",
 							"tab_size": 8,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4160.0,
+						"translation.y": 619.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -480,29 +565,60 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/home/snellin/.config/polybar/config.ini",
+					"file": "dell/coolrandr.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9816,
+						"buffer_size": 1662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7455,
-								7455
+								579,
+								579
 							]
 						],
 						"settings":
 						{
 							"_nv_visual_sel_mode": "mode_visual",
 							"highlight_line": false,
-							"syntax": "Packages/Generic Config/GenericConfig.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6837.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dell/dell_setup.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								491,
+								491
+							]
+						],
+						"settings":
+						{
+							"_nv_visual_sel_mode": "mode_visual",
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -513,7 +629,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 49.0
+		"height": 36.0
 	},
 	"input":
 	{
@@ -570,7 +686,7 @@
 	"project": "dotfiles.sublime-project",
 	"replace":
 	{
-		"height": 90.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -597,27 +713,27 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 784.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 1184.0
 	},
 	"selected_group": 0,
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "wm-restack",
+		"_vintageous_last_buffer_search": "pulse",
 		"_vintageous_last_buffer_search_command": "vi_slash",
-		"_vintageous_last_char_search": "l",
-		"_vintageous_last_char_search_command": "vi_f",
+		"_vintageous_last_char_search": "G",
+		"_vintageous_last_char_search_command": "vi_big_f",
 		"_vintageous_reset_during_init": true
 	},
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 508.0,
+	"side_bar_visible": false,
+	"side_bar_width": 477.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -34,11 +34,3 @@ i3-msg "workspace 9; append_layout ~/.i3/workspace-layouts/8-spotify-workspace.j
 i3-msg "workspace 9; exec spotify"
 i3-msg "workspace 9; exec gnome-terminal -e /home/local/ANT/snellin/unison-forever.sh "
 i3-msg "workspace 9; exec gnome-terminal -e /home/local/ANT/snellin/unison_murder.sh "
-
-
-# Setup second monitor
-
-xrandr --output DP-1 --rotate right
-xrandr --output DP-2 --pos 1080x0
-
-# i3-msg "workspace 4"

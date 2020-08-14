@@ -1,8 +1,8 @@
 !! Colorscheme
 
 ! Screen Scaling
-! Xft.dpi: 192
 Xft.dpi: 192
+! Xft.dpi: 220
 
 ! special
 *.foreground: #93a1a1
@@ -88,11 +88,15 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 !! Transparency
 URxvt.transparent: true
-URxvt.shading:25
+URxvt.shading: 20
+
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+
 
 !! Open Links
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /home/local/ANT/snellin/.local/share/umake/web/firefox-dev/firefox-bin
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 !! Buffer

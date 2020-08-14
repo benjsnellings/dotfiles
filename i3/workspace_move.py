@@ -8,7 +8,13 @@ import i3py.i3 as i3
 
 # args = parser.parse_args()
 direction = sys.argv[1]
-if direction == "left" and not i3.get_workspaces()[0]['focused']:
+if direction == "left":
 	os.system("i3-msg workspace prev")
-elif direction == "right" and not i3.get_workspaces()[-1]['focused']:
+elif direction == "right":
 	os.system("i3-msg workspace next")
+
+# direction = sys.argv[1]
+# if direction == "left" and not i3.get_workspaces()[0]['focused']:
+# 	os.system("i3-msg workspace prev")
+# elif direction == "right" and not i3.get_workspaces()[-1]['focused']:
+# 	os.system("i3-msg workspace next")
