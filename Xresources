@@ -88,7 +88,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 !! Transparency
 URxvt.transparent: true
-URxvt.shading: 20
+URxvt.shading: 30
 
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/c800

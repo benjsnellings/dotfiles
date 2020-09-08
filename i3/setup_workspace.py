@@ -32,21 +32,20 @@ if __name__ == '__main__':
 
     if monitor_positions['m'] in monitor_names and monitor_positions['r'] in monitor_names:
         cmd += f'''
-			i3-msg workspace 1 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 2 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 3 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 4 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 5 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 6 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 7 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 8 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 9 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 10 output {monitor_names[monitor_positions['m']]}
-			i3-msg workspace 17 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 18 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 19 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 20 output {monitor_names[monitor_positions['l']]}
-			i3-msg workspace 1 
+			i3-msg workspace 1 output {monitor_names[monitor_positions['l']]};
+			i3-msg workspace 2 output {monitor_names[monitor_positions['l']]};
+			i3-msg workspace 3 output {monitor_names[monitor_positions['l']]};
+			i3-msg workspace 4 output {monitor_names[monitor_positions['m']]};
+			i3-msg workspace 5 output {monitor_names[monitor_positions['m']]};	
+			i3-msg workspace 6 output {monitor_names[monitor_positions['m']]};
+			i3-msg workspace 7 output {monitor_names[monitor_positions['m']]};
+			i3-msg workspace 8 output {monitor_names[monitor_positions['m']]};
+			i3-msg workspace 9 output {monitor_names[monitor_positions['r']]};
+			i3-msg workspace 10 output {monitor_names[monitor_positions['r']]};
+			i3-msg workspace 17 output {monitor_names[monitor_positions['l']]};
+			i3-msg workspace 18 output {monitor_names[monitor_positions['l']]};
+			i3-msg workspace 19 output {monitor_names[monitor_positions['l']]};
+			i3-msg workspace 20 output {monitor_names[monitor_positions['l']]};
         '''
     else:
         cmd += f'''
@@ -66,11 +65,12 @@ if __name__ == '__main__':
 			i3-msg workspace 20 output {monitor_names[monitor_positions['l']]}
         '''
 
+    print(cmd)
     print(cmd.split())
     subprocess.check_call(cmd.split())
 
-    aftercmd = f'''
-			i3-msg workspace 1 
-        '''
-    print(aftercmd.split())
-    subprocess.check_call(aftercmd.split())
+   #  aftercmd = f'''
+			# i3-msg workspace 1 
+   #      '''
+   #  print(aftercmd.split())
+   #  subprocess.check_call(aftercmd.split())

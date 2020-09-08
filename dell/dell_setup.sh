@@ -12,7 +12,7 @@ xcape -e "Mode_switch=Escape"
 ## Configure Solaar
 ~/tools/Solaar/bin/solaar config 2 dpi 3000
 ~/tools/Solaar/bin/solaar config 2 hires-smooth-resolution true
- killall imwheel && imwheel -b "4 5 6 7"
+killall imwheel && imwheel -b "4 5 6 7"
 
 ## Configure Keyboard repeat speed
 xset r rate 200 80

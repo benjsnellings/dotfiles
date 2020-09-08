@@ -136,7 +136,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -164,13 +164,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "display" {
-        bindsym d exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
+        bindsym d exec "~/dotfiles/dell/default-display-settings.sh &"
+        bindsym s exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
         bindsym w exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
         bindsym a exec "~/dotfiles/dell/dell_setup.sh &"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym q mode "default"
 }
 
 bindsym $mod+d mode "display"
@@ -190,7 +192,7 @@ exec --no-startup-id dunst
 exec_always --no-startup-id flashfocus
 
 # Programs needed for MX Master mouse
-exec --no-startup-id ~/tools/Solaar/bin/solaar
+exec --no-startup-id "~/tools/Solaar/bin/solaar --restart-on-wake-up"
 exec --no-startup-id "imwheel -b \"4 5 6 7\"" # Increase sideways scroll speed and ignore buttons
 
 # Show network manager on i3Status bar
@@ -232,6 +234,7 @@ bindsym $mod+Shift+less move container to output left
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +3%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -3%
 bindsym XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
+bindsym $mod+m exec pactl set-source-mute 1 toggle
 
 # Spotfiy Controls
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -252,3 +255,20 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # Exec DELL XPS specific stuff 
 exec --no-startup-id "$HOME/dotfiles/dell/dell_setup.sh"
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-2
+workspace 7 output DP-2
+workspace 8 output DP-2
+workspace 9 output DP-4
+workspace 10 output DP-4
+workspace 15 output eDP-1
+workspace 16 output eDP-1
+workspace 17 output eDP-1
+workspace 18 output eDP-1
+workspace 19 output eDP-1
+workspace 20 output eDP-1

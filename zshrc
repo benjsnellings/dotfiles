@@ -101,6 +101,7 @@ alias sam='brazil-build-tool-exec sam $1'
 # source /home/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$HOME/.toolbox/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=/opt/firefox/firefox:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
