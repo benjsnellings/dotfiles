@@ -164,7 +164,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "display" {
-        bindsym d exec "~/dotfiles/dell/default-display-settings.sh &"
+        bindsym d exec "~/dotfiles/dell/docked-display-setup.sh &"
         bindsym s exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
         bindsym w exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
         bindsym a exec "~/dotfiles/dell/dell_setup.sh &"

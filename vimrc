@@ -24,6 +24,7 @@ xnoremap <leader>p "_dP
 
 noremap <C-p> viw"_dP
 
+set clipboard=unnamedplus
 
 
 
