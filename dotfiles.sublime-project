@@ -6,6 +6,9 @@
 		},
 		{
 			"path": "/home/ANT.AMAZON.COM/snellin/.config"
+		},
+		{
+			"path": "/home/ANT.AMAZON.COM/snellin/.config/polybar"
 		}
 	]
 }

@@ -10,6 +10,10 @@ set cursorline
 set ignorecase
 set smartcase
 
+" Naviation ----------------------------------------------------------------------------
+
+nnoremap H ^
+nnoremap L $
 
 " Key Bindings -------------------------------------------------------------------------
 let mapleader = ","
@@ -19,6 +23,7 @@ inoremap jk <esc>
 xnoremap <leader>p "_dP
 
 noremap <C-p> viw"_dP
+
 
 
 
