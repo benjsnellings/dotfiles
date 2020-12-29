@@ -34,16 +34,6 @@ if __name__ == '__main__':
         xrandr
     '''
 
-    """ Leftover from a 1080/4K mix display
-    if monitor_positions['m'] in monitor_names and monitor_positions['r'] in monitor_names:
-        subprocess.check_call("notify-send 'Home Workstation'".split())
-        xrandrcmd += f'''
-            --output {monitor_names[monitor_positions['l']]} --mode 3840x2400 --pos 0x0 --scale 0.9999x0.9999 
-            --output {monitor_names[monitor_positions['m']]} --primary --mode 3840x2160 --rate 60.00 --pos 3840x0 --scale 0.9999x0.9999 
-            --output {monitor_names[monitor_positions['r']]} --mode 1920x1080 --scale 2x2 --pos 7680x0 --rate 59.94 --panning 3840x2160+7680+0
-        '''
-    """
-
     if monitor_positions['m'] in monitor_names and monitor_positions['r'] in monitor_names:
         subprocess.check_call("notify-send 'Home Workstation'".split())
         xrandrcmd += f'''
@@ -52,13 +42,17 @@ if __name__ == '__main__':
             --output {monitor_names[monitor_positions['r']]} --mode 3840x2160 --pos 7680x0 
         '''
     else:
-        subprocess.check_call("notify-send 'Internal Display only'".split())
+        subprocess.check_call("notify-send 'Internal Display'".split())
         xrandrcmd += '''
             --output eDP-1 --primary --mode 3840x2400 --pos 0x0 --rotate normal 
             --output DP-1 --off
             --output DP-2 --off
+            --output DP-5 --off
+            --output DP-6 --off
             --output DP-8 --off
             --output DP-2-3 --off
+            --output DP-1-1 --off
+            --output DP-1-2 --off
         '''
 
     print(xrandrcmd.split())

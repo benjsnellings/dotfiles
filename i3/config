@@ -206,7 +206,7 @@ exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-ico
 
 # bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
 #bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh"
-bindsym Scroll_Lock exec "systemctl suspend"
+bindsym $mod+Scroll_Lock exec "systemctl suspend"
 
 ##Enable lock timeout
 exec xautolock -time 10 -detectsleep -locker "$HOME/.i3/lock/timeout_lock.sh" -notify 20 -notifier 'xset dpms force off' &
@@ -259,18 +259,28 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # Exec DELL XPS specific stuff 
 exec --no-startup-id "$HOME/dotfiles/dell/dell_setup.sh"
 
-workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output eDP-1
-#workspace 5 output DP-4
-#workspace 6 output DP-4
-#workspace 7 output DP-4
-#workspace 8 output DP-4
-workspace 5 output DP-1-1
-workspace 6 output DP-1-1
-workspace 7 output DP-1-1
-workspace 8 output DP-1-1
-workspace 9 output DP-2
-workspace 10 output DP-2
-workspace 20 output DP-2
+set $laptopMon eDP-1
+set $wsLeftMon DP-1-2
+set $wsRightMon DP-2
+
+
+workspace 1 output $laptopMon
+workspace 2 output $laptopMon
+workspace 3 output $laptopMon 
+workspace 4 output $laptopMon
+workspace 5 output $laptopMon
+
+workspace 6 output $wsLeftMon
+workspace 7 output $wsLeftMon
+workspace 8 output $wsLeftMon
+workspace 9 output $wsLeftMon
+workspace 10 output $wsLeftMon
+
+workspace 11 output $wsRightMon
+workspace 12 output $wsRightMon
+workspace 13 output $wsRightMon
+workspace 14 output $wsRightMon
+workspace 15 output $wsRightMon
+workspace 19 output $wsRightMon
+workspace 20 output $wsRightMon
+
