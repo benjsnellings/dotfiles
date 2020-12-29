@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+status=$(pactl list sources | grep -A 10 alsa_input.pci-0000_00_1f.3.analog-stereo | grep Mute)
+
+SUB='no'
+if [[ "$status" == *"$SUB"* ]]
+then
+    echo -e "\uf130"
+else
+    echo -e "\uf131"
+fi
+
