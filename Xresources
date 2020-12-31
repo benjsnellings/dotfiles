@@ -49,10 +49,10 @@ Xft.dpi: 192
 !URxvt.italicFont: xft:Iosevka:style=Italic:size=8
 !URxvt.boldItalicFont: xft:Iosevka:style=Bold Italic:size=8
 
-URxvt.font: xft:BitstreamVeraSansMono Nerd Font:style=Roman:size=8:antialias=true
-URxvt.boldFont: xft:BitstreamVeraSansMono Nerd Font:style=Bold:size=8:antialias=true
-URxvt.italicFont: xft:BitstreamVeraSansMono Nerd Font:style=Roman:size=8:antialias=true
-URxvt.boldItalicFont: xft:BitstreamVeraSansMono Nerd Font:style=Bold Oblique:size=8:antialias=true
+URxvt.font: xft:BitstreamVeraSansMono Nerd Font:style=Roman:size=10:antialias=true
+URxvt.boldFont: xft:BitstreamVeraSansMono Nerd Font:style=Bold:size=10:antialias=true
+URxvt.italicFont: xft:BitstreamVeraSansMono Nerd Font:style=Roman:size=10:antialias=true
+URxvt.boldItalicFont: xft:BitstreamVeraSansMono Nerd Font:style=Bold Oblique:size=10:antialias=true
 
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
