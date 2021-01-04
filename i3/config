@@ -1,25 +1,32 @@
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started
-#font pango:Font Awesome 6
-#font pango:Ubuntu Display 5
-#font pango:Dejavu Sans Mono 14
-
-
 # Modkey
 set $mod mod4
 
-
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
 set $up k
 set $down j
 set $left h
 set $right l
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+set $ws34 "34"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -88,55 +95,55 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
-bindsym $mod+Control+1 workspace 11
-bindsym $mod+Control+2 workspace 12
-bindsym $mod+Control+3 workspace 13
-bindsym $mod+Control+4 workspace 14
-bindsym $mod+Control+5 workspace 15
-bindsym $mod+Control+6 workspace 16
-bindsym $mod+Control+7 workspace 17
-bindsym $mod+Control+8 workspace 18
-bindsym $mod+Control+9 workspace 19
-bindsym $mod+Control+0 workspace 20
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Control+1 workspace $ws11
+bindsym $mod+Control+2 workspace $ws12
+bindsym $mod+Control+3 workspace $ws13
+bindsym $mod+Control+4 workspace $ws14
+bindsym $mod+Control+5 workspace $ws15
+bindsym $mod+Control+6 workspace $ws16
+bindsym $mod+Control+7 workspace $ws17
+bindsym $mod+Control+8 workspace $ws18
+bindsym $mod+Control+9 workspace $ws19
+bindsym $mod+Control+0 workspace $ws20
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
-bindsym $mod+Control+Shift+1 move container to workspace 11
-bindsym $mod+Control+Shift+2 move container to workspace 12
-bindsym $mod+Control+Shift+3 move container to workspace 13
-bindsym $mod+Control+Shift+4 move container to workspace 14
-bindsym $mod+Control+Shift+5 move container to workspace 15
-bindsym $mod+Control+Shift+6 move container to workspace 16
-bindsym $mod+Control+Shift+7 move container to workspace 17
-bindsym $mod+Control+Shift+8 move container to workspace 18
-bindsym $mod+Control+Shift+9 move container to workspace 19
-bindsym $mod+Control+Shift+0 move container to workspace 20
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Control+Shift+1 move container to workspace $ws11
+bindsym $mod+Control+Shift+2 move container to workspace $ws12
+bindsym $mod+Control+Shift+3 move container to workspace $ws13
+bindsym $mod+Control+Shift+4 move container to workspace $ws14
+bindsym $mod+Control+Shift+5 move container to workspace $ws15
+bindsym $mod+Control+Shift+6 move container to workspace $ws16
+bindsym $mod+Control+Shift+7 move container to workspace $ws17
+bindsym $mod+Control+Shift+8 move container to workspace $ws18
+bindsym $mod+Control+Shift+9 move container to workspace $ws19
+bindsym $mod+Control+Shift+0 move container to workspace $ws20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -220,7 +227,7 @@ bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pict
 #### Window Specific Controls
 for_window [class="^.*"] border pixel 1
 
-##### Bindings for workspace movement
+##### Bindings for workspace $wsmovement
 bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
 bindsym $mod+Control+$left exec "python $HOME/.i3/workspace_move.py left"
@@ -264,23 +271,22 @@ set $wsLeftMon DP-1-2
 set $wsRightMon DP-2
 
 
-workspace 1 output $laptopMon
-workspace 2 output $laptopMon
-workspace 3 output $laptopMon 
-workspace 4 output $laptopMon
-workspace 5 output $laptopMon
+workspace $ws1 output $laptopMon
+workspace $ws2 output $laptopMon
+workspace $ws3 output $laptopMon 
+workspace $ws4 output $laptopMon
+workspace $ws5 output $laptopMon
 
-workspace 6 output $wsLeftMon
-workspace 7 output $wsLeftMon
-workspace 8 output $wsLeftMon
-workspace 9 output $wsLeftMon
-workspace 10 output $wsLeftMon
+workspace $ws6 output $wsLeftMon
+workspace $ws7 output $wsLeftMon
+workspace $ws8 output $wsLeftMon
+workspace $ws9 output $wsLeftMon
+workspace $ws10 output $wsLeftMon
 
-workspace 11 output $wsRightMon
-workspace 12 output $wsRightMon
-workspace 13 output $wsRightMon
-workspace 14 output $wsRightMon
-workspace 15 output $wsRightMon
-workspace 19 output $wsRightMon
-workspace 20 output $wsRightMon
-
+workspace $ws11 output $wsRightMon
+workspace $ws12 output $wsRightMon
+workspace $ws13 output $wsRightMon
+workspace $ws14 output $wsRightMon
+workspace $ws15 output $wsRightMon
+workspace $ws19 output $wsRightMon
+workspace $ws20 output $wsRightMon
