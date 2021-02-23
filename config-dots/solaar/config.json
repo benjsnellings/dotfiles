@@ -18,9 +18,23 @@
       "93": 93
     }
   },
-  "4069:CEE33068": {
+  "4069:3F1093DF": {
+    "_modelId": "B01940690000",
     "_name": "Wireless Mouse MX Master 2S",
-    "dpi": "3000",
+    "_unitId": "59DDF0CC",
+    "divert-keys": {
+      "195": 0,
+      "196": 0,
+      "215": 0,
+      "82": 0,
+      "83": 0,
+      "86": 0
+    },
+    "dpi": 1000,
+    "gesture2-gestures": {
+      "45": false,
+      "46": false
+    },
     "hires-smooth-invert": false,
     "hires-smooth-resolution": true,
     "reprogrammable-keys": {
@@ -34,5 +48,35 @@
     },
     "smart-shift": 50
   },
-  "_version": "1.0.3"
+  "4069:CEE33068": {
+    "_modelId": "B01940690000",
+    "_name": "Wireless Mouse MX Master 2S",
+    "_unitId": "59DDF0CC",
+    "divert-keys": {
+      "195": 0,
+      "196": 0,
+      "215": 0,
+      "82": 0,
+      "83": 0,
+      "86": 0
+    },
+    "dpi": 3000,
+    "gesture2-gestures": {
+      "45": false,
+      "46": false
+    },
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": true,
+    "reprogrammable-keys": {
+      "195": 195,
+      "196": 196,
+      "80": 80,
+      "81": 81,
+      "82": 82,
+      "83": 83,
+      "86": 86
+    },
+    "smart-shift": 50
+  },
+  "_version": "1.0.4"
 }
