@@ -231,6 +231,12 @@ bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pict
 #### Window Specific Controls
 for_window [class="^.*"] border pixel 1
 
+# Floating Scratchpad for VIM text input
+for_window [class=URxvt instance="__text_scratchpad"] floating enable resize set 1240 1480 move absolute position center
+for_window [class=URxvt instance="__text_scratchpad"] resize set 1240 1480
+for_window [class=URxvt instance="__text_scratchpad"] move absolute position center
+bindsym $mod+g exec ~/.i3/text-scratchpad.sh
+
 ##### Bindings for workspace $wsmovement
 bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
