@@ -31,7 +31,12 @@ noremap <C-p> viw"_dP
 set clipboard=unnamedplus
 
 
+" vim-plug plugins -------------------------------------------------------------------------
+" https://github.com/junegunn/vim-plug
 
+call plug#begin('~/.vim/plugged')
+  Plug 'preservim/nerdtree'
+call plug#end()
 
-
-
+" plugin shortcuts -------------------------------------------------------------------------
+map <F2> :NERDTreeToggle<CR>
