@@ -9,7 +9,7 @@ dir=~/dotfiles/config-dots                  # dotfiles directory
 olddir=~/old_dotfiles/old_config_dotfiles	# old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-files="sway compton polybar solaar"    
+files="sway compton polybar solaar dunst"
 
 ##########
 

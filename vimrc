@@ -31,6 +31,16 @@ noremap <C-p> viw"_dP
 set clipboard=unnamedplus
 
 
+" Spell check settings -------------------------------------------------------------------------
+hi clear SpellBad
+hi clear SpellCap
+hi SpellBad cterm=underline
+hi SpellBad ctermfg=Red
+hi SpellCap cterm=underline
+hi SpellLocal cterm=underline
+hi SpellRare cterm=underline
+
+
 " vim-plug plugins -------------------------------------------------------------------------
 " https://github.com/junegunn/vim-plug
 

@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export EDITOR="subl"
+export EDITOR="vim"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -103,6 +103,7 @@ alias sam='brazil-build-tool-exec sam $1'
 
 export PATH=$HOME/.toolbox/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/tools:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/opt/firefox/firefox:$PATH
 

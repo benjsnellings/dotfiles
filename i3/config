@@ -26,11 +26,33 @@ set $ws17 "17"
 set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
-set $ws34 "34"
 
 set $laptopMon eDP-1
 set $wsLeftMon DP-1-2
 set $wsRightMon DP-2
+
+workspace $ws1 output $laptopMon
+workspace $ws2 output $laptopMon
+workspace $ws3 output $laptopMon 
+workspace $ws4 output $laptopMon
+workspace $ws5 output $laptopMon
+
+workspace $ws6 output $wsLeftMon
+workspace $ws7 output $wsLeftMon
+workspace $ws8 output $wsLeftMon
+workspace $ws9 output $wsLeftMon
+workspace $ws10 output $wsLeftMon
+
+workspace $ws11 output $wsRightMon
+workspace $ws12 output $wsRightMon
+workspace $ws13 output $wsRightMon
+workspace $ws14 output $wsRightMon
+workspace $ws15 output $wsRightMon
+workspace $ws16 output $wsRightMon
+workspace $ws17 output $wsRightMon
+workspace $ws18 output $wsRightMon
+workspace $ws19 output $wsRightMon
+workspace $ws20 output $wsRightMon
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -174,8 +196,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Mode to house various display commands
 mode "display" {
         bindsym d exec "~/dotfiles/dell/docked-display-setup.sh &"
+        bindsym t exec "~/dotfiles/dell/toggle_touchpad.sh &"
         bindsym s exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
         bindsym w exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
         bindsym a exec "~/dotfiles/dell/dell_setup.sh &"
@@ -201,7 +225,8 @@ exec --no-startup-id "xmodmap $HOME/.xmodmap"
 exec --no-startup-id "xset r rate 200 80" # set keypress delay and rate
 exec --no-startup-id dunst 
 exec --no-startup-id davmail
-exec_always --no-startup-id flashfocus
+#exec --no-startup-id redshift
+#exec_always --no-startup-id flashfocus
 
 # Programs needed for MX Master mouse
 exec --no-startup-id "solaar --restart-on-wake-up"
@@ -275,26 +300,3 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # Exec DELL XPS specific stuff 
 exec --no-startup-id "$HOME/dotfiles/dell/dell_setup.sh"
-
-workspace $ws1 output $laptopMon
-workspace $ws2 output $laptopMon
-workspace $ws3 output $laptopMon 
-workspace $ws4 output $laptopMon
-workspace $ws5 output $laptopMon
-
-workspace $ws6 output $wsLeftMon
-workspace $ws7 output $wsLeftMon
-workspace $ws8 output $wsLeftMon
-workspace $ws9 output $wsLeftMon
-workspace $ws10 output $wsLeftMon
-
-workspace $ws11 output $wsRightMon
-workspace $ws12 output $wsRightMon
-workspace $ws13 output $wsRightMon
-workspace $ws14 output $wsRightMon
-workspace $ws15 output $wsRightMon
-workspace $ws16 output $wsRightMon
-workspace $ws17 output $wsRightMon
-workspace $ws18 output $wsRightMon
-workspace $ws19 output $wsRightMon
-workspace $ws20 output $wsRightMon
