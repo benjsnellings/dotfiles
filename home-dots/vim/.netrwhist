@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/ANT.AMAZON.COM/snellin/dotfiles/intellij'
 let g:netrw_dirhist_7='/home/ANT.AMAZON.COM/snellin'
 let g:netrw_dirhist_6='/home/ANT.AMAZON.COM/snellin/dotfiles'
 let g:netrw_dirhist_5='scp://DevDesktop//'

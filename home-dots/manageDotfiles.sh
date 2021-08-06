@@ -5,7 +5,7 @@
 ############################
 
 ########## Variables
-dir=~/dotfiles                    # dotfiles directory
+dir=~/dotfiles/home-dots         # dotfiles directory
 olddir=~/old_dotfiles             # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
