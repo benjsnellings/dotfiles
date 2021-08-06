@@ -1,4 +1,16 @@
-# Modkey
+#######################################################################################################################
+#
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# Comments start with a # and can only be used at the beginning of a line.
+#
+#######################################################################################################################
+#
+### Basic Settings
+#
+
 set $mod mod4
 
 set $up k
@@ -54,71 +66,48 @@ workspace $ws18 output $wsRightMon
 workspace $ws19 output $wsRightMon
 workspace $ws20 output $wsRightMon
 
+
+################################################################################################
+#
+### Window Properties
+#
+
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# Turn off mouse focus
+focus_follows_mouse no
 
-# kill focused window
-bindsym $mod+Shift+q kill
 
-# change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+################################################################################################
+#
+### Window Configurations
+#
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# Set default border size
+for_window [class="^.*"] border pixel 1
 
-# move focused window
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+# Floating Scratchpad for VIM text input
+for_window [class=URxvt instance="__text_scratchpad"] floating enable resize set 1240 1480 move absolute position center
+for_window [class=URxvt instance="__text_scratchpad"] resize set 1240 1480
+for_window [class=URxvt instance="__text_scratchpad"] move absolute position center
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+b split h
+################################################################################################
+#
+# Coloring
+#
 
-# split in vertical orientation
-bindsym $mod+v split v
+#                       border  backgr. text    indicat child_border
+client.focused          #555555 #555555 #ffffff #2e9ef4 #CC0000
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #222222 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+p floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+p focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+################################################################################################
+#
+### I3WM Workspace Binding Keys 
+#
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -164,111 +153,97 @@ bindsym $mod+Control+Shift+8 move container to workspace $ws18
 bindsym $mod+Control+Shift+9 move container to workspace $ws19
 bindsym $mod+Control+Shift+0 move container to workspace $ws20
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+################################################################################################
+#
+### I3WM Control Keys 
+#
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink ./    the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize shrink height 10 px or 10 ppt
-        bindsym $up         resize grow height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+bindsym $mod+Return exec i3-sensible-terminal
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize shrink height 10 px or 10 ppt
-        bindsym Up          resize grow height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+# kill focused window
+bindsym $mod+Shift+q kill
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-bindsym $mod+r mode "resize"
-
-# Mode to house various display commands
-mode "display" {
-        bindsym d exec "~/dotfiles/dell/docked-display-setup.sh &"
-        bindsym t exec "~/dotfiles/dell/toggle_touchpad.sh &"
-        bindsym s exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
-        bindsym w exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
-        bindsym a exec "~/dotfiles/dell/dell_setup.sh &"
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym q mode "default"
-}
-
-bindsym $mod+d mode "display"
-
-
-######################### STARTUP STUFF #############################################
-
-exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
-exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
-exec --no-startup-id compton -cGb --config ~/.config/compton/compton.conf
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id "$HOME/.config/polybar/launch.sh"
-exec --no-startup-id "xrdb $HOME/.Xresources"
-exec --no-startup-id "xmodmap $HOME/.xmodmap"
-exec --no-startup-id "xset r rate 200 80" # set keypress delay and rate
-exec --no-startup-id dunst 
-exec --no-startup-id davmail
-#exec --no-startup-id redshift
-#exec_always --no-startup-id flashfocus
-
-# Programs needed for MX Master mouse
-exec --no-startup-id "solaar --restart-on-wake-up"
-exec --no-startup-id "imwheel -b \"4 5 6 7\"" # Increase sideways scroll speed and ignore buttons
-
-# Show network manager on i3Status bar
-exec --no-startup-id nm-applet
-
-# Turn off Nautalis Desktop
-exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
-
-######################### SELF MADE STUFF #############################################
-
-# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
-#bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh"
-bindsym $mod+Scroll_Lock exec "systemctl suspend"
-
-##Enable lock timeout
-exec xautolock -time 10 -detectsleep -locker "$HOME/.i3/lock/timeout_lock.sh" -notify 20 -notifier 'xset dpms force off' &
-
-# Turn off mouse focus
-focus_follows_mouse no
-
-#Enable Screenshots
-bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pictures/screenshots'
-
-#### Window Specific Controls
-for_window [class="^.*"] border pixel 1
-
-# Floating Scratchpad for VIM text input
-for_window [class=URxvt instance="__text_scratchpad"] floating enable resize set 1240 1480 move absolute position center
-for_window [class=URxvt instance="__text_scratchpad"] resize set 1240 1480
-for_window [class=URxvt instance="__text_scratchpad"] move absolute position center
-bindsym $mod+g exec ~/.i3/text-scratchpad.sh
-
-##### Bindings for workspace $wsmovement
+# Bindings for workspace movement
 bindsym $mod+Control+Left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+Right exec "python $HOME/.i3/workspace_move.py right"
 bindsym $mod+Control+$left exec "python $HOME/.i3/workspace_move.py left"
 bindsym $mod+Control+$right exec "python $HOME/.i3/workspace_move.py right"
 
-# start rofi
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+p floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+p focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+bindsym $mod+minus scratchpad show
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+################################################################################################
+#
+### Volume, Media, and Special Keys 
+#
+
+# bindsym $mod+shift+0 exec "$home/.i3/lock.sh $home/pictures/icons/lock.png
+# bindsym Scroll_Lock exec "xautolock -locknow -detectsleep -locker $HOME/.i3/lock/test_lock_2.sh"
+bindsym $mod+Scroll_Lock exec "systemctl suspend"
+
+#Enable Screenshots
+bindsym Print exec scrot 'Screenshot-%Y-%m-%d-%H%M%S_scrot.png' -e 'mv $f ~/Pictures/screenshots'
+
+# Open a vim text scratchpad
+bindsym $mod+g exec ~/.i3/text-scratchpad.sh
+
+# Start rofi for Program Selection
 bindsym $mod+space       exec "rofi -modi drun -show drun -theme ~/.rofi/slate -show-icons"
 bindsym $mod+Shift+space exec "rofi -show ssh -theme ~/.rofi/slate"
 
@@ -291,12 +266,87 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86MonBrightnessUp exec brightnessctl s 10000+
 bindsym XF86MonBrightnessDown exec brightnessctl s 10000-
 
-# Coloring
-##                       border  backgr. text    indicator child_border
-client.focused          #555555 #555555 #ffffff #2e9ef4 #CC0000
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #222222 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+
+################################################################################################
+#
+### Special Command Modes
+#
+
+# Resize window (you can also use the mouse for that)
+set $mode_resize Resize Window
+bindsym $mod+r mode $mode_resize
+mode "$mode_resize" {
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink ./    the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize shrink height 10 px or 10 ppt
+        bindsym $up         resize grow height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize shrink height 10 px or 10 ppt
+        bindsym Up          resize grow height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+
+# Mode to house various Computer Control commands
+set $mode_control Computer Control
+bindsym $mod+d mode $mode_control
+mode "$mode_control" {
+        bindsym d exec "~/dotfiles/dell/docked-display-setup.sh &"
+        bindsym t exec "~/dotfiles/dell/toggle_touchpad.sh &"
+        bindsym s exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
+        bindsym w exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
+        bindsym a exec "~/dotfiles/dell/dell_setup.sh &"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym q mode "default"
+}
+
+
+################################################################################################
+#
+### Startup 
+#
+
+exec --no-startup-id "python3 $HOME/.i3/screen_setup.py"
+exec --no-startup-id "python3 $HOME/.i3/setup_workspace.py"
+exec --no-startup-id compton -cGb --config ~/.config/compton/compton.conf
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id "$HOME/.config/polybar/launch.sh"
+exec --no-startup-id "xrdb $HOME/.Xresources"
+exec --no-startup-id "xmodmap $HOME/.xmodmap"
+exec --no-startup-id "xset r rate 200 80" # set keypress delay and rate
+exec --no-startup-id dunst 
+exec --no-startup-id davmail
+#exec --no-startup-id redshift
+#exec_always --no-startup-id flashfocus
+
+# Programs needed for MX Master mouse
+exec --no-startup-id "~/tools/Solaar/bin/solaar --restart-on-wake-up"
+# exec --no-startup-id "solaar --restart-on-wake-up"
+exec --no-startup-id "imwheel -b \"4 5 6 7\"" # Increase sideways scroll speed and ignore buttons
+
+# Show network manager on i3Status bar
+exec --no-startup-id nm-applet
+
+# Turn off Nautalis Desktop
+exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
+
+# Enable lock timeout
+exec xautolock -time 10 -detectsleep -locker "$HOME/.i3/lock/timeout_lock.sh" -notify 20 -notifier 'xset dpms force off' &
 
 # Exec DELL XPS specific stuff 
 exec --no-startup-id "$HOME/dotfiles/dell/dell_setup.sh"
+

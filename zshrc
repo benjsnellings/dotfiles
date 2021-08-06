@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="snellin"
+ZSH_THEME="awesomepanda"
 # eval `dircolors $HOME/.dir_colors/dircolors`
 
 
@@ -60,6 +60,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export EDITOR="vim"
+export TERMINAL="urxvt"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -104,9 +105,12 @@ alias sam='brazil-build-tool-exec sam $1'
 export PATH=$HOME/.toolbox/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/tools:$PATH
+export PATH=$HOME/tools/Solaar/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/opt/firefox/firefox:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$HOME/.toolbox/bin:$PATH
 
 export PATH=$HOME/.toolbox/bin:$PATH

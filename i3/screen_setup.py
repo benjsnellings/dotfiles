@@ -17,6 +17,7 @@ monitor_positions = {
     'l': '4d10d01400000000',
     'm': '04721c07076d7102',
     'r': '1e6d0777fdcd0000',
+    'work': '10acdea04c364731',
 }
 
 edid_re = re.compile(r'([\w\d-]+)\sconnected.*?00ffffffffffff00([\d\w]{16})', re.S)
@@ -41,6 +42,14 @@ if __name__ == '__main__':
             --output {monitor_names[monitor_positions['m']]} --primary --mode 3840x2160 --rate 60.00 --pos 3840x0 
             --output {monitor_names[monitor_positions['r']]} --mode 3840x2160 --pos 7680x0 
         '''
+    elif monitor_positions['work'] in monitor_names :
+        subprocess.check_call("notify-send 'Office Workstation'".split())
+        xrandrcmd += f'''
+            --output {monitor_names[monitor_positions['l']]} --mode 2560x1600 --pos 0x0 
+            --output {monitor_names[monitor_positions['work']]} --primary --mode 3440x1440 --scale 1.4x1.4 --pos 2560x0 
+        '''
+        print(xrandrcmd)
+
     else:
         subprocess.check_call("notify-send 'Internal Display'".split())
         xrandrcmd += '''
