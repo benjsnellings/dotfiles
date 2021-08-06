@@ -1,0 +1,36 @@
+/* set default namespace to XUL */
+@namespace
+url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Set Font Size In Folder Pane */
+
+/* 
+#folderTree >treechildren::-moz-tree-cell-text {
+   font-size: 16pt !important; }
+*/
+
+/* Set Font Size In Thread Pane */
+
+/* 
+#threadTree >treechildren::-moz-tree-cell-text {
+   font-size: 16pt !important; }
+*/
+
+
+/* Change the color of folders with unread messages */
+treechildren::-moz-tree-cell-text(hasUnreadMessages-true)
+{color: red !important;}
+
+/* set default namespace to XUL */
+
+#threadTree treechildren::-moz-tree-cell-text(unread),
+treechildren::-moz-tree-cell-text(hasUnreadMessages-true) {
+
+	font-weight: bold !important;
+	font-style: italic !important;
+	color: orange !important;
+}
+#threadTree treechildren::-moz-tree-cell-text(selected) {
+
+	color: white !important;
+}
