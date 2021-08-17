@@ -41,17 +41,13 @@ set $ws20 "20"
 
 
 # Xresources settings
-set_from_resource $laptopMon i3.output.0.name	eDP-1
-set_from_resource $wsLeftMon i3.output.1.name	$output0
-set_from_resource $wsRightMon i3.output.2.name	$output1
-
-# set $laptopMon eDP-1-1
-# set $wsLeftMon DP-1-1-2
-# set $wsRightMon DP-1-2
+set_from_resource $laptopMon i3.output.0.name eDP-1
+set_from_resource $wsLeftMon i3.output.1.name $laptopMon
+set_from_resource $wsRightMon i3.output.2.name $wsLeftMon
 
 workspace $ws1 output $laptopMon
 workspace $ws2 output $laptopMon
-workspace $ws3 output $laptopMon 
+workspace $ws3 output $laptopMon
 workspace $ws4 output $laptopMon
 workspace $ws5 output $laptopMon
 
