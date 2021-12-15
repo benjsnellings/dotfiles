@@ -98,6 +98,7 @@ alias bbb='brc --allPackages brazil-build'
 alias bbbc='bball --reverse --continue brazil-build clean'
 alias bbra='bbr apollo-pkg'
 alias sam='brazil-build-tool-exec sam $1'
+alias adaAdmin='function _admin(){ ada credentials update --account=$1 --provider conduit --role=IibsAdminAccess-DO-NOT-DELETE };_admin'
 
 # source /home/snellin/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source $HOME/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -110,7 +111,5 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=/opt/firefox/firefox:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH=$HOME/.toolbox/bin:$PATH
 
 export PATH=$HOME/.toolbox/bin:$PATH

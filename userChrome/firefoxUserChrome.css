@@ -1,3 +1,5 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
 /* Classic Menu Bar (windows only?) */
 #toolbar-menubar .menubar-text,
 #toolbar-menubar menuitem, 

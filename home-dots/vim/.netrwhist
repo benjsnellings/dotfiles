@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/ANT.AMAZON.COM/snellin/unison_install/unison'
+let g:netrw_dirhist_0='/home/ANT.AMAZON.COM/snellin/old_dotfiles'
+let g:netrw_dirhist_9='/home/ANT.AMAZON.COM/snellin/dotfiles/config-dots/dunst'
 let g:netrw_dirhist_8='/home/ANT.AMAZON.COM/snellin/dotfiles/intellij'
 let g:netrw_dirhist_7='/home/ANT.AMAZON.COM/snellin'
 let g:netrw_dirhist_6='/home/ANT.AMAZON.COM/snellin/dotfiles'
@@ -7,4 +10,3 @@ let g:netrw_dirhist_5='scp://DevDesktop//'
 let g:netrw_dirhist_4='/usr/lib/modules/5.8.0-34-generic'
 let g:netrw_dirhist_3='/home/ANT.AMAZON.COM/snellin/dotfiles/polybar'
 let g:netrw_dirhist_2='/home/ANT.AMAZON.COM/snellin/unison_make/unison-2.51.2'
-let g:netrw_dirhist_1='/usr/share/themes'

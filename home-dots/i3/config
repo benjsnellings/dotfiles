@@ -86,6 +86,13 @@ focus_follows_mouse no
 ### Window Configurations
 #
 
+# Set assigned workspaces
+## Get class value with 'xprop | grep CLASS'
+assign [class="Google-chrome"] $ws1
+assign [class="Slack"] $ws2
+assign [class="Thunderbird"] $ws3
+assign [class="Spotify"] $wsi4
+
 # Set default border size
 for_window [class="^.*"] border pixel 1
 
