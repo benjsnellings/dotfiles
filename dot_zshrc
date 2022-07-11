@@ -54,3 +54,5 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+echo "Checking for dotfile updates..."

@@ -1,0 +1,32 @@
+[user]
+	email = benjsnellings@gmail.com
+	name = Ben Snellings
+    signingkey = 778D52A9B3CFC553
+[color]
+	ui = auto
+[core]
+	pager = less -FMRiX
+	excludesfile = /users/ben.snellings/.gitignore_global
+	editor = vim
+	preloadindex = true
+	fsmonitor = true
+	untrackedcache = true
+[push]
+	default = simple
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    st = status
+    squash = "! ~/tools/squash.sh"
+    co = checkout
+	checkoutr = checkout
+[pull]
+	ff = only
+[gc]
+	auto = 256
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[feature]
+	manyFiles = true

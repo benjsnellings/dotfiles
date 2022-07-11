@@ -1,0 +1,55 @@
+alias gll='git log --graph --all -n 20 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
+alias glll='git log --graph --all -n 30 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
+alias gllll='git log --graph --all -n 40 --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset"'
+alias glp='git log --graph -n 20  --pretty=format:"%Cblue%h%Creset [%Cgreen%ar%Creset] [%Cred%an%Creset] %s%C(yellow)%d%Creset" HEAD'
+alias moi='chezmoi'
+
+
+# Affirm Stuff
+
+alias ucp_release=alias scc=/Users/ben.snellings/Workspace/cosmops/kubernetes/scripts/set-cluster-context.py
+alias docker-server-start='docker-compose --file deployable/meta/servers/docker-compose.yml up --detach'
+alias rebuild_ucp="~/tools/rebuild_ucp.sh"
+
+function ucp_release() {
+    git checkout -b "ucp-release/$(date +'%Y-%m-%d')-${1}"
+}
+
+function activate_venv() {
+    # Specify deployable target
+    [[ $1 ]] && target=$1 || target=monolith
+    echo Activating virtual environment for $target
+ 
+    local WORKSPACE=/Users/ben.snellings/Workspace
+    # cd $WORKSPACE/all-the-things
+    source $WORKSPACE/all-the-things/deployable/$target/src/.venv/bin/activate
+}
+
+function activate_venv3() {
+    # Specify deployable target
+    [[ $1 ]] && target=$1 || target=monolith
+    echo Activating virtual environment for $target
+ 
+    local WORKSPACE=/Users/ben.snellings/Workspace
+    # cd $WORKSPACE/all-the-things
+    source $WORKSPACE/all-the-things/deployable/$target/src/.venv3/bin/activate
+}
+
+function tlogin() {
+
+  local cluster=$1
+  if [ -z "$cluster" ]; then
+    echo "Cluster not set"
+    echo "Run: tlogin {{ CLUSTER }}, where {{ CLUSTER }} is prod, stage or dev"
+    return 0
+  fi
+
+  if [[ $cluster == "prod" ]]; then
+    cluster="keyhole"
+  fi
+  echo "Connecting to teleport.core.affirm-${cluster}.com"
+  out=$(tsh login --proxy=teleport.core.affirm-${cluster}.com:443)
+  echo ${out}
+}
+# function tssh() { tsh ssh -A ${USER//./}@$1 } 
+function tssh() { local repl_name=${USER//./}; tsh ssh -o "ForwardAgent yes" $repl_name@$1 }
