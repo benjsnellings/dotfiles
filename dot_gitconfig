@@ -6,7 +6,7 @@
 	ui = auto
 [core]
 	pager = less -FMRiX
-	excludesfile = /users/ben.snellings/.gitignore_global
+	excludesfile = /Users/snellin/.gitignore_global
 	editor = vim
 	preloadindex = true
 	fsmonitor = true

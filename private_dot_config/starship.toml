@@ -1,4 +1,6 @@
 
+
+format = """$all"""
  
 command_timeout = 500
 
