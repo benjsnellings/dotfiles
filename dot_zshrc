@@ -33,9 +33,13 @@ source $HOME/.zsh_alias
 # Starship prompt
 eval "$(starship init zsh)"
 
+
+# Add random toolpaths
+export PATH=/apollo/env/envImprovement/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/tools:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/.toolbox/bin:$PATH"
 
 # Fuzzy Finder Tool
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -44,9 +48,7 @@ export PATH=$HOME/.local/bin:$PATH
 GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 
 export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
-export PATH="/Users/ben.snellings/.phabricator/arcanist/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-export PATH="$HOME/.toolbox/bin:$PATH"
 
 echo "Checking for dotfile updates..."

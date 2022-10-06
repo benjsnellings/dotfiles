@@ -18,6 +18,7 @@ set smartcase
 set hlsearch
 
 " Naviation ----------------------------------------------------------------------------
+set backspace=indent,eol,start  " more powerful backspacing
 
 nnoremap H ^
 nnoremap L $

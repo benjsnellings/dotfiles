@@ -1,12 +1,12 @@
 [user]
-	email = snellin@gmail.com
+	email = snellin@amazon.com
 	name = Ben Snellings
     signingkey = 778D52A9B3CFC553
 [color]
 	ui = auto
 [core]
 	pager = less -FMRiX
-	excludesfile = /Users/snellin/.gitignore_global
+	excludesfile = ~/.gitignore
 	editor = vim
 	preloadindex = true
 	fsmonitor = true
