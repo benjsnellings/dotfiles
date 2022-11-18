@@ -4,3 +4,6 @@
     command = "kdiff3"
     args = ["-m", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}", "-o", "{{ .Source }}" ] 
     # args = ["-d", "{{ .Destination }}", "{{ .Source }}"]
+
+[git]
+    autoCommit = true
