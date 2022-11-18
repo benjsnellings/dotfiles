@@ -58,4 +58,3 @@ export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 echo "Checking for dotfile updates..."
-export PATH="/bin:${PATH//:\/bin:/:}"

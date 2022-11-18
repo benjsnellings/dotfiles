@@ -1,0 +1,30 @@
+{
+	"ignored_packages":
+	[
+		"Six",
+		"Vintage",
+		"Vintageous",
+	],
+	"shift_tab_unindent": true,
+	"translate_tabs_to_spaces": true,
+
+
+	// VIM Settings //
+	"vintageous_handle_keys":
+	{
+		"<C-F>": false,
+		"<C-P>": false,
+		"<C-c>": false,
+		"<C-f>": false,
+		"<C-n>": false,
+		"<C-v>": false,
+		"<C-x>": false,
+	},
+	"vintageous_i_escape_jk": true,
+	"vintageous_use_ctrl_keys": true,
+	"theme": "Afterglow-magenta.sublime-theme",
+
+	// Afterglow Settings
+	"tabs_small": true,
+	"neovintageous_build_version": 12700,
+}

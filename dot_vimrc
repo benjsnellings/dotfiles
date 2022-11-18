@@ -17,6 +17,9 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Set colors for the themes
+set termguicolors
+
 " Naviation ----------------------------------------------------------------------------
 set backspace=indent,eol,start  " more powerful backspacing
 
@@ -55,6 +58,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 
 call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 " plugin shortcuts -------------------------------------------------------------------------

@@ -1,4 +1,6 @@
 
 
 [merge]
-    args = ["-d", "{{ .Destination }}", "{{ .Source }}"]
+    command = "kdiff3"
+    args = ["-m", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}", "-o", "{{ .Source }}" ] 
+    # args = ["-d", "{{ .Destination }}", "{{ .Source }}"]

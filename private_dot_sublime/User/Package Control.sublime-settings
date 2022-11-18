@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Advanced CSV",
+		"BinaryPlist",
+		"ConvertEpochToDate",
+		"HexViewer",
+		"i3 wm",
+		"INI",
+		"JSON Reindent",
+		"NeoVintageous",
+		"Origami",
+		"Package Control",
+		"PackageResourceViewer",
+		"Plist Binary",
+		"SideBarEnhancements",
+		"SortBy",
+		"Sync Settings",
+		"Theme - Afterglow",
+	],
+}

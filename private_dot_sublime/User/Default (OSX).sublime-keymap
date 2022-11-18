@@ -1,0 +1,6 @@
+[
+	{ "keys": ["alt+l"], "command": "next_view" },
+	{ "keys": ["alt+h"], "command": "prev_view" },
+  	{ "keys": ["alt+shift+l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+  	{ "keys": ["alt+shift+h"], "command": "travel_to_pane", "args": {"direction": "left"} },
+]

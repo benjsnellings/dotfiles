@@ -1,0 +1,13 @@
+" Naviation ----------------------------------------------------------------------------
+
+nnoremap H ^
+nnoremap L $
+
+" Key Bindings -------------------------------------------------------------------------
+
+let mapleader=,
+
+vnoremap <leader>p "_dP
+noremap <C-p> viw"_dP
+
+set clipboard=unnamedplus

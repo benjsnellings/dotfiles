@@ -1,0 +1,384 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/src/utils/configuration.ts",
+			"settings":
+			{
+				"buffer_size": 13328,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/package.json",
+			"settings":
+			{
+				"buffer_size": 4331,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/test/test_elasticsearch.test.ts",
+			"settings":
+			{
+				"buffer_size": 4188,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					25,
+					1,
+					"sequence",
+					{
+						"commands":
+						[
+							[
+								"left_delete",
+								null
+							],
+							[
+								"insert",
+								{
+									"characters": "6g"
+								}
+							]
+						]
+					},
+					"AwAAABkMAAAAAAAAGQwAAAAAAAABAAAANRkMAAAAAAAAGgwAAAAAAAAAAAAAGgwAAAAAAAAbDAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAGgwAAAAAAAAaDAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"prefere",
+				"Preferences: Settings"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"prefe",
+				"Preferences: Settings"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"search",
+				"File: Search Files"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"neo",
+				"NeoVintageous: Open RC File"
+			],
+			[
+				"preferences",
+				"Preferences: Settings"
+			],
+			[
+				"sync settings",
+				"Sync Settings: Download"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/workplace/Varia/Chozo",
+		"/Volumes/workplace/Varia/Chozo/src",
+		"/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK"
+	],
+	"file_history":
+	[
+		"/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/README.md",
+		"/Users/snellin/Library/Application Support/Sublime Text/Packages/User/SyncSettings.sublime-settings",
+		"/Users/snellin/Library/Application Support/Sublime Text/Packages/User/.neovintageousrc",
+		"/Volumes/workplace/put_tools_call.sh",
+		"/Volumes/workplace/Varia/Publisher/src/VariaSafetyPublisherServiceCDK/package.json"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"configuration"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/src/utils/configuration.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3979,
+								3979
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/TypeScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 830.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/package.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								518,
+								518
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (NPM).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 952.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/test/test_elasticsearch.test.ts",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3120,
+								3120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/zzz A File Icon zzz/aliases/UnitTest (TypeScript).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1043.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Chozo.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"test_elas",
+				"src/ChozoServiceCDK/test/test_elasticsearch.test.ts"
+			],
+			[
+				"configuration",
+				"src/ChozoServiceCDK/src/utils/configuration.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"_vintageous_last_buffer_search": "m6",
+		"_vintageous_last_buffer_search_command": "nv_vi_slash",
+		"_vintageous_reset_during_init": true
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 266.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
