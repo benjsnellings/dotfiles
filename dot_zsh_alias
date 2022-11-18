@@ -31,4 +31,5 @@ alias isengard='isengardcli'
 
 ### EDA Alias'
 alias ebb='eda build brazil-build'
+alias ebb='eda build brazil-build build'
 
