@@ -58,6 +58,9 @@ GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 
 export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 echo "Checking for dotfile updates..."
-export PATH="/bin:${PATH//:\/bin:/:}"
+
+# I think thji sis needed for mac. Double check later
+# export PATH="/bin:${PATH//:\/bin:/:}"
