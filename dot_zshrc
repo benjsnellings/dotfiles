@@ -45,9 +45,19 @@ export PATH="$HOME/.cargo/env:$PATH"
 # Add Zfunctions
 fpath+=~/.zfunc
 
+{{- if eq .chezmoi.hostname "bcd0745fb87b" }}
 # Mac Only Stuff
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+{{- end }}
+
+{{- if eq .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
+# DevDesktop Only Stuff
+{{- end }}
+
+export PATH="/usr/local/bin:$PATH"
 
 #Fuzzy Finder Tool
 # TODO: Setup command to install if not already 
@@ -56,11 +66,8 @@ export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 # Setup local-only branch autocompletion
 GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 
-export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 
-echo "Checking for dotfile updates..."
+echo "TODO: Checking for dotfile updates..."
 
 # I think thji sis needed for mac. Double check later
 # export PATH="/bin:${PATH//:\/bin:/:}"
