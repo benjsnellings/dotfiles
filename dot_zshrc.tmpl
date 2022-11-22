@@ -45,17 +45,17 @@ export PATH="$HOME/.cargo/env:$PATH"
 # Add Zfunctions
 fpath+=~/.zfunc
 
-{{ "{{" }}- if eq .chezmoi.hostname "{{ .chezmoi.hostname }}" {{ "}}" }}
+{{- if ne .chezmoi.hostname "bcd0745fb87b" }}
 # Mac Only Stuff
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-{{ "{{" }}- end {{ "}}" }}
+{{- end }}
 
-{{ "{{" }}- if eq .chezmoi.hostname "dev-dsk-{{ .chezmoi.username }}-2b-8d3a360b" {{ "}}" }}
+{{- if ne .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
 # DevDesktop Only Stuff
-{{ "{{" }}- end {{ "}}" }}
+{{- end }}
 
 export PATH="/usr/local/bin:$PATH"
 
