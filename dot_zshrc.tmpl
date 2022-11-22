@@ -1,15 +1,8 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="awesomepanda"
 ZSH_THEME=""
-# eval `dircolors $HOME/.dir_colors/dircolors`
 
 plugins=(git sudo docker zsh-syntax-highlighting)
 
@@ -17,22 +10,13 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR="vim"
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
 export LANG=en_US.UTF-8
 
 # Include the alias file
 source $HOME/.zsh_alias
 
-# Setup Pure
-# fpath+=$HOME/.zsh/pure
-# autoload -U promptinit; promptinit
-# prompt pure
-
 # Starship prompt
 eval "$(starship init zsh)"
-
 
 # Add random toolpaths
 export PATH=/apollo/env/envImprovement/bin:$PATH
