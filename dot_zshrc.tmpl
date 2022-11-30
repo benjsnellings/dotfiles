@@ -39,7 +39,6 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 {{- if eq .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
 # DevDesktop Only Stuff
-export PATH=\$PATH:$(realpath ../../env/sigv4curl-1.0/runtime/bin)
 {{- end }}
 
 export PATH="/usr/local/bin:$PATH"
