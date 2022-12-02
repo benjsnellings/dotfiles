@@ -17,9 +17,6 @@ set ignorecase
 set smartcase
 set hlsearch
 
-" Set colors for the themes
-set termguicolors
-
 " Naviation ----------------------------------------------------------------------------
 set backspace=indent,eol,start  " more powerful backspacing
 
