@@ -55,7 +55,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 
 call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
-  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 " plugin shortcuts -------------------------------------------------------------------------
