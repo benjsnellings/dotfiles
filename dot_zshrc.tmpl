@@ -13,7 +13,11 @@ export EDITOR="vim"
 export LANG=en_US.UTF-8
 
 # Include the alias file
-for config (~/.zsh/*.zsh) source $config
+if [[ -d "$ZDOTDIR" ]]; then
+  for file in "$ZDOTDIR"/*.zsh; do
+    source "$file"
+  done
+fi
 # source $HOME/.zsh_alias
 
 # source $HOME/.zsh_functions
