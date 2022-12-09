@@ -1,0 +1,281 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pre",
+				"preparation_time_in_minutes"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"binary",
+				"Plist Binary: Toggle XML & Binary"
+			],
+			[
+				"preferences",
+				"Preferences: Key Bindings"
+			],
+			[
+				"Plist",
+				"Plist Binary: Toggle XML & Binary"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"bash",
+				"Set Syntax: Bash"
+			],
+			[
+				"vin",
+				"NeoVintageous: Open RC File"
+			],
+			[
+				"prefere",
+				"Preferences: Settings"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"prefe",
+				"Preferences: Settings"
+			],
+			[
+				"search",
+				"File: Search Files"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"neo",
+				"NeoVintageous: Open RC File"
+			],
+			[
+				"sync settings",
+				"Sync Settings: Download"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/snellin/.local/share/chezmoi"
+	],
+	"file_history":
+	[
+		"/Library/Managed Preferences/snellin/org.mozilla.firefox.plist",
+		"/Library/Managed Preferences/org.mozilla.firefox.plist",
+		"/Volumes/workplace/Exercism/rust/sublist/README.md",
+		"/Volumes/workplace/Exercism/rust/sublist/src/lib.rs",
+		"/Volumes/workplace/Exercism/rust/semi-structured-logs/README.md",
+		"/Volumes/workplace/Exercism/rust/semi-structured-logs/tests/semi-structured-logs.rs",
+		"/Volumes/workplace/Exercism/rust/semi-structured-logs/src/lib.rs",
+		"/Volumes/workplace/Exercism/rust/lucians-luscious-lasagna/README.md",
+		"/Volumes/workplace/Exercism/rust/lucians-luscious-lasagna/tests/lucians-luscious-lasagna.rs",
+		"/Volumes/workplace/Exercism/rust/lucians-luscious-lasagna/src/lib.rs",
+		"/Library/Managed Preferences/snellin/complete.plist",
+		"/Volumes/workplace/Testing/SmithyRsExample/src/SmithyRsServerSdkPokemonService/src/plugin.rs",
+		"/Volumes/workplace/Testing/SmithyRsExample/src/SmithyRsServerSdkPokemonService/src/lib.rs",
+		"/Volumes/workplace/Testing/SmithyRsExample/src/SmithyRsServerSdkPokemonService/src/main.rs",
+		"/Users/snellin/Library/Application Support/Sublime Text/Packages/User/.neovintageousrc",
+		"/Volumes/workplace/Varia/Chozo/src/ChozoServiceCDK/README.md",
+		"/Users/snellin/Library/Application Support/Sublime Text/Packages/User/SyncSettings.sublime-settings",
+		"/Volumes/workplace/put_tools_call.sh",
+		"/Volumes/workplace/Varia/Publisher/src/VariaSafetyPublisherServiceCDK/package.json"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 112.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Chezmoi.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"test_elas",
+				"src/ChozoServiceCDK/test/test_elasticsearch.test.ts"
+			],
+			[
+				"configuration",
+				"src/ChozoServiceCDK/src/utils/configuration.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/.local/share/chezmoi/Chezmoi.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
