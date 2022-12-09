@@ -1,11 +1,9 @@
-
 # Include zsh source files
 if [[ -d ~/.zsh/ ]]; then
   for file in ~/.zsh/*; do
     source "$file"
   done
 fi
-
 
 
 {{- if eq .chezmoi.hostname "bcd0745fb87b" }}
@@ -18,17 +16,13 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 {{- if eq .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
 # DevDesktop Only Stuff
+
+# TODO: Setup kinit amd mwinit renewal
+# https://w.amazon.com/bin/view/Mshrarm/Kinit_And_Mwinit_renewal_script
 {{- end }}
-
-export PATH="/usr/local/bin:$PATH"
-
-# Fuzzy Finder Tool
-# TODO: Setup command to install if not already 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Setup local-only branch autocompletion
 GIT_COMPLETION_CHECKOUT_NO_GUESS=1
-
 
 echo "TODO: Checking for dotfile updates..."
 
