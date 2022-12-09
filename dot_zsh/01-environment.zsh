@@ -12,5 +12,5 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 export LANG=en_US.UTF-8
 
-
-# TODO: test
+# Starship prompt
+eval "$(starship init zsh)"
