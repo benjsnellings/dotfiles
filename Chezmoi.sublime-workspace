@@ -24,6 +24,10 @@
 		"selected_items":
 		[
 			[
+				"bash",
+				"Set Syntax: Bash"
+			],
+			[
 				"json",
 				"JSON Reindent: reindent file or selection"
 			],
@@ -54,10 +58,6 @@
 			[
 				"javasc",
 				"Set Syntax: JavaScript"
-			],
-			[
-				"bash",
-				"Set Syntax: Bash"
 			],
 			[
 				"vin",
@@ -120,10 +120,30 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/snellin/.local/share/chezmoi"
+		"/Users/snellin/.local/share/chezmoi",
+		"/Users/snellin/.local/share/chezmoi/dot_zfunc",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh",
+		"/Users/snellin/.local/share/chezmoi/private_dot_config",
+		"/Users/snellin/.local/share/chezmoi/private_dot_config/chezmoi",
+		"/Users/snellin/.local/share/chezmoi/private_dot_sublime"
 	],
 	"file_history":
 	[
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/zsh_functions.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zshrc.tmpl",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/50-fzf.sh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/01-environment.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/03-amazon.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/04-paths.zsh",
+		"/Users/snellin/.zsh/50-fzf.sh",
+		"/Users/snellin/.local/share/chezmoi/dot_zshrc.orig",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/zsh_alias.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/empty_01-environment.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/empty_03-amazon.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/zsh_alias",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/empty_zsh_functions.zsh",
+		"/Users/snellin/.zsh/zsh_functions.zsh",
+		"/Users/snellin/.local/share/chezmoi/dot_zsh/empty_zsh_functions",
 		"/Library/Managed Preferences/snellin/org.mozilla.firefox.plist",
 		"/Library/Managed Preferences/org.mozilla.firefox.plist",
 		"/Volumes/workplace/Exercism/rust/sublist/README.md",
@@ -268,6 +288,9 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"_vintageous_last_char_search": "k",
+		"_vintageous_last_char_search_command": "vi_f",
+		"_vintageous_reset_during_init": true
 	},
 	"show_minimap": false,
 	"show_open_files": false,
