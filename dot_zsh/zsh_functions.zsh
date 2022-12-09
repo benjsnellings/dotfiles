@@ -1,3 +1,17 @@
+#
+# Run ssh agent when it does not exist
+function run_ssh_agent() {
+ if ps -p $SSH_AGENT_PID > /dev/null
+ then
+   echo "ssh-agent is already running"
+   # Do something knowing the pid exists, i.e. the process with $PID is running
+ else
+   eval `ssh-agent -s`
+ fi
+}
+
+#
+# mwinit_validate
 function mwinit_validate() {
   echo "checking for Midway authentication"
   SSH_CERT=~/.ssh/id_rsa-cert.pub
