@@ -21,7 +21,7 @@ function kinit_renew() {
 }
 
 function run_ssh_agent() {
- if ps -p $SSH_AGENT_PID > /dev/null
+ if ps -p $SSH_AGENT_PID > /dev/null 2>&1
  then
    echo "ssh-agent is already running"
    # Do something knowing the pid exists, i.e. the process with $PID is running
