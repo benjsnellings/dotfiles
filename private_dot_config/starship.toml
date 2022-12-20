@@ -5,5 +5,5 @@ format = """$all"""
 command_timeout = 500
 
 [git_status]
-disabled = true
+disabled = false
 
