@@ -278,6 +278,35 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Change Hyper+u to underscore",
+                                "type": "basic",
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "left_control",
+                                            "left_alt",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "u"
+                                },
+                                "to": [
+                                    {
+                                        "repeat": true,
+                                        "key_code": "hyphen",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "halt": false
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
