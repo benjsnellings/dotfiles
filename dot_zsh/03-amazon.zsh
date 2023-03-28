@@ -17,7 +17,7 @@ function amzn_auth() {
 
 
 function kinit_renew() { 
-    echo "renewing Kinit" ; kinit -f -l 10h -r 7d; 
+    echo "renewing Kinit" ; kinit -f -l 7d -r 30d; 
 }
 
 function run_ssh_agent() {
