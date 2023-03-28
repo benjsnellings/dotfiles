@@ -284,6 +284,31 @@
                     {
                         "manipulators": [
                             {
+                                "description": "Change right option to MEH",
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_option",
+                                        "modifiers": [
+                                            "right_shift",
+                                            "right_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
                                 "description": "Change Hyper+u to underscore",
                                 "from": {
                                     "key_code": "u",
