@@ -30,6 +30,10 @@ inoremap jk <esc>
 xnoremap <leader>p "_dP
 noremap <C-p> viw"_dP
 
+
+" Remove search highlighting on escape
+nnoremap <esc> :noh<return><esc>
+
 " set clipboard=unnamedplus
 
 
