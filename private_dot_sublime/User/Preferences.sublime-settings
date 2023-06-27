@@ -16,7 +16,7 @@
 		"<C-P>": false,
 		"<C-c>": false,
 		"<C-f>": false,
-		"<C-n>": false,
+		"<C-n>": true,
 		"<C-v>": false,
 		"<C-x>": false,
 	},
