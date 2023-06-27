@@ -37,8 +37,8 @@ function mwinit_validate() {
     echo "Midway expired. Please re-authenticate."
     if mwinit -o --aea ; then
       run_ssh_agent
-      ssh-add -D ~/.ssh/*_rsa
-      ssh-add ~/.ssh/*_rsa
+      ssh-add -D ~/.ssh/*_ecdsa
+      ssh-add ~/.ssh/*_ecdsa
     else
       echo "Failed to authenticate."
     fi
