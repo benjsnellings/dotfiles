@@ -32,8 +32,8 @@ function run_ssh_agent() {
 
 function mwinit_validate() {
   echo "checking for Midway authentication"
-  SSH_CERT=~/.ssh/id_rsa-cert.pub
-  if (! test -f "$SSH_CERT") || (test "`find ~/.ssh/id_rsa-cert.pub -mmin +1220`"); then
+  SSH_CERT=~/.ssh/id_ecdsa-cert.pub
+  if (! test -f "$SSH_CERT") || (test "`find ~/.ssh/id_ecdsa-cert.pub -mmin +1220`"); then
     echo "Midway expired. Please re-authenticate."
     if mwinit -o --aea ; then
       run_ssh_agent
