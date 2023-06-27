@@ -30,3 +30,7 @@
 	clean = git-lfs clean -- %f
 [feature]
 	manyFiles = true
+[http]
+	postBuffer = 2097152000
+[https]
+	postBuffer = 2097152000
