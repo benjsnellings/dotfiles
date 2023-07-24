@@ -20,6 +20,7 @@
     st = status
     squash = "! ~/tools/squash.sh"
     co = checkout
+        coa = git add -A && git commit
 	checkoutr = checkout
 [pull]
 	ff = only
