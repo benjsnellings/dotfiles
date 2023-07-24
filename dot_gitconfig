@@ -1,40 +1,39 @@
 [user]
-	email = snellin@amazon.com
-	name = Ben Snellings
+    email = snellin@amazon.com
+    name = Ben Snellings
     signingkey = 778D52A9B3CFC553
 [color]
-	ui = auto
+    ui = auto
 [core]
-	pager = less -FMRiX
-	excludesfile = ~/.gitignore
-	editor = vim
-	preloadindex = true
-	fsmonitor = true
-	untrackedcache = true
+    pager = less -FMRiX
+    excludesfile = ~/.gitignore
+    editor = vim
+    preloadindex = true
+    fsmonitor = true
+    untrackedcache = true
 [push]
-	default = simple
-	default = current
-	autoSetupRemote = true
+    default = simple
+    default = current
+    autoSetupRemote = true
 [alias]
-	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
     st = status
     squash = "! ~/tools/squash.sh"
     co = checkout
-        coa = git add -A && git commit
-	checkoutr = checkout
+    checkoutr = checkout
 [pull]
-	ff = only
+    ff = only
 [gc]
-	auto = 256
+    auto = 256
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
 [feature]
-	manyFiles = true
+    manyFiles = true
 [http]
-	postBuffer = 2097152000
+    postBuffer = 2097152000
 [https]
 	postBuffer = 2097152000
 [credential "https://github.com"]
