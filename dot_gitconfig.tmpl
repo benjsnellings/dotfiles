@@ -21,7 +21,7 @@
     squash = "! ~/tools/squash.sh"
     co = checkout
     checkoutr = checkout
-	ca = "!git add -A && git commit"
+    ca = "!git add -A && git commit"
 [pull]
     ff = only
 [gc]
@@ -36,14 +36,15 @@
 [http]
     postBuffer = 2097152000
 [https]
-	postBuffer = 2097152000
+    postBuffer = 2097152000
 {{- if eq .chezmoi.hostname "bcd0745fb87b" }}
 [credential "https://github.com"]
-	helper = 
+    helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+    helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
+{{- end }}
 {{- if eq .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
 [credential "https://github.com"]
     helper =
