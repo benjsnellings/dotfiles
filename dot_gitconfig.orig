@@ -37,9 +37,18 @@
     postBuffer = 2097152000
 [https]
 	postBuffer = 2097152000
+{{- if eq .chezmoi.hostname "bcd0745fb87b" }}
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/opt/homebrew/bin/gh auth git-credential
+{{- if eq .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
+[credential "https://github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+ [credential "https://gist.github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+{{- end }}
