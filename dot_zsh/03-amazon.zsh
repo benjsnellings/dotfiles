@@ -8,13 +8,20 @@ export PATH="/usr/local/bin:$PATH"
 function amzn_auth() {
     # TODO check for unlock status
 
+    # Unlock the Bitwarden VAULT
+    bwu
+
+    # Get the Amazon Passwords
     AMZN_PASS="$(bw get password "Amazon Login")"
     AMZN_PIN="$(bw get item "8008c105-dcf8-493d-aa76-af3801208364" | jq -r '.fields[] | select(.name == "Pin") | .value')"
+    echo $AMZN_PASS 
+    echo $AMZN_PIN
+
 
     #TODO feed input to kinit and mwvalidate
+    # Probably not going to be that easy
 
 }
-
 
 function kinit_renew() { 
     echo "renewing Kinit" ; kinit -f -l 7d -r 30d; 
