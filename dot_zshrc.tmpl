@@ -5,8 +5,7 @@ if [[ -d ~/.zsh/ ]]; then
   done
 fi
 
-
-{{- if eq .chezmoi.hostname "bcd0745fb87b" }}
+{{ if eq .chezmoi.os "darwin" }}
 # Mac Only Stuff
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
@@ -15,7 +14,7 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="/Users/snellin/Library/Python/3.9/bin:$PATH"
 {{- end }}
 
-{{- if eq .chezmoi.hostname "dev-dsk-snellin-2b-8d3a360b" }}
+{{ if eq .chezmoi.os "linux" }}
 # DevDesktop Only Stuff
 
 # TODO: Setup kinit amd mwinit renewal
