@@ -8,3 +8,11 @@ noremap <C-p> viw"_dP
 set clipboard+=unnamed
 
 set noerrorbells
+
+
+# Intellij Plugins
+# https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins
+Plug 'vim-surround'
+
+
+
