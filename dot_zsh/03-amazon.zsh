@@ -62,6 +62,11 @@ function amzn_renew() {
     mwinit_validate
 }
 
+alias ada_output=$(ada credentials print --profile cams-alpha --role Admin) && \
+           export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) && \
+              export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) && \
+                 export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
+
 
 # Request weekly expiration with 30 day renewal, although the
 # server only gives out 10 hour expiration with 7 day renewal.
