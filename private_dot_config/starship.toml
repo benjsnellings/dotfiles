@@ -7,3 +7,7 @@ command_timeout = 500
 [git_status]
 disabled = false
 
+
+[kotlin]
+disabled = true
+
