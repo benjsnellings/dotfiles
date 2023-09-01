@@ -22,6 +22,7 @@
     co = checkout
     checkoutr = checkout
     ca = "!git add -A && git commit"
+    edit = !$EDITOR $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}' )
 [pull]
     ff = only
 [gc]
