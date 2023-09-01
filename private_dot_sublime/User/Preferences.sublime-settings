@@ -26,5 +26,6 @@
 
 	// Afterglow Settings
 	"tabs_small": true,
-	"neovintageous_build_version": 12700,
+	"neovintageous_build_version": 13200,
+	"vintageous_use_super_keys": false,
 }
