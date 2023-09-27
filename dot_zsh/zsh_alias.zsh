@@ -25,7 +25,7 @@ alias bbra='bbr apollo-pkg'
 alias sam='brazil-build-tool-exec sam $1'
 alias adaAdmin='function _admin(){ ada credentials update --account=$1 --provider conduit --role=IibsAdminAccess-DO-NOT-DELETE };_admin'
 
-alias mwinit='mwinit -o'
+alias mwinit='mwinit -o --aea'
 alias auth='kinit && mwinit'
 alias isengard='isengardcli'
 
