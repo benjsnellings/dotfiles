@@ -62,6 +62,13 @@ function amzn_renew() {
     mwinit_validate
 }
 
+function ada_personal() {
+   ada_output=$(ada credentials print --account 232890881194 --role Admin --provider isengard) 
+   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
+   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
+   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
+}
+
 function ada_cams_alpha() {
    ada_output=$(ada credentials print --account 877640243017 --role Admin --provider isengard) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
