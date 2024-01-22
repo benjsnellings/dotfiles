@@ -83,6 +83,13 @@ function ada_cams_prod() {
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
 }
 
+function ada_calculator() {
+   ada_output=$(ada credentials print --account 381492294813 --role Admin --provider isengard) 
+   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
+   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
+   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
+}
+
 # Request weekly expiration with 30 day renewal, although the
 # server only gives out 10 hour expiration with 7 day renewal.
 # echo "checking for Kinit status"
