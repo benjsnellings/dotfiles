@@ -78,11 +78,14 @@ function ada_calculator() {
 
 function ada_snellin_ac_demo() {
    ada_output=$(ada credentials print --account 471112920131 --role IibsAdminAccess-DO-NOT-DELETE --provider conduit) 
+}
+
+function ada_calculator_alpha() {
+   ada_output=$(ada credentials print --account 913800417489 --role Admin --provider isengard) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
    export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
 }
-
 
 # Request weekly expiration with 30 day renewal, although the
 # server only gives out 10 hour expiration with 7 day renewal.
