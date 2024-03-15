@@ -69,26 +69,20 @@ function ada_personal() {
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
 }
 
-function ada_cams_alpha() {
-   ada_output=$(ada credentials print --account 877640243017 --role Admin --provider isengard) 
-   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
-   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
-   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
-}
-
-function ada_cams_prod() {
-   ada_output=$(ada credentials print --account 268982207704 --role Admin --provider isengard) 
-   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
-   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
-   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
-}
-
 function ada_calculator() {
    ada_output=$(ada credentials print --account 381492294813 --role Admin --provider isengard) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
    export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
 }
+
+function ada_snellin_demo() {
+   ada_output=$(ada credentials print --account 471112920131 --role IibsAdminAccess-DO-NOT-DELETE --provider conduit) 
+   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
+   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
+   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
+}
+
 
 # Request weekly expiration with 30 day renewal, although the
 # server only gives out 10 hour expiration with 7 day renewal.
