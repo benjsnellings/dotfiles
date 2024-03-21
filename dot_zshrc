@@ -5,21 +5,15 @@ if [[ -d ~/.zsh/ ]]; then
   done
 fi
 
-{{ if eq .chezmoi.os "darwin" }}
+
 # Mac Only Stuff
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.0.2t/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="/Users/snellin/Library/Python/3.9/bin:$PATH"
-{{- end }}
 
-{{ if eq .chezmoi.os "linux" }}
-# DevDesktop Only Stuff
 
-# TODO: Setup kinit amd mwinit renewal
-# https://w.amazon.com/bin/view/Mshrarm/Kinit_And_Mwinit_renewal_script
-{{- end }}
 
 # Setup local-only branch autocompletion
 GIT_COMPLETION_CHECKOUT_NO_GUESS=1
@@ -32,9 +26,4 @@ echo "TODO: Checking for dotfile updates..."
 
 # Add mise for some dependency management
 eval "$(~/.local/bin/mise activate zsh)"
-
-# Add NVM stuff for node management
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
