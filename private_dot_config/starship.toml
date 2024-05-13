@@ -11,3 +11,5 @@ disabled = false
 [kotlin]
 disabled = true
 
+[java]
+disabled = true
