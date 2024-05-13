@@ -12,4 +12,4 @@ disabled = false
 disabled = true
 
 [java]
-disabled = false
+disabled = true
