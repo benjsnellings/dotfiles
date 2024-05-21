@@ -62,6 +62,22 @@ function amzn_renew() {
     mwinit_validate
 }
 
+function multi-ssh() {
+  typeset -a ports=(${@})
+
+  if (( ${#ports} == 0 )); then
+    ports=(8080 1443 9443 8085 5005 3000)
+  fi
+
+  typeset -a options=()
+
+  for port in ${ports}; do
+    options+=(-L ${port}:localhost:${port})
+  done
+
+  print ssh ${=options} AxeDesktop
+}
+
 function ada_personal() {
    ada_output=$(ada credentials print --account 232890881194 --role Admin --provider isengard) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
