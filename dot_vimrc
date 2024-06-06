@@ -17,6 +17,12 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Auto Commands ----------------------------------------------------------------------------
+
+" Auto strip whitespaces
+autocmd FileType c,cpp,java,php,ruby,eruby,python,rust,ant,xml autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+
 " Naviation ----------------------------------------------------------------------------
 set backspace=indent,eol,start  " more powerful backspacing
 
