@@ -62,6 +62,11 @@ function amzn_renew() {
     mwinit_validate
 }
 
+function unison-axe() {
+    multi-ssh 
+    unison -ui text cloud_desktop_axe
+}
+
 function multi-ssh() {
   typeset -a ports=(${@})
 
@@ -75,7 +80,7 @@ function multi-ssh() {
     options+=(-L ${port}:localhost:${port})
   done
 
-  print ssh ${=options} AxeDesktop
+  ssh ${=options} AxeDesktop
 }
 
 function ada_personal() {
