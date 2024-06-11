@@ -62,10 +62,14 @@ function amzn_renew() {
     mwinit_validate
 }
 
-function unison-axe() {
+function axe-unison() {
     multi-ssh 
     unison -ui text cloud_desktop_axe
 }
+
+function dev-unison() {
+    multi-ssh 
+    unison -ui text cloud_desktop_axe
 
 function multi-ssh() {
   typeset -a ports=(${@})
