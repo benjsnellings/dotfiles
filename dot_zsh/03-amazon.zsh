@@ -77,6 +77,7 @@ function multi-ssh() {
   typeset -a options=()
 
   for port in ${ports}; do
+    kill $(lsof -t -i:${port}) 2>/dev/null 
     options+=(-N -L ${port}:localhost:${port})
   done
 
