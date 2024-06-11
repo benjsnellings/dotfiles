@@ -64,7 +64,7 @@ function amzn_renew() {
 
 function axe-unison() {
     multi-ssh 
-    unison -ui text cloud_desktop_axe
+    unison -ui text cloud_desktop_sync
 }
 
 function dev-unison() {
