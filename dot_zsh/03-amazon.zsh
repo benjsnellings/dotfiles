@@ -77,10 +77,10 @@ function multi-ssh() {
   typeset -a options=()
 
   for port in ${ports}; do
-    options+=(-L ${port}:localhost:${port})
+    options+=(-N -L ${port}:localhost:${port})
   done
 
-  ssh ${=options} AxeDesktop
+  ssh ${=options} AxeDesktop &
 }
 
 function ada_personal() {
