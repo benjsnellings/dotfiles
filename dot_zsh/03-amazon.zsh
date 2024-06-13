@@ -70,6 +70,7 @@ function axe-unison() {
 function dev-unison() {
     multi-ssh 
     unison -ui text cloud_desktop_axe
+}
 
 function multi-ssh() {
   typeset -a ports=(${@})
