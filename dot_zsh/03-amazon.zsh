@@ -63,12 +63,38 @@ function amzn_renew() {
 }
 
 function dev-unison() {
-    multi-ssh 
+    typeset -a ports=(${@})
+
+    if (( ${#ports} == 0 )); then
+      ports=(8080 1443 9443 8085 5005 3000)
+    fi
+
+    typeset -a options=()
+
+    for port in ${ports}; do
+      kill $(lsof -t -i:${port}) 2>/dev/null 
+      options+=(-N -L ${port}:localhost:${port})
+    done
+
+    ssh ${=options} DevDesktop &
     unison -ui text cloud_desktop_sync
 }
 
 function axe-unison() {
-    multi-ssh 
+    typeset -a ports=(${@})
+
+    if (( ${#ports} == 0 )); then
+      ports=(8080 1443 9443 8085 5005 3000)
+    fi
+
+    typeset -a options=()
+
+    for port in ${ports}; do
+      kill $(lsof -t -i:${port}) 2>/dev/null 
+      options+=(-N -L ${port}:localhost:${port})
+    done
+
+    ssh ${=options} AxeDesktop &
     unison -ui text cloud_desktop_axe
 }
 
