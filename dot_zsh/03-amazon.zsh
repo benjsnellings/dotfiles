@@ -2,6 +2,7 @@
 export PATH=/apollo/env/envImprovement/bin:$PATH
 export PATH="$HOME/.toolbox/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
 
 
 
