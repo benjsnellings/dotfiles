@@ -6,6 +6,15 @@ export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
 
 
 
+
+# Request weekly expiration with 30 day renewal, although the
+# server only gives out 10 hour expiration with 7 day renewal.
+# echo "checking for Kinit status"
+# klist -a | grep -i renew
+# # run kinit_renew when logging in if no kerberos ticket
+# if ! klist -s; then kinit_renew;else echo "Kinit authenticated" ; fi
+# mwinit_validate
+
 function amzn_auth() {
     # TODO check for unlock status
 
@@ -63,6 +72,11 @@ function amzn_renew() {
     mwinit_validate
 }
 
+
+####################################
+#   Unison Start Scripts
+####################################
+
 function dev-unison() {
     typeset -a ports=(${@})
 
@@ -116,6 +130,13 @@ function multi-ssh() {
   ssh ${=options} AxeDesktop &
 }
 
+
+
+####################################
+#    ADA account quick logins
+####################################
+
+
 function ada_personal() {
    ada_output=$(ada credentials print --account 232890881194 --role Admin --provider isengard) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
@@ -141,10 +162,20 @@ function ada_calculator_alpha() {
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
 }
 
-# Request weekly expiration with 30 day renewal, although the
-# server only gives out 10 hour expiration with 7 day renewal.
-# echo "checking for Kinit status"
-# klist -a | grep -i renew
-# # run kinit_renew when logging in if no kerberos ticket
-# if ! klist -s; then kinit_renew;else echo "Kinit authenticated" ; fi
-# mwinit_validate
+
+
+####################################
+#    Duplicator Logic
+####################################
+# https://www.reddit.com/r/git/comments/xeys8g/how_to_ignore_changes_to_a_file_without_deleting/
+function dup_peru_setup() {
+
+  directory_name=$(basename "$PWD")
+  
+
+  # sed -i 's/{{.*}}/STRING_TO_REPLACE_IT/g' filename
+  # git update-index --assume-unchanged settings.gradle.kts
+
+
+}
+

@@ -7,3 +7,4 @@
 
 [git]
     autoCommit = true
+    autoPush = true
