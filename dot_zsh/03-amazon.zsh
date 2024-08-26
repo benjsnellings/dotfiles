@@ -169,13 +169,12 @@ function ada_calculator_alpha() {
 ####################################
 # https://www.reddit.com/r/git/comments/xeys8g/how_to_ignore_changes_to_a_file_without_deleting/
 function dup_peru_setup() {
-
+  git update-index --assume-unchanged settings.gradle.kts
   directory_name=$(basename "$PWD")
-  
+  sed -i '' "s/{{.*}}/${directory_name}/g" settings.gradle.kts 
+}
 
-  # sed -i 's/{{.*}}/STRING_TO_REPLACE_IT/g' filename
-  # git update-index --assume-unchanged settings.gradle.kts
-
-
+function dup_peru_undo() {
+  git update-index --no-assume-unchanged settings.gradle.kts
 }
 
