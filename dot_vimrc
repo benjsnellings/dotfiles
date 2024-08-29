@@ -7,12 +7,16 @@ set showcmd
 set cursorline
 syntax on
 
+" Visual Settings ----------------------------------------------------------------------------"
+
+set guicursor=n-v-c-i:ver80
+
 " Set Insert mode visibility
 
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
-" search settings
+" search settings 
 set ignorecase
 set smartcase
 set hlsearch
