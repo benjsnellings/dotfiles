@@ -9,8 +9,6 @@ syntax on
 
 " Visual Settings ----------------------------------------------------------------------------"
 
-set guicursor=n-v-c-i:ver80
-
 " Set Insert mode visibility
 
 autocmd InsertEnter * set cul
@@ -37,9 +35,24 @@ nnoremap L $
 let mapleader = ","
 
 inoremap jk <esc>
-xnoremap <leader>p "_dP
-noremap <C-p> viw"_dP
 
+"paste and keep context
+xnoremap <leader>p "_dP
+noremap <C-p> viw"_dP 
+
+"Smart way to move between windows
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+
+" Quick Set syntax for string replace
+" nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+vnoremap <Leader>s "hy:%s/<C-r>h//g<left><left>
 
 " Remove search highlighting on escape
 nnoremap <esc> :noh<return><esc>
@@ -70,7 +83,22 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
   Plug 'tpope/vim-surround'
+  Plug 'junegunn/vim-peekaboo'
 call plug#end()
 
 " plugin shortcuts -------------------------------------------------------------------------
+
+
+" NerdTree
 map <F2> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+" END
+
+
