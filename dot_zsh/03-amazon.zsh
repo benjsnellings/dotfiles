@@ -159,7 +159,7 @@ function ada_ecs_test() {
 }
 
 function ada_auth_demo() {
-   ada_output=$(ada credentials print --account 682033509563 IibsAdminAccess-DO-NOT-DELETE --provider conduit) 
+   ada_output=$(ada credentials print --account 682033509563 --role IibsAdminAccess-DO-NOT-DELETE --provider conduit) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
    export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
