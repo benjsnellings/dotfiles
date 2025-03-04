@@ -6,6 +6,8 @@ set number
 set showcmd
 set cursorline
 syntax on
+" Fix for Typescript regex
+set re=0
 
 " Visual Settings ----------------------------------------------------------------------------"
 
