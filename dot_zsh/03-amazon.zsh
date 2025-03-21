@@ -3,11 +3,12 @@ export PATH=/apollo/env/envImprovement/bin:$PATH
 export PATH="$HOME/.toolbox/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
+export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
+export DOCKER_CONFIG=$HOME/.finch
 
 
 
-
-# Request weekly expiration with 30 day renewal, although the
+ #Request weekly expiration with 30 day renewal, although the
 # server only gives out 10 hour expiration with 7 day renewal.
 # echo "checking for Kinit status"
 # klist -a | grep -i renew
