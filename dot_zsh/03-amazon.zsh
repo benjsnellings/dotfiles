@@ -138,13 +138,24 @@ function multi-ssh() {
 ####################################
 
 function ada_conduit() {
-
    if [ -z "$1" ]; then
 	echo "Please provide a account."
   	return 1
    fi
 
    ada_output=$(ada credentials print --account $1 --role IibsAdminAccess-DO-NOT-DELETE --provider conduit) 
+   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
+   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
+   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
+}
+
+function ada_isengard() {
+   if [ -z "$1" ]; then
+	echo "Please provide a account."
+  	return 1
+   fi
+
+   ada_output=$(ada credentials print --account $1 --role Admin --provider isengard) 
    export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
    export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
    export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
