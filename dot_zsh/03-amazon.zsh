@@ -137,6 +137,18 @@ function multi-ssh() {
 #    ADA account quick logins
 ####################################
 
+function ada_conduit() {
+
+   if [ -z "$1" ]; then
+	echo "Please provide a account."
+  	return 1
+   fi
+
+   ada_output=$(ada credentials print --account $1 --role Admin --provider conduit) 
+   export AWS_ACCESS_KEY_ID=$(echo ${ada_output} | jq -r .AccessKeyId) 
+   export AWS_SECRET_ACCESS_KEY=$(echo ${ada_output} | jq -r .SecretAccessKey) 
+   export AWS_SESSION_TOKEN=$(echo ${ada_output} | jq -r .SessionToken)
+}
 
 function ada_personal() {
    ada_output=$(ada credentials print --account 232890881194 --role Admin --provider isengard) 
