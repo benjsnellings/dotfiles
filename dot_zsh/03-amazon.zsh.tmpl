@@ -5,11 +5,9 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
 
 {{ if eq .chezmoi.os "darwin" }}
-    export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
-    export DOCKER_CONFIG=$HOME/.finch
+export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
+export DOCKER_CONFIG=$HOME/.finch
 {{ end }}
-
-
 
  #Request weekly expiration with 30 day renewal, although the
 # server only gives out 10 hour expiration with 7 day renewal.
@@ -219,18 +217,4 @@ function ada_calculator_alpha() {
 }
 
 
-
-####################################
-#    Duplicator Logic
-####################################
-# https://www.reddit.com/r/git/comments/xeys8g/how_to_ignore_changes_to_a_file_without_deleting/
-function dup_peru_setup() {
-  git update-index --assume-unchanged settings.gradle.kts
-  directory_name=$(basename "$PWD")
-  sed -i '' "s/{{.*}}/${directory_name}/g" settings.gradle.kts 
-}
-
-function dup_peru_undo() {
-  git update-index --no-assume-unchanged settings.gradle.kts
-}
 
