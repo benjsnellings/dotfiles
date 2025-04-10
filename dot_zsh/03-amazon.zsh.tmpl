@@ -4,7 +4,7 @@ export PATH="$HOME/.toolbox/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
 
-{{ if eq .chezmoi.os "osx" }}
+{{ if eq .chezmoi.os "darwin" }}
     export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
     export DOCKER_CONFIG=$HOME/.finch
 {{- end }}
