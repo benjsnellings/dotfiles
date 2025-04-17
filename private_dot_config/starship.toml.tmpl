@@ -7,6 +7,14 @@ command_timeout = 500
 [git_status]
 disabled = false
 
+{{ if eq .chezmoidata.devspace "true" }}
+[hostname]
+ssh_only = false
+
+[container]
+disabled = true
+
+{{ end }}
 
 [kotlin]
 disabled = true
