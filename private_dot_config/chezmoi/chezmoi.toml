@@ -8,3 +8,6 @@
 [git]
     autoCommit = true
     autoPush = true
+
+[template]
+    options = ["missingkey=zero"]
