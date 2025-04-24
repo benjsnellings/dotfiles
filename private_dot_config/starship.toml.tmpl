@@ -10,8 +10,12 @@ disabled = false
 
 {{ if eq .devspaces "true" }}
 
+[hostname]
+ssh_only = false
 
 
+[container]
+disabled = true
 
 {{ end }}
 
