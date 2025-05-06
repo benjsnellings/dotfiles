@@ -7,6 +7,10 @@ export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
 {{ if eq .chezmoi.os "darwin" }}
 export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
 export DOCKER_CONFIG=$HOME/.finch
+
+# Start the SSH Agent if it is not already started
+[ -S "$SSH_AUTH_SOCK" ] || source <( ssh-agent -s ) && ssh-add
+
 {{ end }}
 
  #Request weekly expiration with 30 day renewal, although the
