@@ -40,6 +40,9 @@ echo "TODO: Checking for dotfile updates..."
 # Add mise for some dependency management
 eval "$(~/.local/bin/mise activate zsh)"
 
+# Start ssh-agent
+run_ssh_agent
+
 
 lazy_load_nvm() {
   unset -f node nvm
