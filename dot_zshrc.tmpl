@@ -60,3 +60,5 @@ nvm() {
   lazy_load_nvm
   node $@
 }
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
