@@ -2,3 +2,4 @@
 .DS_Store
 .unison..attach*
 .idea/
+.claude/
