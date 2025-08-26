@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Research Trump's communication style and patterns",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Create marketing agent script with Trump-style language",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Add hand emoji integration to the agent",
+    "status": "completed",
+    "priority": "medium",
+    "id": "3"
+  },
+  {
+    "content": "Test and refine the agent's output",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  }
+]

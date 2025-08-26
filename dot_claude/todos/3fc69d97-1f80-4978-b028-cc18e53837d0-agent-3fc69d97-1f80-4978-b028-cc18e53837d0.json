@@ -1,0 +1,38 @@
+[
+  {
+    "content": "Remove pipelineStages from Wave interface completely",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Remove PipelineStage import from wave-generator.ts",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Remove pipelineStages from all wave generator return statements",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Restore original dimension-pipeline.ts logic to only use blueprint stages",
+    "status": "completed",
+    "priority": "high",
+    "id": "4"
+  },
+  {
+    "content": "Remove pipelineStages from app.ts Wave objects",
+    "status": "completed",
+    "priority": "high",
+    "id": "5"
+  },
+  {
+    "content": "Build and test the reverted changes",
+    "status": "completed",
+    "priority": "medium",
+    "id": "6"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Read all promotion documents in the package",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Analyze L7 promotion criteria and role guidelines",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Review work summaries and accomplishments",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Synthesize promotion narrative",
+    "status": "in_progress",
+    "priority": "high",
+    "id": "4"
+  },
+  {
+    "content": "Create/update promotion documents as needed",
+    "status": "pending",
+    "priority": "high",
+    "id": "5"
+  }
+]

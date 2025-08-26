@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__builder-mcp__InternalSearch",
+      "mcp__builder-mcp__ReadInternalWebsites",
+      "Bash(ls:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(mkdir:*)",
+      "Bash(claude config:*)"
+    ],
+    "deny": []
+  }
+}

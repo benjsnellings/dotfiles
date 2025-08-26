@@ -1,0 +1,14 @@
+[
+  {
+    "content": "Check for and revert any unwanted changes in Snellin732025StringWarnCDK package",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Verify the wave-generator.ts changes are in the base IWaveGenerator class",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  }
+]

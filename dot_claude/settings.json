@@ -1,0 +1,69 @@
+{
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "true",
+    "ANTHROPIC_MODEL": "us.anthropic.claude-opus-4-1-20250805-v1:0",
+    "ANTHROPIC_SMALL_FAST_MODEL": "us.anthropic.claude-sonnet-4-20250514-v1:0",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "8192",
+    "ANTHROPIC_CUSTOM_HEADERS": "anthropic-beta: context-1m-2025-08-07",
+    "AWS_PROFILE": "claude-test",
+    "AWS_REGION": "us-west-2",
+    "CLAUDE_CODE_AWS_PROFILE": "claude-test",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_BUG_COMMAND": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "WebFetch(*)",
+      "WebFetch(https://**)",
+      "WebFetch(http://**)",
+      "Read(*)",
+      "ReadFile(*)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "mcp__builder-mcp__ReadInternalWebsites",
+      "mcp__builder-mcp__InternalSearch",
+      "mcp__builder-mcp__SearchAcronymCentral",
+      "mcp__builder-mcp__InternalCodeSearch",
+      "mcp__builder-mcp__WorkspaceSearch",
+      "mcp__builder-mcp__WorkspaceGitDetails",
+      "mcp__builder-mcp__MechanicDiscoverTools",
+      "mcp__builder-mcp__MechanicDescribeTool",
+      "mcp__builder-mcp__ApolloReadActions",
+      "mcp__builder-mcp__CheckFilepathForCAZ",
+      "mcp__builder-mcp__TaskeiGetTask",
+      "mcp__builder-mcp__TaskeiGetRooms",
+      "mcp__builder-mcp__TaskeiListTasks",
+      "mcp__builder-mcp__ReadRemoteTestRun",
+      "mcp__builder-mcp__GetDogmaClassification",
+      "mcp__builder-mcp__GetDogmaRecommendations",
+      "mcp__builder-mcp__TicketingReadActions",
+      "mcp__builder-mcp__OncallReadActions",
+      "mcp__builder-mcp__GetPipelinesRelevantToUser",
+      "mcp__builder-mcp__GetPipelineHealth",
+      "mcp__builder-mcp__GetPipelineDetails",
+      "mcp__builder-mcp__GetSasRisks",
+      "mcp__builder-mcp__GetSasCampaigns",
+      "mcp__builder-mcp__GKAnalyzeVersionSet"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": []
+      }
+    ]
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1756164689105
+  }
+}
