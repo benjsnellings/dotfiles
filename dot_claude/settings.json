@@ -3,8 +3,6 @@
     "CLAUDE_CODE_USE_BEDROCK": "true",
     "ANTHROPIC_MODEL": "us.anthropic.claude-opus-4-1-20250805-v1:0",
     "ANTHROPIC_SMALL_FAST_MODEL": "us.anthropic.claude-sonnet-4-20250514-v1:0",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "8192",
-    "ANTHROPIC_CUSTOM_HEADERS": "anthropic-beta: context-1m-2025-08-07",
     "AWS_PROFILE": "claude-test",
     "AWS_REGION": "us-west-2",
     "CLAUDE_CODE_AWS_PROFILE": "claude-test",
@@ -17,15 +15,11 @@
   "permissions": {
     "allow": [
       "WebFetch",
-      "WebFetch(*)",
-      "WebFetch(https://**)",
-      "WebFetch(http://**)",
+      "WebFetch(domain:*)",
       "Read(*)",
       "ReadFile(*)",
-      "Bash(ls *)",
-      "Bash(find *)",
-      "Bash(find:*)",
       "Bash(ls:*)",
+      "Bash(find:*)",
       "Bash(grep:*)",
       "mcp__builder-mcp__ReadInternalWebsites",
       "mcp__builder-mcp__InternalSearch",
@@ -56,13 +50,7 @@
     "ask": []
   },
   "model": "sonnet",
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": []
-      }
-    ]
-  },
+  "hooks": {},
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
