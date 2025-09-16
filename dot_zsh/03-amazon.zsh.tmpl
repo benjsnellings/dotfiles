@@ -3,6 +3,7 @@ export PATH=/apollo/env/envImprovement/bin:$PATH
 export PATH="$HOME/.toolbox/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
+export CLAUDE_CODE_USE_BEDROCK=1
 
 {{ if eq .chezmoi.os "darwin" }}
 export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
