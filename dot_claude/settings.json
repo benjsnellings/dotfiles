@@ -21,6 +21,9 @@
       "Bash(ls:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(brazil-build release)",
+      "Bash(pipeline diff)",
       "mcp__builder-mcp__ReadInternalWebsites",
       "mcp__builder-mcp__InternalSearch",
       "mcp__builder-mcp__SearchAcronymCentral",
@@ -49,7 +52,7 @@
     "deny": [],
     "ask": []
   },
-  "model": "sonnet",
+  "model": "opusplan",
   "hooks": {},
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
