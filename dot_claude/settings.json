@@ -13,7 +13,9 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "additionalDirectories": ["/tmp"],
+    "additionalDirectories": [
+      "/tmp"
+    ],
     "allow": [
       "WebFetch",
       "WebFetch(domain:*)",
@@ -53,19 +55,8 @@
     "deny": [],
     "ask": []
   },
-  "model": "opusplan",
-  "hooks": {
-  "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/tools/copy-claude-response"
-          }
-        ]
-      }
-    ]
-  },
+  "model": "opus",
+  "hooks": {},
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
