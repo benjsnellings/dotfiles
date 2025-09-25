@@ -54,7 +54,18 @@
     "ask": []
   },
   "model": "opusplan",
-  "hooks": {},
+  "hooks": {
+  "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/tools/copy-claude-response"
+          }
+        ]
+      }
+    ]
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
