@@ -26,7 +26,7 @@
       "Bash(grep:*)",
       "Bash(cat:*)",
       "Bash(brazil-build release)",
-      "Bash(pipeline diff)",
+      "Bash(pipeline:*)",
       "mcp__builder-mcp__ReadInternalWebsites",
       "mcp__builder-mcp__InternalSearch",
       "mcp__builder-mcp__SearchAcronymCentral",
@@ -52,7 +52,9 @@
       "mcp__builder-mcp__GetSasCampaigns",
       "mcp__builder-mcp__GKAnalyzeVersionSet"
     ],
-    "deny": [],
+    "deny": [
+      "Bash(pipeline deploy:*)"
+    ],
     "ask": []
   },
   "model": "opus",
