@@ -2,7 +2,7 @@
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "true",
     "ANTHROPIC_MODEL": "us.anthropic.claude-opus-4-1-20250805-v1:0",
-    "ANTHROPIC_SMALL_FAST_MODEL": "us.anthropic.claude-sonnet-4-20250514-v1:0",
+    "ANTHROPIC_SMALL_FAST_MODEL": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
     "AWS_PROFILE": "claude-test",
     "AWS_REGION": "us-west-2",
     "CLAUDE_CODE_AWS_PROFILE": "claude-test",
@@ -13,9 +13,6 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "additionalDirectories": [
-      "/tmp"
-    ],
     "allow": [
       "WebFetch",
       "WebFetch(domain:*)",
@@ -55,9 +52,11 @@
     "deny": [
       "Bash(pipeline deploy:*)"
     ],
-    "ask": []
+    "ask": [],
+    "additionalDirectories": [
+      "/tmp"
+    ]
   },
-  "model": "opus",
   "hooks": {},
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
