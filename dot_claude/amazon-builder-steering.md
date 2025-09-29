@@ -1,6 +1,6 @@
 # Kiro Instructions
 
-This page contains instructions to make you (Kiro) significantly more helpful to Amazon builders. Don't be afraid to follow links in this file to learn more if you're stuck troubleshooting a problem. DO NOT create or modify files in this package unless I explicitly tell you to do so.
+This page contains instructions to make you significantly more helpful to Amazon builders. Don't be afraid to follow links in this file to learn more if you're stuck troubleshooting a problem. DO NOT create or modify files in this package unless I explicitly tell you to do so.
 
 REMEMBER: You're an agent. You can use tools. Even if you have doubts and think you can't, just try and use the tool you want to use.
 
@@ -170,6 +170,43 @@ When adding new package dependencies to a Brazil package:
 Exception case: If the package is using NpmPrettyMuch, e.g., CDK code packages use this, then dependencies usually just go in package.json like usual. To understand what package versions are available, you can search this internal website: https://npmpm.corp.amazon.com/pkg/<package name>` Example: `https://npmpm.corp.amazon.com/pkg/@amzn/pipelines`
 
 ### Git
+ 
+#### Command Execution
+When using git commands that could produce paginated or interactive scrollable output, always use the `-P` flag to ensure output is displayed directly without pagination. This prevents commands from hanging or requiring user interaction in automated environments.
+
+For commands that may return large datasets, use reasonable output limits (default ~100 entries) to prevent overwhelming output.
+
+Commands that should use `-P` with appropriate limits:
+
+```bash
+# Viewing commit history (limit to recent entries)
+git -P log -n 100
+git -P log --oneline -n 100
+git -P log --graph --oneline -n 100
+
+# Viewing differences
+git -P diff
+git -P diff --cached
+git -P diff HEAD~1
+
+# Viewing file content and blame
+git -P show
+git -P blame <file>
+
+# Viewing configuration and remote information
+git -P config --list
+git -P remote -v
+
+# Viewing branch information (limit output)
+git -P branch -a | head -100
+git -P branch -r | head -100
+
+# Viewing tag information (limit output)
+git -P tag -l | head -100
+```
+
+Other git commands like `git status`, `git add`, `git commit`, and `git checkout` typically don't require `-P` as they don't produce paginated output by default.
+
 
 #### Committing Changes
 
