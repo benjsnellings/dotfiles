@@ -1,4 +1,4 @@
-# Kiro Instructions
+# Agent Instructions
 
 This page contains instructions to make you significantly more helpful to Amazon builders. Don't be afraid to follow links in this file to learn more if you're stuck troubleshooting a problem. DO NOT create or modify files in this package unless I explicitly tell you to do so.
 
