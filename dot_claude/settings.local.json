@@ -6,7 +6,8 @@
       "Bash(ls:*)",
       "WebFetch(domain:docs.anthropic.com)",
       "Bash(mkdir:*)",
-      "Bash(claude config:*)"
+      "Bash(claude config:*)",
+      "Bash(aws bedrock list-foundation-models:*)"
     ],
     "deny": []
   }
