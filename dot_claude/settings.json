@@ -58,6 +58,7 @@
     ]
   },
   "hooks": {},
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
