@@ -24,6 +24,7 @@
       "Bash(cat:*)",
       "Bash(brazil-build release)",
       "Bash(pipeline:*)",
+      "mcp__builder-mcp__Delegate",
       "mcp__builder-mcp__ReadInternalWebsites",
       "mcp__builder-mcp__InternalSearch",
       "mcp__builder-mcp__SearchAcronymCentral",
