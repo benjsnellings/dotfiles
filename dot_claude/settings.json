@@ -23,6 +23,7 @@
       "Bash(grep:*)",
       "Bash(cat:*)",
       "Bash(brazil-build release)",
+      "Bash(ebb)",
       "Bash(pipeline:*)",
       "mcp__builder-mcp__Delegate",
       "mcp__builder-mcp__ReadInternalWebsites",
@@ -51,7 +52,8 @@
       "mcp__builder-mcp__GKAnalyzeVersionSet"
     ],
     "deny": [
-      "Bash(pipeline deploy:*)"
+      "Bash(pipeline deploy:*)",
+      "Bash(git push:*)"
     ],
     "ask": [],
     "additionalDirectories": [
