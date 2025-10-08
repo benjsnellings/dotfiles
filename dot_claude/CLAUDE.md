@@ -1,2 +1,3 @@
-@amazon-builder-steering.md
+@steering/*
 @steering/snellin-steering
+@steering/amazon-builder-steering.md
