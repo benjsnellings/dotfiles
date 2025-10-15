@@ -53,7 +53,8 @@
     ],
     "deny": [
       "Bash(pipeline deploy:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ],
     "ask": [],
     "additionalDirectories": [
@@ -61,7 +62,7 @@
     ]
   },
   "hooks": {},
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
