@@ -22,6 +22,8 @@
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(cat:*)",
+      "Bash(git log:*)",
+      "Bash(git -P log:*)",
       "Bash(brazil-build release)",
       "Bash(ebb)",
       "Bash(pipeline:*)",
@@ -62,7 +64,10 @@
     ]
   },
   "hooks": {},
-  "alwaysThinkingEnabled": false,
+  "enabledPlugins": {
+    "feature-dev@claude-code-plugins": true
+  },
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
