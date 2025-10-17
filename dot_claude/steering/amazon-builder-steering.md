@@ -65,10 +65,7 @@ If you want to build all packages in the workspace together, you can do so from 
 ```
 ebb
 ```
-This command will recursively build all packages in the workspace in topological order, respecting their dependencies. You can also:
-
-- Build specific packages with `-p PackageName1 -p PackageName2`
-- The command automatically determines the correct build order based on package dependencies
+This command will recursively build all packages in the workspace in topological order, respecting their dependencies. The command automatically determines the correct build order based on package dependencies
 
 #### Troubleshooting Build Issues
 

@@ -1,6 +1,5 @@
 
 
-Use the Atlas MCP tool to lookup information on tools you do not know
 
 
 ### Working with Quip Documents
@@ -41,4 +40,4 @@ When working with Quip documents, use the appropriate MCP tool based on your int
 ```
 
 #### Rationale
-ReadInternalWebsites is more efficient for read-only operations as it's a simpler, general-purpose tool designed for retrieving content from internal websites. QuipEditor has additional overhead for edit capabilities and should only be used when modifications are actually needed. This ensures optimal performance and follows the principle of using the simplest tool that accomplishes the task.
+ReadInternalWebsites is more efficient for read-only operations as it's a simpler, general-purpose tool designed for retrieving content from internal websites. QuipEditor has additional overhead for edit capabilities and should only be used when modifications are actually needed. This ensures optimal performance and follows the principle of using the simplest tool that accomplishes the task. 
