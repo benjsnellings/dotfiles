@@ -23,9 +23,8 @@ curl -sS https://starship.rs/install.sh | sh -s -- -b ~/bin --yes
 
 source ~/.zshrc
 
-# MISE should already be installed
-# echo "Install Mise"
-# curl https://mise.run | sh
+echo "Install Mise"
+curl https://mise.run | sh
 
 echo "Install Chezmoi"
 sh -c "$(curl -fsLS get.chezmoi.io)"
@@ -49,6 +48,11 @@ EOF
 ./bin/chezmoi apply
 
 
-# echo "ReSource"
+echo "Configure Claude"
+ada profile add --account 972842349728 --profile claude-test --provider isengard --region us-west-2 --role Admin
+npm install -g @anthropic-ai/claude-code
+
+
+echo "ReSource"
 # zsh
 # source ~/.zshrc
