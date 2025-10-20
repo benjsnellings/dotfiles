@@ -23,8 +23,8 @@ curl -sS https://starship.rs/install.sh | sh -s -- -b ~/bin --yes
 
 source ~/.zshrc
 
-echo "Install Mise"
-curl https://mise.run | sh
+# echo "Install Mise"
+# curl https://mise.run | sh
 
 echo "Install Chezmoi"
 sh -c "$(curl -fsLS get.chezmoi.io)"
