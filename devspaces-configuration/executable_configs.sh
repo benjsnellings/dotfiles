@@ -23,8 +23,15 @@ curl -sS https://starship.rs/install.sh | sh -s -- -b ~/bin --yes
 
 source ~/.zshrc
 
-echo "Install Mise"
-curl https://mise.run | sh
+# echo "Install Mise"
+# curl https://mise.run | sh
+
+
+echo "Configure Claude"
+ada profile add --account 972842349728 --profile claude-test --provider isengard --region us-west-2 --role Admin
+npm install -g @anthropic-ai/claude-code
+toolbox install mcp-registry
+mcp-registry install builder-mcp
 
 echo "Install Chezmoi"
 sh -c "$(curl -fsLS get.chezmoi.io)"
@@ -46,11 +53,6 @@ touch ~/.local/share/chezmoi/.chezmoidata.json
 EOF
 
 ./bin/chezmoi apply
-
-
-echo "Configure Claude"
-ada profile add --account 972842349728 --profile claude-test --provider isengard --region us-west-2 --role Admin
-npm install -g @anthropic-ai/claude-code
 
 
 echo "ReSource"
