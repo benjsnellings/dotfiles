@@ -33,3 +33,5 @@ alias isengard='isengardcli'
 alias ebb='eda build brazil-build'
 alias ebbb='eda build brazil-build build'
 
+#### Claude Alias
+alias cld='claude --dangerously-skip-permissions'
