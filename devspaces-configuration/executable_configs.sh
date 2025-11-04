@@ -29,6 +29,7 @@ source ~/.zshrc
 
 echo "Configure Claude"
 ada profile add --account 972842349728 --profile claude-test --provider isengard --region us-west-2 --role Admin
+claude-creds --once
 # npm install -g @anthropic-ai/claude-code
 curl -fsSL https://claude.ai/install.sh | bash
 toolbox install mcp-registry
