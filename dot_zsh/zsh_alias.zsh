@@ -35,3 +35,4 @@ alias ebbb='eda build brazil-build build'
 
 #### Claude Alias
 alias cld='claude --dangerously-skip-permissions'
+alias claude-creds='ada credentials update --account=972842349728 --provider=isengard --role="Admin"'
