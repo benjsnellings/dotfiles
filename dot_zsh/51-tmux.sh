@@ -4,7 +4,7 @@
 
 # Main tmux-session function
 tmux-session() {
-    local SCRIPT_PATH="$HOME/.local/bin/tmux-session.sh"
+    local SCRIPT_PATH="$HOME/tools/tmux-session.sh"
 
     # Check if script exists
     if [[ ! -f "$SCRIPT_PATH" ]]; then
