@@ -19,7 +19,7 @@ tmux-session() {
 
 # Tmux session aliases
 alias ts='tmux-session'
-alias tsd='tmux-session .'           # Start in current directory
+alias tsd='tmux kill-session'           # Kill current session
 alias tsp='tmux-session ~/projects'  # Start in projects folder
 alias tsl='tmux list-sessions'       # List all sessions
 alias tsk='tmux kill-session -t'     # Kill session by name
