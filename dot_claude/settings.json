@@ -64,9 +64,33 @@
       "/tmp"
     ]
   },
-  "hooks": {},
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "aim skills inject",
+            "timeout": 10000
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
-    "feature-dev@claude-code-plugins": true
+    "feature-dev@claude-code-plugins": true,
+    "amazon-development-tools@amazon-builder-skills": true,
+    "amazon-writing-documentation@amazon-builder-skills": true,
+    "code-development@amazon-builder-skills": true,
+    "amazon-search-discovery@amazon-builder-skills": true,
+    "amazon-utilities@amazon-builder-skills": true,
+    "amazon-core-workflows@amazon-builder-skills": true,
+    "amazon-brazil-crux@amazon-builder-skills": true,
+    "amazon-aws-cdk@amazon-builder-skills": true,
+    "amazon-taskei-sim@amazon-builder-skills": true,
+    "amazon-debugging-operations@amazon-builder-skills": true,
+    "amazon-documentation-workflows@amazon-builder-skills": true
   },
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
