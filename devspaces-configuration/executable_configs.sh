@@ -34,6 +34,7 @@ claude-creds --once
 curl -fsSL https://claude.ai/install.sh | bash
 toolbox install mcp-registry
 mcp-registry install builder-mcp
+aim skills install AmazonBuilderCoreAISkillSet
 
 echo "Install Chezmoi"
 sh -c "$(curl -fsLS get.chezmoi.io)"
