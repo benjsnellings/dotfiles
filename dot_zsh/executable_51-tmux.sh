@@ -4,7 +4,7 @@
 
 # Main tmux-session function
 tmux-session() {
-    local SCRIPT_PATH="$HOME/tools/tmux-session.sh"
+    local SCRIPT_PATH="$HOME/.local/bin/tmux-session.sh"
 
     # Check if script exists
     if [[ ! -f "$SCRIPT_PATH" ]]; then
@@ -19,11 +19,12 @@ tmux-session() {
 
 # Tmux session aliases
 alias ts='tmux-session'
-alias tsd='tmux kill-session'           # Kill current session
+alias tsd='tmux-session .'           # Start in current directory
 alias tsp='tmux-session ~/projects'  # Start in projects folder
 alias tsl='tmux list-sessions'       # List all sessions
 alias tsk='tmux kill-session -t'     # Kill session by name
 alias tsa='tmux attach -t'           # Attach to session by name
+alias tsc='tmux-session -c ~/.config/tmux-sessions/cld-session.yml'  # Session with cld in top pane
 
 # Auto-completion for zsh
 _tmux-session() {
@@ -43,6 +44,3 @@ if command -v fzf &> /dev/null; then
         [[ -n "$project_dir" ]] && tmux-session "$project_dir"
     }
 fi
-
-# Export for availability in subshells
-# export -f tmux-session 2>/dev/null || true
