@@ -12,7 +12,7 @@ export DOCKER_CONFIG=$HOME/.finch
 
 # Start the SSH Agent if it is not already started
 [ -S "$SSH_AUTH_SOCK" ] || source <( ssh-agent -s ) && ssh-add
-
+  
 {{ end }}
 
  #Request weekly expiration with 30 day renewal, although the
