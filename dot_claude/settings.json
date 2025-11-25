@@ -1,7 +1,7 @@
 {
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "true",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-1-20250805-v1:0",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-5-20251101-v1:0",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-5-20250929-v1:0[1m]",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
     "AWS_PROFILE": "claude-test",
@@ -60,6 +60,7 @@
       "Bash(git commit:*)"
     ],
     "ask": [],
+    "defaultMode": "plan",
     "additionalDirectories": [
       "/tmp",
       "~/.aim/"
@@ -79,6 +80,10 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/snellin/.claude/statusline.sh"
+  },
   "enabledPlugins": {
     "feature-dev@claude-code-plugins": true,
     "amazon-development-tools@amazon-builder-skills": false,
@@ -96,5 +101,6 @@
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
-  }
+  },
+  "model": "opusplan"
 }
