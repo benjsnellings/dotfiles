@@ -1,0 +1,4 @@
+# Example .tmux-session-name file
+# Place this file in your project root to override the session name
+# The first line of this file will be used as the session name
+my-custom-project-name

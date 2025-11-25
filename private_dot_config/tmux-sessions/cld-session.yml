@@ -1,0 +1,14 @@
+# Configuration for tmux session with cld command
+# Usage: tmux-session -c ~/.config/tmux-sessions/cld-session.yml [DIRECTORY]
+#    or: tsc [DIRECTORY]  (using the alias)
+windows:
+  - name: main
+    panes:
+      - command: cld
+        size: 75%
+      - command:
+        size: 25%
+
+  - name: creds
+    panes:
+      - command: claude-creds

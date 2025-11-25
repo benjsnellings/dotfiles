@@ -1,0 +1,16 @@
+# Example configuration file for tmux-session
+# This is a placeholder for future functionality
+name: development
+root: ~/projects/myapp
+windows:
+  - name: main
+    layout: even-horizontal
+    panes:
+      - command: vim
+      - command: npm run dev
+  - name: logs
+    panes:
+      - command: tail -f logs/app.log
+  - name: git
+    panes:
+      - command: git status
