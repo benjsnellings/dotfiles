@@ -172,39 +172,83 @@ create_window_from_config() {
     local window_index="$3"
     local work_dir="$4"
     shift 4
-    local panes=("$@")
 
-    if [[ $window_index -eq 0 ]]; then
+    # Parse remaining args: panes and optional sizes (separated by --sizes)
+    local -a panes=()
+    local -a sizes=()
+    local parsing_panes=true
+
+    for arg in "$@"; do
+        if [[ "$arg" == "--sizes" ]]; then
+            parsing_panes=false
+            continue
+        fi
+
+        if [[ "$parsing_panes" == true ]]; then
+            panes+=("$arg")
+        else
+            sizes+=("$arg")
+        fi
+    done
+
+    # Get the first window index to determine if we rename or create
+    local first_window=$(tmux list-windows -t "$session_name" -F '#{window_index}' | head -n1)
+
+    if [[ $window_index -eq $first_window ]]; then
         # Rename the first window
-        tmux rename-window -t "$session_name:0" "$window_name"
+        tmux rename-window -t "$session_name:$first_window" "$window_name"
     else
         # Create new window
         tmux new-window -t "$session_name:$window_index" -n "$window_name" -c "$work_dir"
     fi
 
+    # Get the first pane index (could be 0 or 1 depending on pane-base-index setting)
+    local first_pane=$(tmux list-panes -t "$session_name:$window_index" -F '#{pane_index}' | head -n1)
+
     # Create panes and run commands
-    local pane_index=0
+    local pane_index=$first_pane
+    local size_index=0
     for pane_cmd in "${panes[@]}"; do
-        if [[ $pane_index -eq 0 ]]; then
+        if [[ $pane_index -eq $first_pane ]]; then
             # First pane already exists
             if [[ -n "$pane_cmd" ]]; then
-                tmux send-keys -t "$session_name:$window_index.0" "$pane_cmd" C-m
+                tmux send-keys -t "$session_name:$window_index.$first_pane" "$pane_cmd" C-m
             fi
         else
             # Split for additional panes
-            tmux split-window -t "$session_name:$window_index" -c "$work_dir"
+            local split_cmd="tmux split-window -v -t \"$session_name:$window_index\" -c \"$work_dir\""
+
+            # Add size if specified for this pane
+            if [[ -n "${sizes[$size_index]}" ]]; then
+                split_cmd="$split_cmd -l ${sizes[$size_index]}"
+            fi
+
+            eval "$split_cmd"
+
             if [[ -n "$pane_cmd" ]]; then
                 tmux send-keys -t "$session_name:$window_index.$pane_index" "$pane_cmd" C-m
             fi
         fi
         ((pane_index++))
+        ((size_index++))
     done
 
-    # Apply tiled layout if more than 2 panes
-    if [[ ${#panes[@]} -gt 2 ]]; then
-        tmux select-layout -t "$session_name:$window_index" tiled
-    elif [[ ${#panes[@]} -eq 2 ]]; then
-        tmux select-layout -t "$session_name:$window_index" even-vertical
+    # Check if any custom sizes were specified
+    local has_custom_sizes=false
+    for size in "${sizes[@]}"; do
+        if [[ -n "$size" ]]; then
+            has_custom_sizes=true
+            break
+        fi
+    done
+
+    # Apply tiled layout only if no custom sizes specified
+    if [[ "$has_custom_sizes" == false ]]; then
+        if [[ ${#panes[@]} -gt 2 ]]; then
+            tmux select-layout -t "$session_name:$window_index" tiled
+        elif [[ ${#panes[@]} -eq 2 ]]; then
+            tmux select-layout -t "$session_name:$window_index" even-vertical
+        fi
     fi
 }
 
@@ -227,19 +271,23 @@ load_config() {
 
     # Extract root directory if specified
     local config_root
-    config_root=$(echo "$yaml_content" | grep '^root:' | sed 's/^root:[[:space:]]*//' | sed 's/~/'$HOME'/g')
+    config_root=$(echo "$yaml_content" | grep '^root:' | sed 's/^root:[[:space:]]*//' | sed 's|~|'$HOME'|g')
     if [[ -n "$config_root" ]]; then
         work_dir="$config_root"
         print_message "$BLUE" "Using root directory from config: $work_dir"
     fi
+
+    # Get the first window index (could be 0 or 1 depending on base-index setting)
+    local first_window=$(tmux list-windows -t "$session_name" -F '#{window_index}' | head -n1)
 
     # Parse windows
     local in_windows=false
     local in_window=false
     local in_panes=false
     local current_window_name=""
-    local window_index=0
+    local window_index=$first_window
     local -a current_panes=()
+    local -a current_pane_sizes=()
 
     while IFS= read -r line; do
         # Check if we're entering windows section
@@ -253,13 +301,14 @@ load_config() {
             if [[ "$line" =~ ^[[:space:]]{2}-[[:space:]]name: ]]; then
                 # Save previous window if exists
                 if [[ -n "$current_window_name" ]]; then
-                    create_window_from_config "$session_name" "$current_window_name" "$window_index" "$work_dir" "${current_panes[@]}"
+                    create_window_from_config "$session_name" "$current_window_name" "$window_index" "$work_dir" "${current_panes[@]}" --sizes "${current_pane_sizes[@]}"
                     ((window_index++))
                 fi
 
                 # Start new window
                 current_window_name=$(echo "$line" | sed 's/^[[:space:]]*-[[:space:]]name:[[:space:]]*//')
                 current_panes=()
+                current_pane_sizes=()
                 in_window=true
                 in_panes=false
                 continue
@@ -273,12 +322,20 @@ load_config() {
 
             # Parse pane commands (starts with "      -" or "      - command:")
             if [[ "$in_panes" == true ]]; then
-                if [[ "$line" =~ ^[[:space:]]{6}-[[:space:]]command: ]]; then
+                # Check for size field (8 spaces + "size:")
+                if [[ "$line" =~ ^[[:space:]]{8}size: ]]; then
+                    local size=$(echo "$line" | sed 's/^[[:space:]]*size:[[:space:]]*//')
+                    # Update the last size entry (Bash 3 compatible)
+                    local last_index=$((${#current_pane_sizes[@]} - 1))
+                    current_pane_sizes[$last_index]="$size"
+                elif [[ "$line" =~ ^[[:space:]]{6}-[[:space:]]command: ]]; then
                     local cmd=$(echo "$line" | sed 's/^[[:space:]]*-[[:space:]]command:[[:space:]]*//')
                     current_panes+=("$cmd")
+                    current_pane_sizes+=("")  # Placeholder, may be updated by next size: line
                 elif [[ "$line" =~ ^[[:space:]]{6}- ]]; then
                     local cmd=$(echo "$line" | sed 's/^[[:space:]]*-[[:space:]]*//')
                     current_panes+=("$cmd")
+                    current_pane_sizes+=("")  # Placeholder, may be updated by next size: line
                 fi
             fi
         fi
@@ -286,11 +343,11 @@ load_config() {
 
     # Create last window if exists
     if [[ -n "$current_window_name" ]]; then
-        create_window_from_config "$session_name" "$current_window_name" "$window_index" "$work_dir" "${current_panes[@]}"
+        create_window_from_config "$session_name" "$current_window_name" "$window_index" "$work_dir" "${current_panes[@]}" --sizes "${current_pane_sizes[@]}"
     fi
 
     # Select first window
-    tmux select-window -t "$session_name:0"
+    tmux select-window -t "$session_name:$first_window"
 
     print_message "$GREEN" "✓ Configuration loaded successfully"
     return 0
