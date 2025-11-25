@@ -86,18 +86,7 @@
     "command": "bash ~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "feature-dev@claude-code-plugins": true,
-    "amazon-development-tools@amazon-builder-skills": false,
-    "amazon-writing-documentation@amazon-builder-skills": false,
-    "code-development@amazon-builder-skills": false,
-    "amazon-search-discovery@amazon-builder-skills": false,
-    "amazon-utilities@amazon-builder-skills": false,
-    "amazon-core-workflows@amazon-builder-skills": false,
-    "amazon-brazil-crux@amazon-builder-skills": false,
-    "amazon-aws-cdk@amazon-builder-skills": false,
-    "amazon-taskei-sim@amazon-builder-skills": false,
-    "amazon-debugging-operations@amazon-builder-skills": false,
-    "amazon-documentation-workflows@amazon-builder-skills": false
+    "feature-dev@claude-code-plugins": true
   },
   "alwaysThinkingEnabled": false,
   "feedbackSurveyState": {
