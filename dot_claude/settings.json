@@ -66,6 +66,7 @@
       "~/.aim/"
     ]
   },
+  "model": "opusplan",
   "hooks": {
     "SessionStart": [
       {
@@ -101,6 +102,5 @@
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
-  },
-  "model": "opusplan"
+  }
 }
