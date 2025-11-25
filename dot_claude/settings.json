@@ -92,14 +92,14 @@
     "code-development@amazon-builder-skills": false,
     "amazon-search-discovery@amazon-builder-skills": false,
     "amazon-utilities@amazon-builder-skills": false,
-    "amazon-core-workflows@amazon-builder-skills": true,
-    "amazon-brazil-crux@amazon-builder-skills": true,
-    "amazon-aws-cdk@amazon-builder-skills": true,
-    "amazon-taskei-sim@amazon-builder-skills": true,
-    "amazon-debugging-operations@amazon-builder-skills": true,
-    "amazon-documentation-workflows@amazon-builder-skills": true
+    "amazon-core-workflows@amazon-builder-skills": false,
+    "amazon-brazil-crux@amazon-builder-skills": false,
+    "amazon-aws-cdk@amazon-builder-skills": false,
+    "amazon-taskei-sim@amazon-builder-skills": false,
+    "amazon-debugging-operations@amazon-builder-skills": false,
+    "amazon-documentation-workflows@amazon-builder-skills": false
   },
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
   }
