@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-
 cd ~
 
 echo "Add tools"
@@ -29,9 +28,10 @@ source ~/.zshrc
 
 echo "Configure Claude"
 ada profile add --account 972842349728 --profile claude-test --provider isengard --region us-west-2 --role Admin
-claude-creds --once
+# claude-creds --once
 # npm install -g @anthropic-ai/claude-code
 curl -fsSL https://claude.ai/install.sh | bash
+claude update
 toolbox install mcp-registry
 mcp-registry install builder-mcp
 aim skills install AmazonBuilderCoreAISkillSet
