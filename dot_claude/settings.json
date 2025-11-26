@@ -19,6 +19,7 @@
       "WebFetch(domain:*)",
       "Read(*)",
       "ReadFile(*)",
+      "Search(*)",
       "Bash(ls:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
