@@ -19,7 +19,6 @@
       "WebFetch(domain:*)",
       "Read(*)",
       "ReadFile(*)",
-      "Search(*)",
       "Bash(ls:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
@@ -67,7 +66,6 @@
       "~/.aim/"
     ]
   },
-  "model": "opusplan",
   "hooks": {
     "SessionStart": [
       {
