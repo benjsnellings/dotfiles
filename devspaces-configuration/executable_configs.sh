@@ -28,14 +28,14 @@ source ~/.zshrc
 
 echo "Configure Claude"
 ada profile add --account 972842349728 --profile claude-test --provider isengard --region us-west-2 --role Admin
-# claude-creds --once
-# npm install -g @anthropic-ai/claude-code
 curl -fsSL https://claude.ai/install.sh | bash
 claude update
 toolbox install mcp-registry
 mcp-registry install builder-mcp
+claude mcp add -s user builder-mcp -- builder-mcp --include-tools 'ReadInternalWebsites, InternalSearch, InternalCodeSearch, BrazilBuildAnalyzerTool, GetSoftwareRecommendation, SearchSoftwareRecommendations, Taskei*'
 aim skills install AmazonBuilderCoreAISkillSet
 aim skills install AmazonBuilderGenAIPowerUsersQContext
+
 
 echo "Install Chezmoi"
 sh -c "$(curl -fsLS get.chezmoi.io)"
