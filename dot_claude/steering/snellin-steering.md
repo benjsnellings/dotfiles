@@ -1,7 +1,5 @@
 
 
-
-
 ### Working with Quip Documents
 
 When working with Quip documents, use the appropriate MCP tool based on your intent:

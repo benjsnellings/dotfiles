@@ -52,7 +52,7 @@ After navigating to the package directory:
 3. If no custom instructions are found, use the standard Brazil build process:
 
    ```
-   brazil-build release
+   brazil-build 
    ```
 
 This will compile, run static analysis tools, and unit tests. It doesn't matter what language the package is written in, you should always build the package to verify any changes you've made. Fix any problems causing build failures. Address the root cause instead of the symptoms.
@@ -75,7 +75,7 @@ If the build ends in error:
 2. Check for CannotFindBuildDirectoryException or messages like "Couldn't find a build directory at"
 3. Try building with the recursive command:
    ```
-   brazil-recursive-cmd brazil-build release
+   ebb
    ```
 4. Look for specific error messages and address them directly
 
@@ -160,7 +160,7 @@ When adding new package dependencies to a Brazil package:
    - Identifies missing dependencies
    - Creates a dry-run merge build
    - Merges the dependencies into your local copy of the version set
-   - After this, `brazil-build release` should work
+   - After this, `brazil-build` should work
 
 5. If you see errors about dependencies not being in the version set, always try `brazil workspace merge` first before making other changes.
 
