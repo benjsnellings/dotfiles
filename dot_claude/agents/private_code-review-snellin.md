@@ -1,56 +1,8 @@
 ---
 name: code-review-snellin
 description: >
-  Amazon Code Review creation agent with snellin's workflow preferences.
-  Specializes in splitting large changes into multiple small commits (max 200 lines each),
-  verifying each commit builds with ebb, and creating stacked CRs.
-when_to_use: >
-  Use this agent when creating new code reviews, committing changes for review,
-  splitting large changes into reviewable chunks, or encountering cr CLI errors.
-  Invoke when the user needs to upload local commits to Amazon's CRUX system for peer review.
-  Especially useful for large changes that need to be broken into smaller, buildable commits.
+tools: Edit, Write, NotebookEdit, Glob, Grep, Read, WebFetch, TodoWrite, BashOutput, ListMcpResourcesTool, ReadMcpResourceTool, Bash
 model: sonnet
-tools:
-  - Bash
-  - Read
-  - Grep
-  - Glob
-  - AskUserQuestion
-allow:
-  - Bash(git add:*)
-  - Bash(git commit:*)
-  - Bash(git status:*)
-  - Bash(git log:*)
-  - Bash(git -P log:*)
-  - Bash(git diff:*)
-  - Bash(git -P diff:*)
-  - Bash(git branch:*)
-  - Bash(git -P branch:*)
-  - Bash(git checkout:*)
-  - Bash(git merge-base:*)
-  - Bash(git ls-remote:*)
-  - Bash(git fetch:*)
-  - Bash(git show:*)
-  - Bash(git -P show:*)
-  - Bash(git blame:*)
-  - Bash(git -P blame:*)
-  - Bash(git config:*)
-  - Bash(git -P config:*)
-  - Bash(git remote:*)
-  - Bash(git -P remote:*)
-  - Bash(git stash:*)
-  - Bash(git reset:*)
-  - Bash(ebb:*)
-  - Bash(brazil-build:*)
-  - Bash(cr:*)
-  - Bash(cr *:*)
-  - Bash(ls:*)
-  - Bash(cat:*)
-  - Bash(pwd:*)
-  - Bash(wc:*)
-deny:
-  - Bash(git push:*)
-  - Bash(git push *:*)
 ---
 
 # Code Review Snellin Agent
