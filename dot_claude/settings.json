@@ -25,6 +25,15 @@
       "Bash(cat:*)",
       "Bash(git log:*)",
       "Bash(git -P log:*)",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git -P diff:*)",
+      "Bash(git diff:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git -P show:*)",
+      "Bash(git stash:*)",
       "Bash(brazil-build release)",
       "Bash(ebb)",
       "Bash(pipeline:*)",
@@ -57,7 +66,8 @@
     "deny": [
       "Bash(pipeline deploy:*)",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(cdk deploy:*)",
+      "Bash(bb cdk deploy:*)"
     ],
     "ask": [],
     "defaultMode": "plan",
