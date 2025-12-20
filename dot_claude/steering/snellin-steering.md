@@ -173,3 +173,34 @@ if is_success(result) and result["content_type"] == "markdown":
 - **Error Handling**: Built-in timeout handling, error categorization, and detailed error messages
 - **Maintenance**: Single point of updates if internal website APIs change
 - **Content Detection**: Automatically handles different response formats (JSON, Markdown, HTML, text)
+
+### Claude Code: Verbose Command Output Bug
+
+**Problem**: Claude Code has issues detecting completion of commands that produce massive output (87,000+ characters). The process gets killed (SIGKILL, exit code 137) even after the command completes successfully.
+
+**Affected Commands**:
+- `brazil-build` / `brazil-build release` (CDK synth produces massive output)
+- Any command that outputs tens of thousands of characters
+
+**Symptoms**:
+- Exit code 137 (128 + 9 = SIGKILL)
+- Message: `[Request interrupted by user for tool use]`
+- Build actually succeeded (visible in truncated output)
+- Background tasks accumulate and never clean up properly
+
+**Workaround**: Redirect output to a file and capture only the exit code:
+
+```bash
+# Instead of:
+brazil-build release
+
+# Use:
+brazil-build release > /tmp/build.log 2>&1; echo "EXIT_CODE=$?"
+
+# Then check results:
+tail -20 /tmp/build.log  # Verify BUILD SUCCEEDED
+```
+
+**Why This Happens**: Claude Code's process handling appears to have buffer/stream issues with very large output. When output exceeds ~30,000 characters (truncation threshold), the underlying process management struggles to properly detect command completion.
+
+**Date Discovered**: 2025-12-19
