@@ -11,6 +11,9 @@
     "@builtin",
     "@builder-mcp"
   ],
+  "allowedTools": [
+    "*"
+  ],
   "resources": [
     "file://~/.kiro/steering/**/*.md"
   ],
