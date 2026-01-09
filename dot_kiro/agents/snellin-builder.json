@@ -1,0 +1,26 @@
+{
+  "name": "snellin-builder",
+  "description": "Personal Amazon development agent with full tool access, matching Claude Code configuration",
+  "mcpServers": {
+    "builder-mcp": {
+      "command": "builder-mcp",
+      "args": []
+    }
+  },
+  "tools": [
+    "@builtin",
+    "@builder-mcp"
+  ],
+  "resources": [
+    "file://~/.kiro/steering/**/*.md"
+  ],
+  "hooks": {
+    "agentSpawn": [
+      {
+        "command": "aim skills inject",
+        "timeout_ms": 10000
+      }
+    ]
+  },
+  "useLegacyMcpJson": false
+}
