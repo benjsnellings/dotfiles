@@ -5,6 +5,10 @@
     "builder-mcp": {
       "command": "builder-mcp",
       "args": []
+    }, 
+    "spec-studio-mcp" : {
+      "command" : "mcp-spec-studio-server",
+      "args" : []
     }
   },
   "tools": [
@@ -16,7 +20,8 @@
     "@"
   ],
   "resources": [
-    "file://~/.kiro/steering/**/*.md"
+    "file://~/.kiro/steering/**/*.md",
+    "file://~/.kiro/resources/amazon-builder-context.md"
   ],
   "hooks": {
     "agentSpawn": [
@@ -28,3 +33,5 @@
   },
   "useLegacyMcpJson": false
 }
+
+
