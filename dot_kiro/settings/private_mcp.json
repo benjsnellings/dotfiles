@@ -1,15 +1,12 @@
 {
-  "mcpServers": {
-    "builder-mcp": {
-      "command": "builder-mcp",
-      "args": []
+  "mcpServers" : {
+    "builder-mcp" : {
+      "command" : "builder-mcp",
+      "args" : [ ]
     },
-    "spec-studio-mcp": {
-      "command": "mcp-spec-studio-server",
-      "args": []
+    "spec-studio-mcp" : {
+      "command" : "mcp-spec-studio-server",
+      "args" : [ ]
     }
-  },
-  "powers": {
-    "mcpServers": {}
   }
 }
