@@ -22,7 +22,7 @@ alias ts='tmux-session'
 alias tsd='tmux-session .'           # Start in current directory
 alias tsp='tmux-session ~/projects'  # Start in projects folder
 alias tsl='tmux list-sessions'       # List all sessions
-alias tsk='tmux kill-session -t .'     # Kill session by name
+alias tsk='tmux kill-session -t'     # Kill session by name
 alias tsa='tmux attach -t'           # Attach to session by name
 alias tsc='tmux-session -c ~/.config/tmux-sessions/cld-session.yml'  # Session with cld in top pane
 
