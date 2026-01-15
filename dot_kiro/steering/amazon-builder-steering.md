@@ -262,16 +262,12 @@ These rules are considered absolute and must never be violated under any circums
 
 ##### 1. Never delete any Git files or directories
 - The `.git` directory must never be modified directly
-- Never run commands that would delete or corrupt Git history
 - Do not use `git filter-branch`, `git reset --hard`, or similar commands that rewrite history
-- Git history is sacrosanct and must be preserved at all costs
 
 ##### 2. Never rewrite Git history (local or remote)
 - Do not force push (`git push --force`) to overwrite remote history
-- Do not amend commits that have already been created, even if they're only local
 - Do not rebase branches, even if they haven't been shared yet
 - Do not use interactive rebase to modify existing commits
-- Treat local Git history with the same reverence as remote history
 
 ##### 3. Never push changes off host
 - All Git operations must remain on the local system
@@ -290,7 +286,6 @@ If these rules are accidentally violated:
 2. Document what happened and what was lost
 3. Consider creating a new branch from the last known good state
 4. If Git history is corrupted, preserve the working directory before attempting recovery
-
 
 ### IDE Tools
 
