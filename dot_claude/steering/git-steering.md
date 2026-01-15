@@ -1,10 +1,10 @@
 ### Git Commit Operations
 
-**ALWAYS delegate git commit operations to the `git-operator` agent.**
+**ALWAYS delegate git commit operations to the `amzn-commit` agent.**
 
-While you have permissions to run git commands directly, you MUST use the `git-operator` agent for all commit-related operations. This ensures consistent, well-formatted commit messages following Conventional Commits specification.
+While you have permissions to run git commands directly, you MUST use the `amzn-commit` agent for all commit-related operations. This ensures consistent, well-formatted commit messages following Conventional Commits specification.
 
-#### Operations requiring git-operator
+#### Operations requiring amzn-commit
 - `git commit` - Creating commits (agent ensures proper message format)
 - `git add` + `git commit` - Staging and committing together
 
@@ -20,11 +20,11 @@ When the user asks to commit changes, use the Task tool:
 
 ```
 Task tool with:
-  subagent_type: git-operator
+  subagent_type: amzn-commit
   prompt: [describe the commit operation and context]
 ```
 
-The git-operator agent will:
+The amzn-commit agent will:
 1. Check `git status` to understand the changes
 2. Review `git diff` to understand what's being committed
 3. Create a properly formatted commit message following Conventional Commits
@@ -65,7 +65,7 @@ All commit messages MUST follow the Conventional Commits format:
 
 #### Commit Message Quality Requirements
 
-The git-operator agent MUST ultrathink before creating commit messages:
+The amzn-commit agent MUST ultrathink before creating commit messages:
 
 1. **Deep Analysis**: Thoroughly explore `git diff` output to understand:
    - What files were changed and why
