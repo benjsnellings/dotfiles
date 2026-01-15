@@ -20,8 +20,7 @@
     "@"
   ],
   "resources": [
-    "file://~/.kiro/steering/**/*.md",
-    "file://~/.kiro/resources/amazon-builder-context.md"
+    "file://~/.kiro/steering/**/*.md"
   ],
   "hooks": {
     "agentSpawn": [
