@@ -4,7 +4,7 @@
   "mcpServers": {
     "builder-mcp": {
       "command": "builder-mcp",
-      "args": []
+      "args" : [ "--include-tools", "SkillsTool", "--skill-paths", "/Users/snellin/.aim/packages/local/StoreGenSpecStudioSkills-1.0/skills", "--skill-name-filter", "spec-explorer" ]
     }, 
     "spec-studio-mcp" : {
       "command" : "mcp-spec-studio-server",
