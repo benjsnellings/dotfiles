@@ -1,12 +1,26 @@
 {
-  "mcpServers" : {
-    "builder-mcp" : {
-      "command" : "builder-mcp",
-      "args" : [ ]
+  "mcpServers": {
+    "builder-mcp": {
+      "command": "builder-mcp",
+      "args": [],
+      "autoApprove": [
+        "SkillsTool",
+        "WorkspaceSearch",
+        "*"
+      ]
     },
-    "spec-studio-mcp" : {
-      "command" : "mcp-spec-studio-server",
-      "args" : [ ]
+    "spec-studio-mcp": {
+      "command": "mcp-spec-studio-server",
+      "args": [],
+      "autoApprove": [
+        "get-package-metadata",
+        "get-package-feature",
+        "semantic_search",
+        "*"
+      ]
     }
+  },
+  "powers": {
+    "mcpServers": {}
   }
 }
