@@ -1,8 +1,4 @@
 
-[diff]
-command = "code"
-args = ["--wait", "--diff", "{{ .Destination }}", "{{ .Target }}"]
-
 [merge]
 command = "bash"
 args = [
