@@ -1,9 +1,14 @@
 
+[diff]
+command = "code"
+args = ["--wait", "--diff", "{{ .Destination }}", "{{ .Target }}"]
 
 [merge]
-    command = "kdiff3"
-    args = ["-m", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}", "-o", "{{ .Source }}" ] 
-    # args = ["-d", "{{ .Destination }}", "{{ .Source }}"]
+command = "bash"
+args = [
+    "-c",
+    "cp {{ .Target }} {{ .Target }}.base && code --new-window --wait --merge {{ .Destination }} {{ .Target }} {{ .Target }}.base {{ .Source }}",
+]
 
 [git]
     autoCommit = true
