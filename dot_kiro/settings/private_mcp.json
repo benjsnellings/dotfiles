@@ -21,6 +21,15 @@
     }
   },
   "powers": {
-    "mcpServers": {}
+    "mcpServers": {
+      "power-spec-planner-builder-mcp": {
+        "command": "builder-mcp",
+        "args": []
+      },
+      "power-spec-planner-spec-studio-mcp": {
+        "command": "mcp-spec-studio-server",
+        "args": []
+      }
+    }
   }
 }
