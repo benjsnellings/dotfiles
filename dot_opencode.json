@@ -1,0 +1,87 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "amazon-bedrock": {
+      "disabled": false,
+      "options": {
+        "region": "us-west-2",
+        "profile": "claude-test"
+      }
+    }
+  },
+  "model": "bedrock/us.anthropic.claude-opus-4-5-20251101-v1:0",
+  "agents": {
+    "coder": {
+      "model": "bedrock/us.anthropic.claude-opus-4-5-20251101-v1:0",
+      "maxTokens": 8000
+    },
+    "task": {
+      "model": "bedrock/us.anthropic.claude-opus-4-5-20251101-v1:0",
+      "maxTokens": 8000
+    },
+    "title": {
+      "model": "bedrock/us.anthropic.claude-opus-4-5-20251101-v1:0",
+      "maxTokens": 80
+    }
+  },
+  "permission": {
+    "*": "ask",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "webfetch": "allow",
+    "todoread": "allow",
+    "todowrite": "allow",
+    "skill": "allow",
+    "bash": {
+      "*": "ask",
+      "git status *": "allow",
+      "git log *": "allow",
+      "git -P log *": "allow",
+      "git diff *": "allow",
+      "git -P diff *": "allow",
+      "git branch *": "allow",
+      "git checkout *": "allow",
+      "git -P show *": "allow",
+      "git stash *": "allow",
+      "git add *": "allow",
+      "git commit *": "allow",
+      "brazil-build *": "allow",
+      "ebb": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "find *": "allow",
+      "grep *": "allow",
+      "pipeline *": "allow",
+      "git push *": "deny",
+      "cdk deploy *": "deny",
+      "pipeline deploy *": "deny"
+    },
+    "edit": {
+      "*": "ask",
+      "/tmp/*": "allow"
+    },
+    "external_directory": {
+      "*": "ask",
+      "/tmp": "allow",
+      "/tmp/*": "allow",
+      "~/.aim": "allow",
+      "~/.aim/*": "allow"
+    }
+  },
+  "mcp": {
+    "builder-mcp": {
+      "type": "local",
+      "command": ["builder-mcp", "--include-tools", "ReadInternalWebsites, InternalSearch, InternalCodeSearch, Taskei*"],
+      "enabled": true
+    }
+  },
+  "instructions": ["~/.claude/CLAUDE.md"],
+  "share": "disabled",
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "debug": false
+}
