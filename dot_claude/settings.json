@@ -1,7 +1,7 @@
 {
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "true",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-5-20251101-v1:0",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-6-v1[1m]",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-5-20250929-v1:0[1m]",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
     "AWS_PROFILE": "claude-test",
@@ -11,7 +11,8 @@
     "DISABLE_ERROR_REPORTING": "1",
     "DISABLE_BUG_COMMAND": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "MAX_THINKING_TOKENS": "63999"
+    "MAX_THINKING_TOKENS": "63999",
+    "CLAUDE_CODE_EFFORT_LEVEL": "high"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -77,7 +78,8 @@
       "~/.aim/"
     ]
   },
-  "model": "us.anthropic.claude-opus-4-5-20251101-v1:0",
+  "model": "global.anthropic.claude-opus-4-6-v1[1m]",
+  
   "hooks": {
     "SessionStart": [
       {
