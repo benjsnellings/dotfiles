@@ -1,34 +1,23 @@
 {
-  "mcpServers": {
-    "builder-mcp": {
-      "command": "builder-mcp",
-      "args": [],
-      "autoApprove": [
-        "SkillsTool",
-        "WorkspaceSearch",
-        "*"
-      ]
+  "mcpServers" : {
+    "builder-mcp" : {
+      "command" : "builder-mcp",
+      "args" : [ ]
     },
-    "spec-studio-mcp": {
-      "command": "mcp-spec-studio-server",
-      "args": [],
-      "autoApprove": [
-        "get-package-metadata",
-        "get-package-feature",
-        "semantic_search",
-        "*"
-      ]
+    "spec-studio-mcp" : {
+      "command" : "mcp-spec-studio-server",
+      "args" : [ ]
     }
   },
-  "powers": {
-    "mcpServers": {
-      "power-spec-planner-builder-mcp": {
-        "command": "builder-mcp",
-        "args": []
+  "powers" : {
+    "mcpServers" : {
+      "power-spec-planner-builder-mcp" : {
+        "command" : "builder-mcp",
+        "args" : [ ]
       },
-      "power-spec-planner-spec-studio-mcp": {
-        "command": "mcp-spec-studio-server",
-        "args": []
+      "power-spec-planner-spec-studio-mcp" : {
+        "command" : "mcp-spec-studio-server",
+        "args" : [ ]
       }
     }
   }
