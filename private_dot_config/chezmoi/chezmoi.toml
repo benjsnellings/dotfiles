@@ -12,3 +12,7 @@ args = [
 
 [template]
     options = ["missingkey=zero"]
+
+[diff]
+    exclude = ["run_aim-setup.sh"]
+
