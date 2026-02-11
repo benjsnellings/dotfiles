@@ -7,6 +7,10 @@
     "spec-studio-mcp" : {
       "command" : "mcp-spec-studio-server",
       "args" : [ ]
+    },
+    "workplace-chat-mcp" : {
+      "command" : "workplace-chat-mcp",
+      "args" : [ ]
     }
   },
   "powers" : {
