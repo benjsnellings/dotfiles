@@ -35,7 +35,7 @@ if $HAS_AIM; then
     }
 
     echo "[aim-setup] Installing MCP servers from registry..."
-    aim mcp install builder-mcp spec-studio-mcp || {
+    aim mcp install builder-mcp spec-studio-mcp workplace-chat-mcp || {
         echo "[aim-setup] WARNING: aim mcp install failed (continuing)"
     }
 fi
@@ -60,6 +60,11 @@ if $HAS_JQ; then
       "spec-studio-mcp": {
         "type": "stdio",
         "command": "mcp-spec-studio-server"
+      },
+      "workplace-chat-mcp": {
+        "type": "stdio",
+        "command": "workplace-chat-mcp",
+        "args": []
       }
     }'
 
