@@ -1,8 +1,8 @@
 ### Git Commit Operations
 
-**ALWAYS delegate git commit operations to the `amzn-commit` agent.**
+**ALWAYS delegate git commit operations to the `amzn-commit:amzn-commit` agent.**
 
-While you have permissions to run git commands directly, you MUST use the `amzn-commit` agent for all commit-related operations. This ensures consistent, well-formatted commit messages following Conventional Commits specification.
+While you have permissions to run git commands directly, you MUST use the `amzn-commit:amzn-commit` agent for all commit-related operations. This ensures consistent, well-formatted commit messages following Conventional Commits specification.
 
 #### Operations requiring amzn-commit
 - `git commit` - Creating commits (agent ensures proper message format)
