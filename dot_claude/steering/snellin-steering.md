@@ -3,9 +3,9 @@
 
 **ALWAYS delegate git and code review operations to specialized agents.**
 
-#### Git Operations → `amzn-commit` Agent
+#### Git Operations → `amzn-commit:amzn-commit` Agent
 
-Use the `amzn-commit` agent (via Task tool) for ALL git operations:
+Use the `amzn-commit:amzn-commit` agent (via Task tool) for ALL git operations:
 - Committing changes
 - Viewing git status, log, diff
 - Creating/switching branches
@@ -15,9 +15,9 @@ Use the `amzn-commit` agent (via Task tool) for ALL git operations:
 
 **Do NOT run git commands directly** - always invoke the agent.
 
-#### Code Reviews → `amzn-cr` Agent
+#### Code Reviews → `amzn-cr:amzn-cr` Agent
 
-Use the `amzn-cr` agent (via Task tool) for ALL CRUX code review operations:
+Use the `amzn-cr:amzn-cr` agent (via Task tool) for ALL CRUX code review operations:
 - Creating new code reviews (`cr` command)
 - Updating existing CRs
 - Addressing reviewer feedback
@@ -28,9 +28,9 @@ Use the `amzn-cr` agent (via Task tool) for ALL CRUX code review operations:
 
 ```
 Task tool with:
-  subagent_type: amzn-commit  # for git operations
+  subagent_type: amzn-commit:amzn-commit  # for git operations
   OR
-  subagent_type: amzn-cr      # for code reviews
+  subagent_type: amzn-cr:amzn-cr          # for code reviews
   prompt: [describe the operation]
 ```
 
@@ -38,11 +38,11 @@ Task tool with:
 
 | User Request | Agent to Use |
 |--------------|--------------|
-| "Commit these changes" | `amzn-commit` |
-| "Show me git status" | `amzn-commit` |
-| "Create a code review" | `amzn-cr` |
-| "Address the CR feedback" | `amzn-cr` |
-| "Review this CR link" | `amzn-cr` |
+| "Commit these changes" | `amzn-commit:amzn-commit` |
+| "Show me git status" | `amzn-commit:amzn-commit` |
+| "Create a code review" | `amzn-cr:amzn-cr` |
+| "Address the CR feedback" | `amzn-cr:amzn-cr` |
+| "Review this CR link" | `amzn-cr:amzn-cr` |
 
 ### Working with Quip Documents
 
