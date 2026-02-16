@@ -11,6 +11,10 @@
     "workplace-chat-mcp" : {
       "command" : "workplace-chat-mcp",
       "args" : [ ]
+    },
+    "agentspaces-mcp" : {
+      "command" : "agentspaces-mcp",
+      "args" : [ ]
     }
   },
   "powers" : {
