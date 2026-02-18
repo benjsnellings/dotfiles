@@ -113,7 +113,8 @@
     "ralph-wiggum@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": false,
     "amzn-commit@amzn": true,
-    "amzn-cr@amzn": true
+    "amzn-cr@amzn": true,
+    "amzn-team@amzn": true
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
