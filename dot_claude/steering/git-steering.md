@@ -1,10 +1,10 @@
 ### Git Commit Operations
 
-**ALWAYS delegate git commit operations to the `amzn-commit:amzn-commit` agent.**
+**ALWAYS delegate git commit operations to the `smangings:commit` agent.**
 
-While you have permissions to run git commands directly, you MUST use the `amzn-commit:amzn-commit` agent for all commit-related operations. This ensures consistent, well-formatted commit messages following Conventional Commits specification.
+While you have permissions to run git commands directly, you MUST use the `smangings:commit` agent for all commit-related operations. This ensures consistent, well-formatted commit messages following Conventional Commits specification.
 
-#### Operations requiring amzn-commit:amzn-commit
+#### Operations requiring smangings:commit
 - `git commit` - Creating commits (agent ensures proper message format)
 - `git add` + `git commit` - Staging and committing together
 
@@ -20,11 +20,11 @@ When the user asks to commit changes, use the Task tool:
 
 ```
 Task tool with:
-  subagent_type: amzn-commit:amzn-commit
+  subagent_type: smangings:commit
   prompt: [describe the commit operation and context]
 ```
 
-The amzn-commit:amzn-commit agent will:
+The smangings:commit agent will:
 1. Check `git status` to understand the changes
 2. Review `git diff` to understand what's being committed
 3. Create a properly formatted commit message following Conventional Commits
@@ -65,7 +65,7 @@ All commit messages MUST follow the Conventional Commits format:
 
 #### Commit Message Quality Requirements
 
-The amzn-commit:amzn-commit agent MUST ultrathink before creating commit messages:
+The smangings:commit agent MUST ultrathink before creating commit messages:
 
 1. **Deep Analysis**: Thoroughly explore `git diff` output to understand:
    - What files were changed and why
