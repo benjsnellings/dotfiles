@@ -2,28 +2,16 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "smangings",
   "version": "1.0.0",
-  "description": "Smnangings marketplace for Claude Code plugins",
+  "description": "Smangings marketplace for Claude Code plugins",
   "owner": {
     "name": "snellin",
     "email": "snellin@amazon.com"
   },
   "plugins": [
     {
-      "name": "commit",
-      "source": "./commit",
-      "description": "Streamline your git workflow with simple commands for committing, pushing, and creating pull requests",
-      "category": "productivity"
-    },
-    {
-      "name": "cr",
-      "source": "./cr",
-      "description": "Amazon CRUX code review automation - create CRs, address feedback, and review code",
-      "category": "development"
-    },
-    {
-      "name": "team",
-      "source": "./team",
-      "description": "Specialized agent team for Amazon codebase workflows: research, build fixing, test debugging, deployment troubleshooting, and multi-package coordination",
+      "name": "smangings",
+      "source": "./",
+      "description": "Amazon development toolkit: git workflows, CRUX code reviews, and specialized agent team",
       "category": "development"
     }
   ]
