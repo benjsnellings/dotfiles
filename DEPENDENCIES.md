@@ -11,6 +11,7 @@ This document lists all dependencies required for this dotfiles configuration. D
 | **starship** | Cross-shell prompt with customizations | ✓ |
 | **fzf** | Fuzzy finder for command history and file search | ✓ |
 | **tmux** | Terminal multiplexer | ✓ |
+| **delta** | git diffing tool | ✓ |
 
 ### ZSH Plugins (via Oh-My-ZSH)
 - `git` - Git aliases and completions
