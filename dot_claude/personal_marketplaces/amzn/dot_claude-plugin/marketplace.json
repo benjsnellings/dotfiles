@@ -1,0 +1,30 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "amzn",
+  "version": "1.0.0",
+  "description": "Amazon internal marketplace for Claude Code plugins",
+  "owner": {
+    "name": "snellin",
+    "email": "snellin@amazon.com"
+  },
+  "plugins": [
+    {
+      "name": "amzn-commit",
+      "source": "./amzn-commit",
+      "description": "Streamline your git workflow with simple commands for committing, pushing, and creating pull requests",
+      "category": "productivity"
+    },
+    {
+      "name": "amzn-cr",
+      "source": "./amzn-cr",
+      "description": "Amazon CRUX code review automation - create CRs, address feedback, and review code",
+      "category": "development"
+    },
+    {
+      "name": "amzn-team",
+      "source": "./amzn-team",
+      "description": "Specialized agent team for Amazon codebase workflows: research, build fixing, test debugging, deployment troubleshooting, and multi-package coordination",
+      "category": "development"
+    }
+  ]
+}
