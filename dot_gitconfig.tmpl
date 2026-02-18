@@ -5,7 +5,7 @@
 [color]
     ui = auto
 [core]
-    pager = less -FMRiX
+	pager = delta
     excludesfile = ~/.gitignore
     editor = vim
     preloadindex = true
@@ -15,17 +15,7 @@
     default = simple
     default = current
     autoSetupRemote = true
-[diff]
-    tool = diffmerge
-[difftool "diffmerge"]
-    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[difftool]
-    prompt = false
-[merge]
-    tool = diffmerge
-[mergetool "diffmerge"]
-    cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-    trustExitCode = true
+	conflictStyle = zdiff3
 [mergetool]
     keepBackup = false
 [alias]
