@@ -11,7 +11,13 @@
     {
       "name": "smangings",
       "source": "./",
-      "description": "Amazon development toolkit: git workflows, CRUX code reviews, and specialized agent team",
+      "description": "Amazon development toolkit: git workflows, CRUX code reviews, and Spec Studio context",
+      "category": "development"
+    },
+    {
+      "name": "smangit",
+      "source": "./smangit",
+      "description": "Specialist agent team for Amazon development: research, build fixing, test debugging, deployment troubleshooting, and multi-package coordination",
       "category": "development"
     }
   ]

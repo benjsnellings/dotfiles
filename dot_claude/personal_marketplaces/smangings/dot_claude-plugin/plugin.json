@@ -1,7 +1,7 @@
 {
   "name": "smangings",
   "description": "Amazon development toolkit: git workflows, CRUX code reviews, and specialized agent team for research, build fixing, test debugging, deployment troubleshooting, and multi-package coordination",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "author": {
     "name": "snellin",
     "email": "snellin@amazon.com"
