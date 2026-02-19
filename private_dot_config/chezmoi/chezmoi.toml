@@ -14,5 +14,6 @@ args = [
     options = ["missingkey=zero"]
 
 [diff]
+    pager = "delta"
     exclude = ["scripts"]
 
