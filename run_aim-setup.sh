@@ -1,8 +1,8 @@
 #!/bin/bash
 # run_aim-setup.sh — Runs on every `chezmoi apply`
-# Installs/updates aim skills, agents, and MCP servers, provisions the
-# ClaudeAmazonMarketplace workspace and plugins, then ensures
-# ~/.claude.json has the correct mcpServers configuration.
+# Installs/updates aim skills, agents, and MCP servers, registers the
+# smangings plugin marketplace, then ensures ~/.claude.json has the
+# correct mcpServers configuration.
 
 set -euo pipefail
 
@@ -20,13 +20,6 @@ if ! command -v jq &>/dev/null; then
     HAS_JQ=false
 else
     HAS_JQ=true
-fi
-
-if ! command -v brazil &>/dev/null; then
-    echo "[aim-setup] brazil not found on PATH, skipping marketplace workspace"
-    HAS_BRAZIL=false
-else
-    HAS_BRAZIL=true
 fi
 
 if ! command -v claude &>/dev/null; then
@@ -55,65 +48,36 @@ if $HAS_AIM; then
     }
 fi
 
-# ── ClaudeAmazonMarketplace workspace + marketplace ────────────────
+# ── Claude plugin marketplace (smangings) ───────────────────────────
 
-MARKETPLACE_WS="$HOME/tools/ClaudeAmazonMarketplace"
-MARKETPLACE_PKG_DIR="$MARKETPLACE_WS/src/ClaudeAmazonMarketplace"
-MARKETPLACE_AMZN_DIR="$MARKETPLACE_PKG_DIR/amzn"
+MARKETPLACE_DIR="$HOME/.claude/personal_marketplaces/smangings"
 
-if $HAS_BRAZIL; then
-    if [ ! -d "$MARKETPLACE_WS/src" ]; then
-        echo "[aim-setup] Creating ClaudeAmazonMarketplace workspace at $MARKETPLACE_WS..."
-        brazil ws create --root "$MARKETPLACE_WS" --versionset SnellinAiPlayground/development || {
-            echo "[aim-setup] WARNING: workspace create failed (continuing)"
-        }
-        if [ -d "$MARKETPLACE_WS" ]; then
-            echo "[aim-setup] Pulling ClaudeAmazonMarketplace package..."
-            (cd "$MARKETPLACE_WS" && brazil ws use -p ClaudeAmazonMarketplace) || {
-                echo "[aim-setup] WARNING: brazil ws use failed (continuing)"
-            }
-        fi
-    else
-        echo "[aim-setup] Syncing ClaudeAmazonMarketplace workspace..."
-        (cd "$MARKETPLACE_WS" && brazil ws sync) || {
-            echo "[aim-setup] WARNING: brazil ws sync failed (continuing)"
-        }
-    fi
-fi
-
-if $HAS_CLAUDE && [ -d "$MARKETPLACE_AMZN_DIR" ]; then
+if $HAS_CLAUDE && [ -d "$MARKETPLACE_DIR" ]; then
     MARKETPLACE_LIST=$(claude plugin marketplace list 2>/dev/null || true)
-    if echo "$MARKETPLACE_LIST" | grep -q "amzn"; then
-        echo "[aim-setup] Updating amzn marketplace..."
-        claude plugin marketplace update amzn || {
+    if echo "$MARKETPLACE_LIST" | grep -q "smangings"; then
+        echo "[aim-setup] Updating smangings marketplace..."
+        claude plugin marketplace update smangings || {
             echo "[aim-setup] WARNING: marketplace update failed (continuing)"
         }
     else
-        echo "[aim-setup] Adding amzn marketplace from $MARKETPLACE_AMZN_DIR..."
-        claude plugin marketplace add "$MARKETPLACE_AMZN_DIR" || {
+        echo "[aim-setup] Adding smangings marketplace from $MARKETPLACE_DIR..."
+        claude plugin marketplace add "$MARKETPLACE_DIR" || {
             echo "[aim-setup] WARNING: marketplace add failed (continuing)"
         }
     fi
 
     PLUGIN_LIST=$(claude plugin list 2>/dev/null || true)
-    if ! echo "$PLUGIN_LIST" | grep -q "amzn-commit@amzn"; then
-        echo "[aim-setup] Installing amzn-commit plugin..."
-        claude plugin install amzn-commit@amzn || {
-            echo "[aim-setup] WARNING: amzn-commit install failed (continuing)"
-        }
-    fi
-
-    if ! echo "$PLUGIN_LIST" | grep -q "amzn-cr@amzn"; then
-        echo "[aim-setup] Installing amzn-cr plugin..."
-        claude plugin install amzn-cr@amzn || {
-            echo "[aim-setup] WARNING: amzn-cr install failed (continuing)"
+    if ! echo "$PLUGIN_LIST" | grep -q "smangings@smangings"; then
+        echo "[aim-setup] Installing smangings plugin..."
+        claude plugin install smangings@smangings || {
+            echo "[aim-setup] WARNING: smangings install failed (continuing)"
         }
     fi
 else
     if ! $HAS_CLAUDE; then
         echo "[aim-setup] claude CLI not available, skipping marketplace registration"
-    elif [ ! -d "$MARKETPLACE_AMZN_DIR" ]; then
-        echo "[aim-setup] $MARKETPLACE_AMZN_DIR not found, skipping marketplace registration"
+    elif [ ! -d "$MARKETPLACE_DIR" ]; then
+        echo "[aim-setup] $MARKETPLACE_DIR not found, skipping marketplace registration"
     fi
 fi
 
