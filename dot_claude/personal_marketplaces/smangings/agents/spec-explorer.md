@@ -26,7 +26,7 @@ description: |
   <commentary>Multi-package refactors need cross-package context to avoid breaking contracts.</commentary>
   </example>
 tools: Read, Glob, Grep, mcp__spec-studio-mcp__semantic_search, mcp__spec-studio-mcp__get-package-metadata, mcp__spec-studio-mcp__get-package-by-name, mcp__spec-studio-mcp__get-specification-doc, mcp__spec-studio-mcp__get-package-feature, mcp__spec-studio-mcp__search-collections, mcp__spec-studio-mcp__get-collection-metadata
-model: sonnet
+model: opus
 color: purple
 ---
 
