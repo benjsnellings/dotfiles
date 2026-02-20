@@ -101,13 +101,6 @@ Spec Studio packages use a hierarchical structure with a `docs/` folder:
 3. **Status matters**: Only packages with SUCCESS or PARTIAL_SUCCESS status work
 4. **Package name required**: Most tools need the exact Brazil package name
 
-## Key URLs
-
-- **Spec Studio UI**: https://specs.harmony.a2z.com/
-- **MCP Integration Docs**: https://specs.harmony.a2z.com/resources/mcp-server
-- **About Spec Studio**: https://specs.harmony.a2z.com/resources/about
-- **Roadmap**: https://specs.harmony.a2z.com/resources/roadmap
-
 ## Detailed Documentation
 
 For complete parameter schemas, example outputs, and advanced workflows, see:
