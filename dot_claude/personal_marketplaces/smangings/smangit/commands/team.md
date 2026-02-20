@@ -28,7 +28,7 @@ Determine which category the request falls into:
 ## Step 2: Dispatch
 
 ### For single-domain requests
-Launch the matching specialist agent directly using the Task tool with the user's request as the prompt.
+Launch the matching specialist agent directly using the Task tool with the user's request as the prompt, and launch `smangit:team-lead` to monitor the specialist
 
 ### For multi-domain or complex requests
 Launch `smangit:team-lead` to orchestrate the full team. Provide:
@@ -38,4 +38,4 @@ Launch `smangit:team-lead` to orchestrate the full team. Provide:
 
 ## Step 3: Report
 
-After the agent completes, present the results to the user with clear next steps.
+After the team completes, present the results to the user with clear next steps.
