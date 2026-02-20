@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "smangings",
+  "version": "1.0.0",
+  "description": "Smangings marketplace for Claude Code plugins",
+  "owner": {
+    "name": "snellin",
+    "email": "snellin@amazon.com"
+  },
+  "plugins": [
+    {
+      "name": "smangings",
+      "source": "./",
+      "description": "Amazon development toolkit: git workflows, CRUX code reviews, and Spec Studio context",
+      "category": "development"
+    },
+    {
+      "name": "smangit",
+      "source": "./smangit",
+      "description": "Specialist agent team for Amazon development: research, build fixing, test debugging, deployment troubleshooting, and multi-package coordination",
+      "category": "development"
+    }
+  ]
+}
