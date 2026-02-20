@@ -11,8 +11,12 @@ model=$(echo "$input" | jq -r '.model.display_name')
 max_ctx=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 
-# Abbreviate home directory with ~
+# Abbreviate home directory, then trim to last 3 path components
 cwd_display="${cwd/#$HOME/~}"
+parts=$(echo "$cwd_display" | tr '/' '\n' | wc -l)
+if [ "$parts" -gt 3 ]; then
+    cwd_display=$(echo "$cwd_display" | rev | cut -d'/' -f1-3 | rev)
+fi
 
 # Get time in 24-hour format
 time_now=$(date '+%H:%M:%S')
