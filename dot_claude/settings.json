@@ -112,7 +112,8 @@
     "pr-review-toolkit@claude-code-plugins": true,
     "ralph-wiggum@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": false,
-    "smangings@smangings": true
+    "smangings@smangings": true,
+    "smangit@smangings": true
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
