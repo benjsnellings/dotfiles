@@ -2,25 +2,13 @@
 
 **ALWAYS gather Spec Studio context in parallel with codebase exploration before making code changes to Amazon packages.**
 
-When starting any code modification task, you MUST spawn the SpecExplorer agent **in parallel with** the Explore agent. Both should be launched in the same message (multiple Task tool calls) so they run concurrently — SpecExplorer gathers Spec Studio specification context while Explore searches the local codebase. This ensures you understand existing architecture, API contracts, business rules, and constraints before writing code.
+When starting any code modification task inside a Brazil workspace, you MUST spawn the SpecExplorer agent **in parallel with** the Explore agent. Both should be launched in the same message (multiple Task tool calls) so they run concurrently — SpecExplorer gathers Spec Studio specification context while Explore searches the local codebase. This ensures you understand existing architecture, API contracts, business rules, and constraints before writing code.
 
 #### When to Spawn SpecExplorer
 
-**MUST spawn** (in parallel with Explore) when the task involves:
-- Implementing a new feature or capability
-- Fixing a bug that requires understanding system behavior
-- Refactoring existing code
-- Integrating with or calling another service
-- Modifying API interfaces or data models
-- Changing business logic or validation rules
+**MUST spawn** (in parallel with Explore) whenever you are inside a Brazil workspace. To detect this, check for a `Config` file in the current package directory or run `brazil workspace show` from the working directory. If either confirms a Brazil workspace, spawn SpecExplorer.
 
-**SKIP** when the task is:
-- Purely cosmetic (formatting, comments, typos, whitespace)
-- Updating configuration values (version bumps, feature flags)
-- Adding or updating documentation files only
-- Running build/test commands without code changes
-- Git operations (commit, branch, status)
-- The user explicitly says "skip context gathering" or "I already have context"
+No exclusions — always gather context regardless of change type (features, bug fixes, refactors, cosmetic changes, config updates, documentation, etc.).
 
 #### How to Invoke
 
