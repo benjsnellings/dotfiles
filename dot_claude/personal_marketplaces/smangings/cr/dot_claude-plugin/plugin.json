@@ -1,9 +1,0 @@
-{
-  "name": "cr",
-  "description": "Amazon CRUX code review automation - create CRs, address feedback, and review code",
-  "version": "1.0.0",
-  "author": {
-    "name": "snellin",
-    "email": "snellin@amazon.com"
-  }
-}

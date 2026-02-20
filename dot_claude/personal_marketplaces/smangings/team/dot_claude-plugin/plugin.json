@@ -1,9 +1,0 @@
-{
-  "name": "team",
-  "description": "Specialized agent team for Amazon codebase workflows: research, build fixing, test debugging, deployment troubleshooting, and multi-package coordination",
-  "version": "1.0.0",
-  "author": {
-    "name": "snellin",
-    "email": "snellin@amazon.com"
-  }
-}
