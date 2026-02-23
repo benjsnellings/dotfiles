@@ -33,7 +33,7 @@ alias svim='vim -u ~/.SpaceVim/vimrc'
 GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 
 echo "TODO: Checking for dotfile updates..."
-chezmoi git pull -- --autostash --rebase && chezmoi diff --no-pager
+chezmoi git pull -- --autostash --rebase && moist
 
 # I think thji sis needed for mac. Double check later
 # export PATH="/bin:${PATH//:\/bin:/:}"
