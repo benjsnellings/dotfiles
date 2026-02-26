@@ -291,11 +291,45 @@ install_dev_tools() {
             read -p "Install Rustup (Rust toolchain manager)? [y/N] " -n 1 -r
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
-                install_with_curl "https://sh.rustup.rs" "Rustup"
+                info "Installing Rustup..."
+                if [ "$DRY_RUN" = false ]; then
+                    curl -fsSL https://sh.rustup.rs | sh -s -- -y || error "Failed to install Rustup"
+                    # shellcheck disable=SC1091
+                    source "$HOME/.cargo/env"
+                    success "Rustup installed"
+                else
+                    echo "  [DRY-RUN] Would install Rustup"
+                fi
             fi
         fi
     else
         success "Rustup is already installed"
+        # Ensure cargo is in PATH for subsequent installs (e.g., delta)
+        # shellcheck disable=SC1091
+        [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+    fi
+
+    # Delta (git diff tool) - installed via cargo
+    if ! check_command "delta"; then
+        if check_command "cargo"; then
+            if [ "$INTERACTIVE" = true ]; then
+                read -p "Install delta (git diff tool) via cargo? [y/N] " -n 1 -r
+                echo
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    info "Installing delta via cargo..."
+                    if [ "$DRY_RUN" = false ]; then
+                        cargo install git-delta || error "Failed to install delta"
+                        success "delta installed"
+                    else
+                        echo "  [DRY-RUN] Would install delta via cargo"
+                    fi
+                fi
+            fi
+        else
+            warning "delta requires cargo (Rust). Install Rustup first to enable delta installation"
+        fi
+    else
+        success "delta is already installed"
     fi
 
     # Chezmoi
