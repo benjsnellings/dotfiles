@@ -478,6 +478,24 @@ install_amazon_tools() {
         success "mwinit is available"
     fi
 
+    # GitFarm CLI (installed via toolbox with team registry)
+    if ! check_command "gitfarm"; then
+        if check_command "toolbox"; then
+            info "Installing GitFarm CLI..."
+            if [ "$DRY_RUN" = false ]; then
+                toolbox registry add s3://buildertoolbox-registry-source-team-us-west-2/tools.json 2>/dev/null || true
+                toolbox install gitfarm || error "Failed to install GitFarm CLI"
+                success "GitFarm CLI installed"
+            else
+                echo "  [DRY-RUN] Would add GitFarm toolbox registry and install gitfarm"
+            fi
+        else
+            warning "GitFarm CLI not found and toolbox is not available to install it"
+        fi
+    else
+        success "GitFarm CLI is available"
+    fi
+
     info "For more Amazon tools, see DEPENDENCIES.md under 'Amazon-Internal Tools'"
 }
 
