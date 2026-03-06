@@ -28,11 +28,11 @@ else
     echo "...adding all diffs"
     git add -A
     echo "...commiting the changes"
-    git commit -m "Commit by Ben's squash script"
+    git commit --no-verify -m "Commit by Ben's squash script"
     echo "...proceeding to squash"
     #git reset --soft HEAD~$squashCount
     git reset --soft HEAD~2
-    git commit -m "$commitMsg"
+    git commit --no-verify -m "$commitMsg"
     echo "...done"
 fi
 
