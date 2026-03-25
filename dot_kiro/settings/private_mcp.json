@@ -1,31 +1,37 @@
 {
-  "mcpServers" : {
-    "builder-mcp" : {
-      "command" : "builder-mcp",
-      "args" : [ ]
+  "mcpServers": {
+    "builder-mcp": {
+      "command": "builder-mcp",
+      "args": [
+        "--include-tools=ReadInternalWebsites,InternalCodeSearch,TicketingReadActions,InternalSearch,SkillsTool"
+      ]
     },
-    "spec-studio-mcp" : {
-      "command" : "mcp-spec-studio-server",
-      "args" : [ ]
+    "spec-studio-mcp": {
+      "command": "mcp-spec-studio-server",
+      "args": []
     },
-    "workplace-chat-mcp" : {
-      "command" : "workplace-chat-mcp",
-      "args" : [ ]
+    "workplace-chat-mcp": {
+      "command": "workplace-chat-mcp",
+      "args": []
     },
-    "agentspaces-mcp" : {
-      "command" : "agentspaces-mcp",
-      "args" : [ ]
+    "agentspaces-mcp": {
+      "command": "agentspaces-mcp",
+      "args": []
+    },
+    "ai-community-slack-mcp": {
+      "command": "ai-community-slack-mcp",
+      "args": []
     }
   },
-  "powers" : {
-    "mcpServers" : {
-      "power-spec-planner-builder-mcp" : {
-        "command" : "builder-mcp",
-        "args" : [ ]
+  "powers": {
+    "mcpServers": {
+      "power-spec-planner-builder-mcp": {
+        "command": "builder-mcp",
+        "args": []
       },
-      "power-spec-planner-spec-studio-mcp" : {
-        "command" : "mcp-spec-studio-server",
-        "args" : [ ]
+      "power-spec-planner-spec-studio-mcp": {
+        "command": "mcp-spec-studio-server",
+        "args": []
       }
     }
   }
