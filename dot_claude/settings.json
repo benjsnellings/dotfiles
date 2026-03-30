@@ -9,7 +9,6 @@
     "DISABLE_BUG_COMMAND": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "MAX_THINKING_TOKENS": "63999",
-    "CLAUDE_CODE_EFFORT_LEVEL": "high",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "includeCoAuthoredBy": false,
@@ -38,6 +37,7 @@
       "Bash(ebb)",
       "Bash(pipeline:*)",
       "mcp__builder-mcp__Delegate",
+      "mcp__builder-mcp__SkillsTool",
       "mcp__builder-mcp__ReadInternalWebsites",
       "mcp__builder-mcp__InternalSearch",
       "mcp__builder-mcp__SearchAcronymCentral",
@@ -84,8 +84,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "aim skills inject",
-            "timeout": 10000
+            "command": "bash ~/.claude/hooks/sync-aim-skills.sh",
+            "timeout": 5000
           }
         ]
       }
