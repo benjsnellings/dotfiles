@@ -121,7 +121,8 @@
     "ralph-wiggum@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": false,
     "smangit@smangings": false,
-    "playwright@claude-plugins-official": true
+    "playwright@claude-plugins-official": true,
+    "smangings@smangings": true
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
