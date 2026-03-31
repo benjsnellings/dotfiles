@@ -37,7 +37,6 @@
       "Bash(ebb)",
       "Bash(pipeline:*)",
       "mcp__builder-mcp__Delegate",
-      "mcp__builder-mcp__SkillsTool",
       "mcp__builder-mcp__ReadInternalWebsites",
       "mcp__builder-mcp__InternalSearch",
       "mcp__builder-mcp__SearchAcronymCentral",
@@ -84,8 +83,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/hooks/sync-aim-skills.sh",
-            "timeout": 5000
+            "command": "aim skills inject",
+            "timeout": 10000
           }
         ]
       }
@@ -121,8 +120,8 @@
     "pr-review-toolkit@claude-code-plugins": true,
     "ralph-wiggum@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": false,
-    "smangings@smangings": true,
-    "smangit@smangings": true
+    "smangit@smangings": false,
+    "playwright@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
