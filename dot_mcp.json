@@ -18,6 +18,11 @@
       "type": "stdio",
       "command": "mcp-spec-studio-server"
     },
+    "pippin-mcp": {
+      "type": "stdio",
+      "command": "pippin-mcp-server",
+      "args": []
+    },
     "playwright": {
       "type": "stdio",
       "command": "npx",
