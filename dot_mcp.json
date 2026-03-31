@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "workplace-chat-mcp": {
+      "type": "stdio",
+      "command": "workplace-chat-mcp",
+      "args": []
+    },
+    "builder-mcp": {
+      "type": "stdio",
+      "command": "builder-mcp",
+      "args": [
+        "--include-tools",
+        "ReadInternalWebsites, InternalSearch, InternalCodeSearch, BrazilBuildAnalyzerTool, GetSoftwareRecommendation, SearchSoftwareRecommendations, Taskei*, Quip*"
+      ],
+      "env": {}
+    },
+    "spec-studio-mcp": {
+      "type": "stdio",
+      "command": "mcp-spec-studio-server"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser", "chrome",
+        "--user-data-dir", "/Users/snellin/Library/Application Support/Google/Chrome"
+      ],
+      "env": {}
+    }
+  }
+}
