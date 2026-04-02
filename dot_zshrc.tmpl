@@ -24,6 +24,7 @@ alias svim='vim -u ~/.SpaceVim/vimrc'
 
 {{ if eq .chezmoi.os "linux" }}
 # DevDesktop Only Stuff
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
 # TODO: Setup kinit amd mwinit renewal
 # https://w.amazon.com/bin/view/Mshrarm/Kinit_And_Mwinit_renewal_script
