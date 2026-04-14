@@ -15,6 +15,7 @@ args = [
 
 [diff]
     command = "delta"
+    args = ["--file-transformation", "s|^|/|", "{{ .Destination }}", "{{ .Target }}"]
     pager = "delta"
     exclude = ["scripts"]
 
