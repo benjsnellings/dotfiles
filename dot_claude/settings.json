@@ -124,8 +124,17 @@
     "ralph-wiggum@claude-code-plugins": true,
     "security-guidance@claude-code-plugins": false,
     "smangit@smangings": false,
-    "playwright@claude-plugins-official": true,
-    "smangings@smangings": true
+    "playwright@claude-plugins-official": false,
+    "smangings@smangings": true,
+    "amzn-commit@amzn": true
+  },
+  "extraKnownMarketplaces": {
+    "amzn": {
+      "source": {
+        "source": "directory",
+        "path": "/Volumes/workplace/AgentSwarming/SnellinAiPlayground/src/ClaudeAmazonMarketplace/amzn"
+      }
+    }
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
