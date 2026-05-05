@@ -133,8 +133,10 @@
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
+  "editorMode": "vim",
+  "verbose": true,
+  "autoCompactEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1756164689105
-  },
-  "editorMode": "vim"
+  }
 }
