@@ -130,14 +130,7 @@
     "smangings@smangings": true,
     "amzn-commit@amzn": true
   },
-  "extraKnownMarketplaces": {
-    "amzn": {
-      "source": {
-        "source": "directory",
-        "path": "/Volumes/workplace/AgentSwarming/SnellinAiPlayground/src/ClaudeAmazonMarketplace/amzn"
-      }
-    }
-  },
+  "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
