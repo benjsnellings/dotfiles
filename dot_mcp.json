@@ -28,8 +28,7 @@
       "command": "npx",
       "args": [
         "@playwright/mcp@latest",
-        "--browser", "chrome",
-        "--user-data-dir", "/Users/snellin/Library/Application Support/Google/Chrome"
+        "--extension"
       ],
       "env": {}
     }
