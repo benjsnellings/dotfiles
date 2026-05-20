@@ -127,7 +127,10 @@
     "smangit@smangings": false,
     "playwright@claude-plugins-official": false,
     "smangings@smangings": true,
-    "typescript-lsp@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
