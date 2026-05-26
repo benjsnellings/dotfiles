@@ -407,6 +407,19 @@ install_macos_specific() {
         fi
     fi
 
+    # Finch (Docker alternative)
+    if [ "$INTERACTIVE" = true ]; then
+        read -p "Install Finch (Docker alternative)? [y/N] " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            if [ "$DRY_RUN" = false ]; then
+                brew install --cask finch || error "Failed to install Finch"
+                success "Finch installed"
+            else
+                echo "  [DRY-RUN] Would install Finch"
+            fi
+        fi
+    fi
 }
 
 # Amazon-internal tools
