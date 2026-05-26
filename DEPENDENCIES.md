@@ -77,7 +77,6 @@ This document lists all dependencies required for this dotfiles configuration. D
 |------|-------------|----------|
 | **homebrew** | Package manager for macOS | ✓ |
 | **karabiner-elements** | Keyboard customization tool | Optional |
-| **finch** | Docker alternative for macOS | Optional |
 | **sublime-text** | GUI text editor | Optional |
 
 ### Homebrew-Managed Paths

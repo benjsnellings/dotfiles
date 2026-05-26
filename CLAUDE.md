@@ -106,7 +106,7 @@ After sourcing `~/.zsh/*`, `dot_zshrc.tmpl` conditionally adds macOS or Linux pa
 ## Platform Branching
 
 Templates branch on `.chezmoi.os`:
-- **macOS** (`darwin`): Homebrew paths, Sublime Text path, Karabiner config, finch aliases, `gh auth git-credential` helper
+- **macOS** (`darwin`): Homebrew paths, Sublime Text path, Karabiner config, `gh auth git-credential` helper
 - **Linux**: AWS EC2 metadata disabled, DevDesktop-specific config, different credential helper paths
 
 ## Key Dotfile Behaviors
