@@ -11,6 +11,12 @@ model=$(echo "$input" | jq -r '.model.display_name')
 max_ctx=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 
+# Extract cumulative session cost (USD)
+cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
+
+# Extract effort level (only present when model supports reasoning effort)
+effort=$(echo "$input" | jq -r '.effort.level // empty')
+
 # Abbreviate home directory, then trim to last 3 path components
 cwd_display="${cwd/#$HOME/~}"
 parts=$(echo "$cwd_display" | tr '/' '\n' | wc -l)
@@ -27,6 +33,7 @@ CYAN='\033[36m'
 MAGENTA='\033[35m'
 YELLOW='\033[33m'
 RED='\033[31m'
+GREEN='\033[32m'
 RESET='\033[0m'
 
 # Get git branch if in a git repository (skip optional locks for performance)
@@ -71,6 +78,16 @@ else
     context_info="${bar} ${used_k}k/${max_k}k (${pct}%)"
 fi
 
+# Format cost to 2 decimals (printf handles the float; default 0 if absent)
+cost_fmt=$(printf '$%.2f' "$cost" 2>/dev/null || echo '$0.00')
+
+# Build effort segment (omit entirely when not available)
+if [ -n "$effort" ]; then
+    effort_info=" • ${MAGENTA}${effort}${RESET}"
+else
+    effort_info=""
+fi
+
 # Build status line with color codes
-# Format: directory • git-branch • model • time | context-bar
-printf '%b' "${BLUE}${cwd_display}${RESET}${git_info} • ${MAGENTA}${model}${RESET} • ${YELLOW}${time_now}${RESET} | ${context_info}"
+# Format: directory • git-branch • model[•effort] • time | context-bar • cost
+printf '%b' "${BLUE}${cwd_display}${RESET}${git_info} • ${MAGENTA}${model}${RESET}${effort_info} • ${YELLOW}${time_now}${RESET} | ${context_info} • ${GREEN}${cost_fmt}${RESET}"
