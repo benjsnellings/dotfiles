@@ -137,7 +137,7 @@
   },
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "verbose": true,
