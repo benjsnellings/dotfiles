@@ -74,6 +74,7 @@
     ],
     "deny": [
       "Bash(pipeline deploy:*)",
+      "Bash(git push:*)",
       "Bash(cdk deploy:*)",
       "Bash(bb cdk deploy:*)"
     ],
