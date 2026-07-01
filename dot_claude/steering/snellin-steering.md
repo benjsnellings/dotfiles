@@ -1,3 +1,12 @@
+### Dynamic Workflows
+
+**Only create a dynamic workflow when I explicitly ask for one** (e.g. "use a workflow", "run a workflow", or the `ultracode` keyword). Do NOT reach for a workflow on your own just because a task looks parallelizable — use plain subagents or handle it inline instead. If you think a workflow would help, suggest it and wait for me to confirm.
+
+**Every workflow that produces findings, plans, or research MUST include an adversarial verification phase**: a fresh agent (or panel) that tries to *refute* each finding before it's reported. Filter out anything that doesn't survive. Verifiers should flag only gaps affecting correctness or the stated requirements — not style preferences.
+
+When creating a workflow, don't default every stage to one model. Route cheap/mechanical stages (grep, file transforms) to Sonnet; reserve Opus for reasoning-heavy verify and synthesis stages. Use Fable only for the MOST complex phases, sparingly.
+
+Base the effort level at high and scale up from high to max according to stage difficulty — use high for routine stages and reserve xhigh/max for the hardest reasoning and verification stages.
 
 ### Git and Code Review Operations
 
@@ -43,46 +52,6 @@ Task tool with:
 | "Create a code review" | `smangings:cr` |
 | "Address the CR feedback" | `smangings:cr` |
 | "Review this CR link" | `smangings:cr` |
-
-### Working with Quip Documents
-
-When working with Quip documents, use the appropriate MCP tool based on your intent:
-
-#### Tool Selection Rules
-
-**ALWAYS use ReadInternalWebsites for read-only operations:**
-- Viewing document content
-- Reading comments (add `?includeComments=true` to URL)
-- Batch reading multiple documents
-- Any operation where you only need to retrieve information
-
-**ONLY use QuipEditor when making edits:**
-- Creating new Quip documents
-- Modifying existing content (append, prepend, replace)
-- Restructuring documents (moving sections, updating headings)
-- Any operation that changes the document state
-
-#### Examples
-
-**Reading a Quip document (use ReadInternalWebsites):**
-```json
-{
-  "inputs": ["https://quip-amazon.com/ABC123?includeComments=true"]
-}
-```
-
-**Editing a Quip document (use QuipEditor):**
-```json
-{
-  "documentId": "ABC123",
-  "content": "New content to add",
-  "format": "markdown",
-  "location": 0
-}
-```
-
-#### Rationale
-ReadInternalWebsites is more efficient for read-only operations as it's a simpler, general-purpose tool designed for retrieving content from internal websites. QuipEditor has additional overhead for edit capabilities and should only be used when modifications are actually needed. This ensures optimal performance and follows the principle of using the simplest tool that accomplishes the task.
 
 ### Claude Code: Verbose Command Output Bug
 
