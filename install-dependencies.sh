@@ -457,6 +457,23 @@ install_amazon_tools() {
         success "Claude Code is already installed"
     fi
 
+    # Check for Codex (OpenAI Codex CLI, configured for Bedrock via alias)
+    if ! check_command "codex"; then
+        if check_command "npm"; then
+            info "Installing Codex CLI via npm..."
+            if [ "$DRY_RUN" = false ]; then
+                npm install -g @openai/codex || error "Failed to install Codex CLI"
+                success "Codex CLI installed"
+            else
+                echo "  [DRY-RUN] Would install Codex CLI via npm (@openai/codex)"
+            fi
+        else
+            warning "npm not found. Install Node.js first, then: npm install -g @openai/codex"
+        fi
+    else
+        success "Codex CLI is already installed"
+    fi
+
     # Check for Brazil
     if ! check_command "brazil-build"; then
         warning "Brazil build system not found. This is typically pre-installed on Amazon developer machines"

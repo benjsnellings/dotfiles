@@ -116,6 +116,7 @@ These tools are specific to Amazon's internal development environment and are on
 | Tool | Description |
 |------|-------------|
 | **claude-code** | Claude Code CLI with Bedrock integration |
+| **codex** | OpenAI Codex CLI (`@openai/codex`) with Bedrock integration |
 | **toolbox** | Amazon standard development tools installer |
 | **builder-mcp** | Builder MCP for internal tools |
 | **mcp-registry** | MCP server registry |
