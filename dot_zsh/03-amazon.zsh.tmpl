@@ -138,6 +138,35 @@ function multi-ssh() {
   ssh ${=options} DevDesktop &
 }
 
+# pf: forward one or more ports FROM a remote host TO this machine.
+#
+# Usage:
+#   pf NextGenDev 8000            # local 8000 -> NextGenDev:8000
+#   pf NextGenDev 8000 3000       # multiple ports, host is the FIRST arg
+#
+# Generalized version of multi-ssh (above) that takes an arbitrary host.
+# The remote host is where `localhost` resolves, so the service must be
+# listening on the remote's loopback.
+function pf() {
+  # The first positional arg is the host; everything after it is a port.
+  local host="$1"
+  local ports=("${@[2,-1]}")
+
+  if [[ -z "$host" || ${#ports} == 0 ]]; then
+    echo "usage: pf <host> <port> [port...]" >&2
+    return 1
+  fi
+
+  local -a options=(-f -N)
+  for port in ${ports}; do
+    kill $(lsof -t -i:${port}) 2>/dev/null   # free the local port first
+    options+=(-L ${port}:localhost:${port})
+  done
+
+  echo "forwarding ${ports} from ${host} -> localhost" >&2
+  ssh ${=options} "$host"
+}
+
 
 
 ####################################
