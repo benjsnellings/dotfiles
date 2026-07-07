@@ -10,7 +10,7 @@
     "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "Sonnet 5 (1M)",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "Haiku 4.5",
-    "ANTHROPIC_CUSTOM_MODEL_OPTION": "global.anthropic.claude-fable-5[1m]",
+    "ANTHROPIC_CUSTOM_MODEL_OPTION": "us.anthropic.claude-fable-5[1m]",
     "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME": "Fable 5 (1M)",
     "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION": "Claude Fable 5 with 1M context",
     "ENABLE_PROMPT_CACHING_1H": "1",
@@ -43,6 +43,8 @@
       "Bash(git checkout:*)",
       "Bash(git -P show:*)",
       "Bash(git stash:*)",
+      "Bash(git push -u origin worktree-*)",
+      "Bash(git push origin worktree-*)",
       "Bash(brazil-build release)",
       "Bash(ebb)",
       "Bash(pipeline:*)",
@@ -74,7 +76,14 @@
     ],
     "deny": [
       "Bash(pipeline deploy:*)",
-      "Bash(git push:*)",
+      "Bash(git push* --force*)",
+      "Bash(git push* -f*)",
+      "Bash(git push* --delete*)",
+      "Bash(git push* -d*)",
+      "Bash(git push*:main*)",
+      "Bash(git push*:refs/heads/main*)",
+      "Bash(git push* +*)",
+      "Bash(git push* main*)",
       "Bash(cdk deploy:*)",
       "Bash(bb cdk deploy:*)"
     ],
@@ -180,7 +189,8 @@
     "smangings@smangings": true,
     "superpowers@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
@@ -188,7 +198,7 @@
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "verbose": true,
-  "autoCompactEnabled": false,
+  "autoCompactEnabled": true,
   "teammateMode": "in-process",
   "teammateDefaultModel": "global.anthropic.claude-opus-4-6-v1[1m]",
   "feedbackSurveyState": {
