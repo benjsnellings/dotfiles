@@ -39,7 +39,8 @@
       "args": [
         "@playwright/mcp@latest",
         "--headless",
-        "--browser", "chromium"
+        "--browser", "chromium",
+        "--init-page", "{{ .chezmoi.homeDir }}/.config/playwright-mcp/midway-init.js"
       ],
 {{- end }}
       "env": {}
