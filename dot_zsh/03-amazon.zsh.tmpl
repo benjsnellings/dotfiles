@@ -6,6 +6,10 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/apollo/env/CodeSearchCLI/bin/"
 export CLAUDE_CODE_USE_BEDROCK=1
 
+# mcurl: curl with the Midway auth cookie for hitting internal Amazon endpoints.
+# Run `mwinit` first to populate ~/.midway/cookie.
+alias mcurl='curl -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie'
+
 {{ if eq .chezmoi.os "darwin" }}
 # export DOCKER_HOST=unix:///Applications/Finch/lima/data/finch/sock/finch.sock
 # export DOCKER_CONFIG=$HOME/.finch
