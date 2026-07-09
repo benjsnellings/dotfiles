@@ -7,9 +7,11 @@
  * sites is authenticated as the local user.
  *
  * Scope: works for DIRECT Midway sites (code.amazon.com, phonetool,
- * midway-auth, most builderhub). Does NOT complete OIDC federation, so
- * federated sites (w.amazon.com, atoz.amazon.work) will 401 — those require
- * MCS mode from @amzn/playwright-midway-auth.
+ * midway-auth, most builderhub) AND any federated/OIDC site whose IdP trusts
+ * the injected amazon_enterprise_access (AEA) cookie on an *.aws.dev /
+ * *.a2z.com / *.amazon.dev domain (e.g. the tunnels.lab.aws.dev tunnels).
+ * Only Kerberos-gated sites (w.amazon.com via kerberizer) still fail — those
+ * require MCS mode from @amzn/playwright-midway-auth.
  *
  * Refresh AEA cookies with `mwinit --refresh-aea` (~2h lifetime); a full
  * `mwinit -s -o` re-auth if the session itself lapsed (~20h).
@@ -18,9 +20,11 @@
  * agents / controlled environments only.
  */
 
-const { readFileSync } = require('fs');
-const { homedir } = require('os');
-const { join } = require('path');
+// Loaded by @playwright/mcp via `--init-page` as an ES module; it invokes the
+// DEFAULT export. Must be ESM (`export default`), not CommonJS.
+import { readFileSync } from 'fs';
+import { homedir } from 'os';
+import { join } from 'path';
 
 function parseMidwayCookies(content) {
   const byKey = new Map();
@@ -54,7 +58,7 @@ function parseMidwayCookies(content) {
   return [...byKey.values()];
 }
 
-module.exports = async ({ page }) => {
+export default async ({ page }) => {
   const cookiePath = join(homedir(), '.midway', 'cookie');
   let content;
   try {
