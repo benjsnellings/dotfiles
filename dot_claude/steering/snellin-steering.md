@@ -10,19 +10,14 @@ Base the effort level at high and scale up from high to max according to stage d
 
 ### Git and Code Review Operations
 
-**ALWAYS delegate git and code review operations to specialized agents.**
+**ALWAYS delegate git commit and code review operations to specialized agents.**
 
 #### Git Operations → `smangings:commit` Agent
 
-Use the `smangings:commit` agent (via Task tool) for ALL git operations:
+Use the `smangings:commit` agent (via Task tool) for COMMIT git operations:
 - Committing changes
-- Viewing git status, log, diff
-- Creating/switching branches
-- Staging files
-- Managing stash
-- Cleaning up [gone] branches
 
-**Do NOT run git commands directly** - always invoke the agent.
+**Do NOT use this agent for merges or rebases** 
 
 #### Code Reviews → `smangings:cr` Agent
 
