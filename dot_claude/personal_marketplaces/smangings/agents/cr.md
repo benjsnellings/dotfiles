@@ -11,7 +11,7 @@ description: |
   - Monitoring CR analyzer results (dry-run builds)
   - Enforcing single-commit-per-package before CR creation
 tools: Bash, Read, Grep, Glob, Edit, Write, mcp__builder-mcp__ReadInternalWebsites
-model: inherit
+model: sonnet
 ---
 
 # CRUX Code Review Agent
