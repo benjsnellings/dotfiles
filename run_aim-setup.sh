@@ -43,7 +43,7 @@ if $HAS_AIM; then
     }
 
     echo "[aim-setup] Installing MCP servers from registry..."
-    aim mcp install builder-mcp spec-studio-mcp workplace-chat-mcp agentspaces-mcp || {
+    aim mcp install builder-mcp spec-studio-mcp elemental-workplace-chat-mcp agentspaces-mcp || {
         echo "[aim-setup] WARNING: aim mcp install failed (continuing)"
     }
 fi
