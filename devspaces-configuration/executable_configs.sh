@@ -59,6 +59,26 @@ EOF
 ./bin/chezmoi apply
 
 
+echo "Install host dependencies (jq, aws, Bitwarden CLI, etc.)"
+# install-dependencies.sh lives in the repo, so it is only available after
+# 'chezmoi init' above cloned it. It installs jq + the Bitwarden CLI (bw),
+# which the run_bedrock-aws-profiles-setup.sh script needs to restore the
+# bedrock-access-* AWS profiles from Bitwarden.
+if [ -f ~/.local/share/chezmoi/install-dependencies.sh ]; then
+  ( cd ~/.local/share/chezmoi && ./install-dependencies.sh ) \
+    || echo "WARNING: install-dependencies.sh had issues (continuing)"
+fi
+
+
+echo "Restore Bedrock AWS profiles from Bitwarden"
+# The first apply above cannot populate ~/.aws because the vault is locked on a
+# fresh host. After logging into and unlocking Bitwarden, re-apply to let
+# run_bedrock-aws-profiles-setup.sh fetch the keys into ~/.aws:
+echo "  -> bw login    # once per host, if not already authenticated"
+echo "  -> bwu         # unlock the vault (exports BW_SESSION)"
+echo "  -> chezmoi apply   # populates the bedrock-access-* AWS profiles"
+
+
 echo "ReSource"
 # zsh
 # source ~/.zshrc
