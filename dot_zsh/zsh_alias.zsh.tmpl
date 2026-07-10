@@ -40,9 +40,12 @@ alias ebbb='eda build brazil-build build'
 
 #### Claude Alias
 alias cld='claude --dangerously-skip-permissions --mcp-config ~/.mcp.json'
-# Same as cld, but forces the bedrock-access-secondary AWS profile (overrides the
-# profile pinned in ~/.claude/settings.json; shell env wins over settings env).
-alias cls='AWS_PROFILE=bedrock-access-secondary CLAUDE_CODE_AWS_PROFILE=bedrock-access-secondary cld'
+# Like cld but pins a specific bedrock-access AWS profile (shell env overrides the
+# profile in ~/.claude/settings.json). cl2=secondary ... cl5=quinary.
+alias cl2='AWS_PROFILE=bedrock-access-secondary CLAUDE_CODE_AWS_PROFILE=bedrock-access-secondary cld'
+alias cl3='AWS_PROFILE=bedrock-access-tertiary CLAUDE_CODE_AWS_PROFILE=bedrock-access-tertiary cld'
+alias cl4='AWS_PROFILE=bedrock-access-quaternary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quaternary cld'
+alias cl5='AWS_PROFILE=bedrock-access-quinary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quinary cld'
 alias claude-creds='ada credentials update --account=972842349728 --provider=isengard --role="Admin"'
 
 #### Kiro Alias
