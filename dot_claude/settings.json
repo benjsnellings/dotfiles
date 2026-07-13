@@ -19,9 +19,7 @@
     "DISABLE_BUG_COMMAND": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "MAX_THINKING_TOKENS": "63999",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_CODE_RETRY_WATCHDOG": "1",
-    "CLAUDE_CODE_MAX_RETRIES": "15"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -74,7 +72,24 @@
       "mcp__builder-mcp__GetPipelineDetails",
       "mcp__builder-mcp__GetSasRisks",
       "mcp__builder-mcp__GetSasCampaigns",
-      "mcp__builder-mcp__GKAnalyzeVersionSet"
+      "mcp__builder-mcp__GKAnalyzeVersionSet",
+      "mcp__workplace-chat-mcp__search",
+      "mcp__workplace-chat-mcp__search_files",
+      "mcp__workplace-chat-mcp__lookup_user",
+      "mcp__workplace-chat-mcp__batch_get_user_info",
+      "mcp__workplace-chat-mcp__batch_get_conversation_history",
+      "mcp__workplace-chat-mcp__batch_get_thread_replies",
+      "mcp__workplace-chat-mcp__get_conversation_details",
+      "mcp__workplace-chat-mcp__get_dm_channel",
+      "mcp__workplace-chat-mcp__get_channel_info",
+      "mcp__workplace-chat-mcp__resolve_channel",
+      "mcp__workplace-chat-mcp__get_channel_sections",
+      "mcp__workplace-chat-mcp__get_channel_tabs",
+      "mcp__workplace-chat-mcp__get_canvas_content",
+      "mcp__workplace-chat-mcp__get_list_content",
+      "mcp__workplace-chat-mcp__list_reminders",
+      "mcp__workplace-chat-mcp__list_scheduled_messages",
+      "mcp__workplace-chat-mcp__download_file_content"
     ],
     "deny": [
       "Bash(pipeline deploy:*)",
@@ -96,7 +111,7 @@
       "~/.aim/"
     ]
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
     "SessionStart": [
       {
@@ -196,8 +211,8 @@
   },
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
-  "effortLevel": "xhigh",
-  "tui": "default",
+  "effortLevel": "high",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "verbose": true,
