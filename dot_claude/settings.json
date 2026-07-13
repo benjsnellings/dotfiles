@@ -19,7 +19,9 @@
     "DISABLE_BUG_COMMAND": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "MAX_THINKING_TOKENS": "63999",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_RETRY_WATCHDOG": "1",
+    "CLAUDE_CODE_MAX_RETRIES": "15"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -94,7 +96,7 @@
       "~/.aim/"
     ]
   },
-  "model": "opus",
+  "model": "sonnet",
   "hooks": {
     "SessionStart": [
       {
@@ -194,7 +196,8 @@
   },
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "verbose": true,
