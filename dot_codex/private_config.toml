@@ -1,11 +1,30 @@
-model = "openai.gpt-5.6-sol"
+model = "openai.gpt-5.5"
 model_provider = "amazon-bedrock"
+model_reasoning_effort = "medium"
 [model_providers.amazon-bedrock.aws]
-profile = "codex-bedrock"
+profile = "bedrock-access-user"
 wire_api = "responses"
 region = "us-west-2"
 
 [projects."/local/home/snellin/workspace/LatticeBrazil"]
 trust_level = "trusted"
+
+[mcp_servers.elemental-workplace-chat-mcp]
+command = "elemental-workplace-chat-mcp"
+
+[mcp_servers.builder-mcp]
+command = "builder-mcp"
+
+[mcp_servers.builder-mcp.env]
+TOOL_PERSONALIZATION_ENABLED = "true"
+TOOL_PERSONALIZATION_MIN_EXECUTIONS = "0"
+TOOL_PERSONALIZATION_ROLLOUT_PERCENTAGE = "100"
+TOOL_PERSONALIZATION_TRAINING_DAYS = "0"
+
+[mcp_servers.agentspaces-mcp]
+command = "agentspaces-mcp"
+
+[mcp_servers.spec-studio-mcp]
+command = "mcp-spec-studio-server"
 
 
