@@ -1,10 +1,10 @@
-model = "openai.gpt-5.5"
+model = "openai.gpt-5.6-sol"
 model_provider = "amazon-bedrock"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "max"
 [model_providers.amazon-bedrock.aws]
 profile = "bedrock-access-user"
 wire_api = "responses"
-region = "us-west-2"
+region = "us-east-1"
 
 [projects."/local/home/snellin/workspace/LatticeBrazil"]
 trust_level = "trusted"
