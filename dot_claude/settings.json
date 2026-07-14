@@ -184,6 +184,28 @@
           }
         ]
       }
+    ],
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/wt-create.sh",
+            "timeout": 120000
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/wt-remove.sh",
+            "timeout": 60000
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -214,7 +236,7 @@
   "extraKnownMarketplaces": {},
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
-  "tui": "fullscreen",
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "verbose": true,
