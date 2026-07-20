@@ -48,6 +48,42 @@ alias cl4='AWS_PROFILE=bedrock-access-quaternary CLAUDE_CODE_AWS_PROFILE=bedrock
 alias cl5='AWS_PROFILE=bedrock-access-quinary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quinary cld'
 alias claude-creds='ada credentials update --account=972842349728 --provider=isengard --role="Admin"'
 
+# clb = "claude balanced": launch cld on whichever bedrock-access profile currently
+# has the FEWEST running claude sessions (ties broken by pool order). Counts live
+# sessions by reading AWS_PROFILE from each `claude` process's environ; a session
+# with no AWS_PROFILE inherited the default (bedrock-access-user) from settings.json.
+# Any args are forwarded to claude, e.g. `clb -c` or `clb -r`.
+clb() {
+  local -a profiles=(
+    bedrock-access-user        # cld  (default in ~/.claude/settings.json)
+    bedrock-access-secondary   # cl2
+    bedrock-access-tertiary    # cl3
+    bedrock-access-quaternary  # cl4
+    bedrock-access-quinary     # cl5
+  )
+  local default_profile=bedrock-access-user
+  local -A counts
+  local p pid prof
+  for p in "${profiles[@]}"; do counts[$p]=0; done
+
+  # Tally running claude sessions per profile.
+  for pid in ${(f)"$(pgrep -x claude 2>/dev/null)"}; do
+    prof=$(tr '\0' '\n' < /proc/$pid/environ 2>/dev/null | grep -m1 '^AWS_PROFILE=' | cut -d= -f2)
+    [[ -z $prof ]] && prof=$default_profile
+    [[ -n ${counts[$prof]+x} ]] && counts[$prof]=$(( counts[$prof] + 1 ))
+  done
+
+  # Pick the least-loaded profile; first in pool order wins ties.
+  local best=${profiles[1]} best_n=${counts[${profiles[1]}]}
+  for p in "${profiles[@]}"; do
+    if (( counts[$p] < best_n )); then best=$p; best_n=${counts[$p]}; fi
+  done
+
+  print -r -- "clb: sessions per profile -> ${(kv)counts}"
+  print -r -- "clb: launching on $best (running: $best_n)"
+  AWS_PROFILE=$best CLAUDE_CODE_AWS_PROFILE=$best cld "$@"
+}
+
 #### Kiro Alias
 alias kd='kiro-cli chat --trust-all-tools'
 
