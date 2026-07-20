@@ -50,8 +50,9 @@ alias claude-creds='ada credentials update --account=972842349728 --provider=ise
 
 # clb = "claude balanced": launch cld on whichever bedrock-access profile currently
 # has the FEWEST running claude sessions (ties broken by pool order). Counts live
-# sessions by reading AWS_PROFILE from each `claude` process's environ; a session
+# sessions by reading AWS_PROFILE from each `claude` process's environment; a session
 # with no AWS_PROFILE inherited the default (bedrock-access-user) from settings.json.
+# Cross-platform: reads /proc on Linux, falls back to `ps eww` on macOS/BSD.
 # Any args are forwarded to claude, e.g. `clb -c` or `clb -r`.
 clb() {
   local -a profiles=(
@@ -66,12 +67,25 @@ clb() {
   local p pid prof
   for p in "${profiles[@]}"; do counts[$p]=0; done
 
+  # Read a process's AWS_PROFILE from its environment. Prefers /proc (Linux);
+  # falls back to `ps eww` (macOS/BSD), where env is space-joined with argv.
+  _clb_profile_of() {
+    local _pid=$1 _prof=''
+    if [[ -r /proc/$_pid/environ ]]; then
+      _prof=$(tr '\0' '\n' < /proc/$_pid/environ 2>/dev/null | grep -m1 '^AWS_PROFILE=' | cut -d= -f2)
+    else
+      _prof=$(ps eww -o command= -p "$_pid" 2>/dev/null | tr ' ' '\n' | grep -m1 '^AWS_PROFILE=' | cut -d= -f2)
+    fi
+    print -r -- "$_prof"
+  }
+
   # Tally running claude sessions per profile.
   for pid in ${(f)"$(pgrep -x claude 2>/dev/null)"}; do
-    prof=$(tr '\0' '\n' < /proc/$pid/environ 2>/dev/null | grep -m1 '^AWS_PROFILE=' | cut -d= -f2)
+    prof=$(_clb_profile_of "$pid")
     [[ -z $prof ]] && prof=$default_profile
     [[ -n ${counts[$prof]+x} ]] && counts[$prof]=$(( counts[$prof] + 1 ))
   done
+  unfunction _clb_profile_of 2>/dev/null
 
   # Pick the least-loaded profile; first in pool order wins ties.
   local best=${profiles[1]} best_n=${counts[${profiles[1]}]}
