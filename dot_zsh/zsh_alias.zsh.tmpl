@@ -39,77 +39,25 @@ alias ebb='eda build brazil-build'
 alias ebbb='eda build brazil-build build'
 
 #### Claude Alias
-# `claude` itself is a load balancer: it picks whichever bedrock-access profile has
-# the FEWEST running claude sessions and launches the real binary pinned to it. This
-# shadows the ~/.local/bin/claude binary; `command claude` reaches the raw binary.
+# `claude` is load balanced: the claude-lb shim picks whichever bedrock-access
+# profile has the FEWEST running claude sessions and execs the real binary pinned
+# to it. The single implementation lives in ~/.local/libexec/claude-lb/claude and
+# has two consumers: this function (interactive shells) and the lattice daemon
+# (its systemd unit puts the shim dir first on PATH).
 #
 #   claude       -> balanced, vanilla Claude Code (no extra flags)
 #   cld          -> balanced, PLUS --dangerously-skip-permissions + ~/.mcp.json
 #   cl1 .. cl5   -> pin a specific profile (balancing skipped; the pin is honored)
 #
 # NOTE: ~/.claude/settings.json must NOT set AWS_PROFILE / CLAUDE_CODE_AWS_PROFILE,
-# or settings.json's env block would override the profile we set here (its env
+# or settings.json's env block would override the profile the shim picks (its env
 # OVERRIDES shell exports) and every session would collapse onto one profile.
 claude() {
-  # Honor an explicit pin (cl1-cl5 export a profile); skip balancing entirely.
-  if [[ -n $CLAUDE_CODE_AWS_PROFILE || -n $AWS_PROFILE ]]; then
-    command claude "$@"
-    return
+  if [[ -x $HOME/.local/libexec/claude-lb/claude ]]; then
+    $HOME/.local/libexec/claude-lb/claude "$@"
+  else
+    command claude "$@"   # shim missing: fall back to the raw binary
   fi
-
-  local -a profiles=(
-    bedrock-access-user        # cl1  ("primary")
-    bedrock-access-secondary   # cl2
-    bedrock-access-tertiary    # cl3
-    bedrock-access-quaternary  # cl4
-    bedrock-access-quinary     # cl5
-  )
-  local default_profile=bedrock-access-user
-  local -A counts
-  local p pid prof
-  for p in "${profiles[@]}"; do counts[$p]=0; done
-
-  # Read a process's AWS_PROFILE from its environment. Prefers /proc (Linux);
-  # falls back to `ps eww` (macOS/BSD), where env is space-joined with argv.
-  _clb_profile_of() {
-    local _pid=$1 _prof=''
-    if [[ -r /proc/$_pid/environ ]]; then
-      _prof=$(tr '\0' '\n' < /proc/$_pid/environ 2>/dev/null | grep -m1 '^AWS_PROFILE=' | cut -d= -f2)
-    else
-      _prof=$(ps eww -o command= -p "$_pid" 2>/dev/null | tr ' ' '\n' | grep -m1 '^AWS_PROFILE=' | cut -d= -f2)
-    fi
-    print -r -- "$_prof"
-  }
-
-  # Tally running claude sessions per profile.
-  for pid in ${(f)"$(pgrep -x claude 2>/dev/null)"}; do
-    prof=$(_clb_profile_of "$pid")
-    [[ -z $prof ]] && prof=$default_profile
-    [[ -n ${counts[$prof]+x} ]] && counts[$prof]=$(( counts[$prof] + 1 ))
-  done
-  unfunction _clb_profile_of 2>/dev/null
-
-  # Pick the least-loaded profile; first in pool order wins ties.
-  local best=${profiles[1]} best_n=${counts[${profiles[1]}]}
-  for p in "${profiles[@]}"; do
-    if (( counts[$p] < best_n )); then best=$p; best_n=${counts[$p]}; fi
-  done
-
-  # Report load (to stderr, only when interactive) so piped/captured stdout stays clean.
-  if [[ -t 2 ]]; then
-    _clb_label() { local l=${1#bedrock-access-}; [[ $l == user ]] && l=primary; print -r -- "$l"; }
-    print -r -- "claude: running sessions per profile" >&2
-    for p in "${profiles[@]}"; do
-      if [[ $p == $best ]]; then
-        printf '  %-11s %2d  <- launching here\n' "$(_clb_label $p)" "${counts[$p]}" >&2
-      else
-        printf '  %-11s %2d\n' "$(_clb_label $p)" "${counts[$p]}" >&2
-      fi
-    done
-    unfunction _clb_label 2>/dev/null
-  fi
-
-  AWS_PROFILE=$best CLAUDE_CODE_AWS_PROFILE=$best command claude "$@"
 }
 
 # cld: the balanced claude() above, plus the "power" flags. Because `claude` is a
