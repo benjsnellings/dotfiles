@@ -39,24 +39,26 @@ alias ebb='eda build brazil-build'
 alias ebbb='eda build brazil-build build'
 
 #### Claude Alias
-alias cld='claude --dangerously-skip-permissions --mcp-config ~/.mcp.json'
-# Like cld but pins a specific bedrock-access AWS profile (shell env overrides the
-# profile in ~/.claude/settings.json). cl2=secondary ... cl5=quinary.
-alias cl2='AWS_PROFILE=bedrock-access-secondary CLAUDE_CODE_AWS_PROFILE=bedrock-access-secondary cld'
-alias cl3='AWS_PROFILE=bedrock-access-tertiary CLAUDE_CODE_AWS_PROFILE=bedrock-access-tertiary cld'
-alias cl4='AWS_PROFILE=bedrock-access-quaternary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quaternary cld'
-alias cl5='AWS_PROFILE=bedrock-access-quinary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quinary cld'
-alias claude-creds='ada credentials update --account=972842349728 --provider=isengard --role="Admin"'
+# `claude` itself is a load balancer: it picks whichever bedrock-access profile has
+# the FEWEST running claude sessions and launches the real binary pinned to it. This
+# shadows the ~/.local/bin/claude binary; `command claude` reaches the raw binary.
+#
+#   claude       -> balanced, vanilla Claude Code (no extra flags)
+#   cld          -> balanced, PLUS --dangerously-skip-permissions + ~/.mcp.json
+#   cl1 .. cl5   -> pin a specific profile (balancing skipped; the pin is honored)
+#
+# NOTE: ~/.claude/settings.json must NOT set AWS_PROFILE / CLAUDE_CODE_AWS_PROFILE,
+# or settings.json's env block would override the profile we set here (its env
+# OVERRIDES shell exports) and every session would collapse onto one profile.
+claude() {
+  # Honor an explicit pin (cl1-cl5 export a profile); skip balancing entirely.
+  if [[ -n $CLAUDE_CODE_AWS_PROFILE || -n $AWS_PROFILE ]]; then
+    command claude "$@"
+    return
+  fi
 
-# clb = "claude balanced": launch cld on whichever bedrock-access profile currently
-# has the FEWEST running claude sessions (ties broken by pool order). Counts live
-# sessions by reading AWS_PROFILE from each `claude` process's environment; a session
-# with no AWS_PROFILE inherited the default (bedrock-access-user) from settings.json.
-# Cross-platform: reads /proc on Linux, falls back to `ps eww` on macOS/BSD.
-# Any args are forwarded to claude, e.g. `clb -c` or `clb -r`.
-clb() {
   local -a profiles=(
-    bedrock-access-user        # cld  (default in ~/.claude/settings.json)
+    bedrock-access-user        # cl1  ("primary")
     bedrock-access-secondary   # cl2
     bedrock-access-tertiary    # cl3
     bedrock-access-quaternary  # cl4
@@ -93,22 +95,38 @@ clb() {
     if (( counts[$p] < best_n )); then best=$p; best_n=${counts[$p]}; fi
   done
 
-  # Friendly display label: strip the bedrock-access- prefix; show the default as "primary".
-  _clb_label() { local l=${1#bedrock-access-}; [[ $l == user ]] && l=primary; print -r -- "$l"; }
+  # Report load (to stderr, only when interactive) so piped/captured stdout stays clean.
+  if [[ -t 2 ]]; then
+    _clb_label() { local l=${1#bedrock-access-}; [[ $l == user ]] && l=primary; print -r -- "$l"; }
+    print -r -- "claude: running sessions per profile" >&2
+    for p in "${profiles[@]}"; do
+      if [[ $p == $best ]]; then
+        printf '  %-11s %2d  <- launching here\n' "$(_clb_label $p)" "${counts[$p]}" >&2
+      else
+        printf '  %-11s %2d\n' "$(_clb_label $p)" "${counts[$p]}" >&2
+      fi
+    done
+    unfunction _clb_label 2>/dev/null
+  fi
 
-  # Report load in pool order (primary, secondary, ...), marking the chosen profile.
-  print -r -- "clb: running claude sessions per profile"
-  for p in "${profiles[@]}"; do
-    if [[ $p == $best ]]; then
-      printf '  %-11s %2d  <- launching here\n' "$(_clb_label $p)" "${counts[$p]}"
-    else
-      printf '  %-11s %2d\n' "$(_clb_label $p)" "${counts[$p]}"
-    fi
-  done
-  unfunction _clb_label 2>/dev/null
-
-  AWS_PROFILE=$best CLAUDE_CODE_AWS_PROFILE=$best cld "$@"
+  AWS_PROFILE=$best CLAUDE_CODE_AWS_PROFILE=$best command claude "$@"
 }
+
+# cld: the balanced claude() above, plus the "power" flags. Because `claude` is a
+# function, this alias resolves to it (the function calls `command claude`, so no
+# recursion) — cld inherits balancing for free.
+alias cld='claude --dangerously-skip-permissions --mcp-config ~/.mcp.json'
+
+# cl1..cl5: pin a specific bedrock-access profile. The exported profile makes claude()
+# honor the pin and skip balancing. cl1=primary ... cl5=quinary.
+alias cl1='AWS_PROFILE=bedrock-access-user CLAUDE_CODE_AWS_PROFILE=bedrock-access-user cld'
+alias cl2='AWS_PROFILE=bedrock-access-secondary CLAUDE_CODE_AWS_PROFILE=bedrock-access-secondary cld'
+alias cl3='AWS_PROFILE=bedrock-access-tertiary CLAUDE_CODE_AWS_PROFILE=bedrock-access-tertiary cld'
+alias cl4='AWS_PROFILE=bedrock-access-quaternary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quaternary cld'
+alias cl5='AWS_PROFILE=bedrock-access-quinary CLAUDE_CODE_AWS_PROFILE=bedrock-access-quinary cld'
+# clb kept for muscle memory: bare `claude` is already balanced.
+alias clb='claude'
+alias claude-creds='ada credentials update --account=972842349728 --provider=isengard --role="Admin"'
 
 #### Kiro Alias
 alias kd='kiro-cli chat --trust-all-tools'

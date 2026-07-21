@@ -2,9 +2,7 @@
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "true",
     "CLAUDE_CODE_USE_MANTLE": "true",
-    "AWS_PROFILE": "bedrock-access-user",
     "AWS_REGION": "us-east-1",
-    "CLAUDE_CODE_AWS_PROFILE": "bedrock-access-user",
     "ANTHROPIC_DEFAULT_FABLE_MODEL": "us.anthropic.claude-fable-5[1m]",
     "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "Fable 5 (1M)",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-8[1m]",
