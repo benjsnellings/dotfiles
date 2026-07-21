@@ -93,8 +93,20 @@ clb() {
     if (( counts[$p] < best_n )); then best=$p; best_n=${counts[$p]}; fi
   done
 
-  print -r -- "clb: sessions per profile -> ${(kv)counts}"
-  print -r -- "clb: launching on $best (running: $best_n)"
+  # Friendly display label: strip the bedrock-access- prefix; show the default as "primary".
+  _clb_label() { local l=${1#bedrock-access-}; [[ $l == user ]] && l=primary; print -r -- "$l"; }
+
+  # Report load in pool order (primary, secondary, ...), marking the chosen profile.
+  print -r -- "clb: running claude sessions per profile"
+  for p in "${profiles[@]}"; do
+    if [[ $p == $best ]]; then
+      printf '  %-11s %2d  <- launching here\n' "$(_clb_label $p)" "${counts[$p]}"
+    else
+      printf '  %-11s %2d\n' "$(_clb_label $p)" "${counts[$p]}"
+    fi
+  done
+  unfunction _clb_label 2>/dev/null
+
   AWS_PROFILE=$best CLAUDE_CODE_AWS_PROFILE=$best cld "$@"
 }
 
