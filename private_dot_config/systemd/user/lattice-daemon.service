@@ -1,0 +1,41 @@
+[Unit]
+Description=Lattice local agent runtime daemon
+Documentation=https://lattice.builder-works.amazon.dev
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Toolbox-vended CLI daemon. --foreground keeps it in the foreground so systemd
+# (Type=simple) owns the lifecycle instead of the CLI forking a background copy.
+# Binds the default health port 19514, so `lattice daemon status/stop/restart`
+# still work against this systemd-managed process.
+ExecStart=/home/snellin/.toolbox/bin/lattice daemon start --foreground
+
+# systemd user services start with a clean environment — the interactive shell
+# PATH is NOT inherited. The daemon discovers agent CLIs by looking them up on
+# PATH at startup, so every agent CLI dir must be listed explicitly:
+#   - claude-lb      -> load-balancing shim for claude (MUST be before ~/.local/bin
+#                       so daemon-spawned claude sessions spread across the
+#                       bedrock-access-* AWS profiles; see that script's header)
+#   - mise node bin  -> codex (+ node for its `#!/usr/bin/env node` shebang)
+#   - mise shims     -> version-independent fallback for mise-managed tools
+#   - ~/.local/bin   -> claude (real binary), mise
+#   - ~/.toolbox/bin -> Amazon builder tools (brazil, ada, ...)
+Environment=PATH=/home/snellin/.local/libexec/claude-lb:/home/snellin/.local/share/mise/installs/node/22/bin:/home/snellin/.local/share/mise/shims:/home/snellin/.local/bin:/home/snellin/.toolbox/bin:/usr/local/bin:/usr/bin:/bin
+Environment=HOME=/home/snellin
+Environment=LOG_LEVEL=debug
+
+# Keep `lattice daemon logs [-f]` working by writing to the same file the CLI tails.
+StandardOutput=append:/home/snellin/.lattice/daemon.log
+StandardError=append:/home/snellin/.lattice/daemon.log
+
+# Keep it alive.
+Restart=always
+RestartSec=3
+# Graceful stop: the daemon handles SIGTERM (see main.rs wait_for_shutdown_signal).
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target
